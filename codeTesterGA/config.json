@@ -8,5 +8,9 @@
     "extensionsIncluded": [
         ".js",
         ".java"
-    ]
+    ],
+    "testFrameworks": {
+        "js": "jest",
+        "java": "junit"
+    }
 }
