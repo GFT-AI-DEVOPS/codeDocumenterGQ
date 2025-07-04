@@ -1,0 +1,12 @@
+{
+    "foldersToInclude": [
+        "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeTesterGA/tests"
+    ],
+    "foldersToExclude": [
+        "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeTesterGA/tests/java"
+    ],
+    "extensionsIncluded": [
+        ".js",
+        ".java"
+    ]
+}
