@@ -1,0 +1,179 @@
+# TRIGGER: Define quando o pipeline deve ser executado automaticamente
+trigger:
+  # BRANCHES: Especifica quais branches acionam o pipeline
+  branches:
+    include:  # Lista de branches que acionam o build
+      - main     # Branch principal de produção
+      - develop  # Branch de desenvolvimento
+  # PATHS: Especifica quais caminhos de arquivo acionam o pipeline
+  paths:
+    include:  # Lista de caminhos que acionam o build quando modificados
+      - src/dotnet/Gft.Ai.Impact/*  # Qualquer mudança neste diretório aciona o build
+
+# NAME: Define o formato do nome do build (usando variáveis predefinidas)
+name: ai-impact-docker-$(Date:yyyyMMdd)$(Rev:.r)-$(Build.RequestedFor)
+# $(Date:yyyyMMdd) = Data atual no formato AAAAMMDD
+# $(Rev:.r) = Número de revisão incremental do dia
+# $(Build.RequestedFor) = Nome do usuário que solicitou o build
+
+# VARIABLES: Define variáveis globais utilizadas em todo o pipeline
+variables:
+  dockerRegistryServiceConnection: "gft-ai-acr"     # Nome da conexão de serviço para Azure Container Registry
+  dockerRegistryDomain: "gftai.azurecr.io"         # Domínio do registro Docker
+  imageName: "gft-ai-impact"                       # Nome da imagem Docker a ser criada
+
+# POOL: Define o ambiente de execução do pipeline
+pool:
+  vmImage: ubuntu-latest  # Usa a imagem Ubuntu mais recente no Azure DevOps
+
+# STEPS: Lista de tarefas a serem executadas sequencialmente
+steps:
+  # CHECKOUT: Faz download do código fonte do repositório
+  - checkout: self        # 'self' indica o repositório atual
+    fetchDepth: 0         # 0 = baixa todo o histórico Git (necessário para git describe)
+    submodules: true      # true = também baixa submódulos Git
+
+  # USEDOTNET: Instala e configura o .NET SDK
+  - task: UseDotNet@2
+    displayName: ".Net 8: Enable"  # Nome exibido no log
+    inputs:
+      packageType: "sdk"                                    # Tipo de pacote (SDK vs Runtime)
+      version: "8.x"                                        # Versão do .NET (8.x = última versão 8)
+      installationPath: $(Agent.ToolsDirectory)/dotnet     # Caminho de instalação
+
+  # NUGETTOOLINSTALLER: Instala a ferramenta NuGet
+  - task: NuGetToolInstaller@1
+    displayName: "Instalar NuGet latest"  # Nome exibido no log
+
+  # NUGETAUTHENTICATE: Autentica com feed privado NuGet
+  - task: NuGetAuthenticate@1
+    inputs:
+      feedUrl: "https://pkgs.dev.azure.com/gft-assets/_packaging/gft-ai-impact/nuget/v3/index.json"  # URL do feed NuGet privado
+
+  # SCRIPT: Executa comandos bash personalizados
+  - script: |
+      echo "Build WEB API project..."
+      dotnet publish -o artifacts  # Publica o projeto para pasta 'artifacts'
+
+      echo "Building Extensions..."
+
+      extensions_pattern="../*Gft.Ai.Impact.Extension*/"  # Padrão para encontrar extensões
+
+      # Loop através de diretórios que correspondem ao padrão
+      for dir in $extensions_pattern; do
+        if [ -d "$dir" ]; then                           # Verifica se é um diretório
+          project=$(find $dir -name "*.csproj")         # Encontra arquivo .csproj
+          if [ -f "$project" ]; then                    # Verifica se arquivo existe
+            full_dir_name=$(basename $dir)              # Extrai nome do diretório
+            project_name=${full_dir_name##*.}           # Extrai parte após último ponto
+            echo "Building $project_name..."
+            dotnet publish $project -o artifacts/Extensions/$project_name  # Publica extensão
+          fi
+        fi
+      done
+    displayName: "Publish: Artifacts"  # Nome exibido no log
+    workingDirectory: "src/dotnet/Gft.Ai.Impact/Gft.Ai.Impact.Api.WebApi"  # Diretório de trabalho
+
+  # DOCKER: Faz login no registro Docker
+  - task: Docker@2
+    displayName: "Docker: Login"
+    inputs:
+      containerRegistry: $(dockerRegistryServiceConnection)  # Usa variável definida anteriormente
+      command: "login"                                       # Comando a executar
+
+  # CMDLINE: Configura Docker para builds multi-arquitetura
+  - task: CmdLine@2
+    displayName: "Docker: Enable Multi-Arch"
+    inputs:
+      script: |
+        docker run --privileged --rm tonistiigi/binfmt --install arm64  # Instala emulador ARM64
+        docker run --privileged --rm tonistiigi/binfmt                  # Verifica emuladores instalados
+        docker buildx create --use                                      # Cria e usa builder multi-plataforma
+
+  # SCRIPT: Define sufixo de versão baseado na branch
+  - script: |
+      if [[ $(Build.SourceBranch) == refs/heads/feature/* ]]; then      # Se branch feature/*
+        echo "##vso[task.setvariable variable=VersionSuffix]-alpha"     # Define sufixo como -alpha
+      elif [[ $(Build.SourceBranch) == refs/heads/develop ]]; then      # Se branch develop
+        echo "##vso[task.setvariable variable=VersionSuffix]-dev"       # Define sufixo como -dev
+      elif [[ $(Build.SourceBranch) == refs/heads/main ]]; then         # Se branch main
+        echo "##vso[task.setvariable variable=VersionSuffix]"           # Sem sufixo
+      else                                                              # Qualquer outra branch
+        echo "##vso[task.setvariable variable=VersionSuffix]-dev"       # Define sufixo como -dev
+      fi
+    displayName: "Set Version Suffix"
+    # ##vso[task.setvariable variable=NOME]VALOR = sintaxe para definir variável no Azure DevOps
+
+  # SCRIPT: Extrai informações de versão da última tag Git
+  - script: |
+      LATEST_TAG=$(git describe --tags --abbrev=0)          # Obtém última tag Git
+      VERSION=${LATEST_TAG#v}                               # Remove prefixo 'v' se existir
+      MAJOR_VERSION=${VERSION%%.*}                          # Extrai versão major (antes do primeiro ponto)
+      MINOR_VERSION=${VERSION#$MAJOR_VERSION.}              # Remove major version
+      MINOR_VERSION=${MINOR_VERSION%%.*}                    # Extrai versão minor
+      PATCH_VERSION=${VERSION##*.}                          # Extrai versão patch (após último ponto)
+      echo "##vso[task.setvariable variable=LATEST_TAG]$LATEST_TAG.$(Build.BuildId)"           # Tag + BuildId
+      echo "##vso[task.setvariable variable=MajorVersion]$MAJOR_VERSION"                       # Versão major
+      echo "##vso[task.setvariable variable=MinorVersion]$MINOR_VERSION"                       # Versão minor
+      echo "##vso[task.setvariable variable=PatchVersion]$PATCH_VERSION"                       # Versão patch
+      PACKAGE_VERSION=$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION.$(Build.BuildId)$(VersionSuffix)  # Versão completa
+      echo "##vso[task.setvariable variable=PACKAGE_VERSION]$PACKAGE_VERSION"                  # Define versão do pacote
+
+  # CMDLINE: Define tag da imagem Docker baseada na branch
+  - task: CmdLine@2
+    displayName: "Set Docker Image Tag"
+    inputs:
+      script: |
+        BRANCH_NAME=$(Build.SourceBranchName)                                    # Nome da branch atual
+        SAFE_BRANCH_NAME=$(echo $BRANCH_NAME | sed 's/[^a-zA-Z0-9]/-/g')        # Substitui caracteres especiais por hífen
+        if [ "$(Build.SourceBranch)" == "refs/heads/main" ]; then               # Se branch main
+          IMAGE_TAG="latest"                                                     # Tag será 'latest'
+        else                                                                     # Qualquer outra branch
+          IMAGE_TAG=$SAFE_BRANCH_NAME                                            # Tag será nome da branch
+        fi
+        echo "##vso[task.setvariable variable=imageTag]$IMAGE_TAG"              # Define variável imageTag
+        echo "TAGs will be => $IMAGE_TAG and $PACKAGE_VERSION"                  # Log informativo
+
+  # SCRIPT: Atualiza número do build exibido na UI
+  - script: |
+      if [ "$(Build.SourceBranch)" = "refs/heads/main" ]; then    # Se branch main
+        echo "##vso[build.updatebuildnumber]$(LATEST_TAG)"        # Usa LATEST_TAG como número do build
+      else                                                        # Qualquer outra branch
+        echo "##vso[build.updatebuildnumber]$(PACKAGE_VERSION)"   # Usa PACKAGE_VERSION como número do build
+      fi
+    displayName: "Set Build Number (LATEST_TAG ou PACKAGE_VERSION)"
+    # ##vso[build.updatebuildnumber]VALOR = sintaxe para atualizar número do build
+
+  # CMDLINE: Build Docker para branch main
+  - task: CmdLine@2
+    displayName: "Docker: Build"
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')  # Só executa se branch for main
+    inputs:
+      script: |
+        docker buildx build --platform linux/amd64,linux/arm64 \                      # Build multi-plataforma
+          -f 'src/dotnet/Gft.Ai.Impact/Gft.Ai.Impact.Api.WebApi/Dockerfile' \        # Caminho do Dockerfile
+          -t $(dockerRegistryDomain)/$(imageName):$LATEST_TAG \                       # Tag 1: versão específica
+          -t $(dockerRegistryDomain)/$(imageName):$(imageTag) \                       # Tag 2: 'latest'
+          --push \                                                                     # Faz push automaticamente
+          .                                                                            # Contexto de build (diretório atual)
+
+  # CMDLINE: Build Docker para outras branches
+  - task: CmdLine@2
+    displayName: "Docker: Build"
+    condition: ne(variables['Build.SourceBranch'], 'refs/heads/main')  # Só executa se branch NÃO for main
+    inputs:
+      script: |
+        docker buildx build --platform linux/amd64,linux/arm64 \                      # Build multi-plataforma
+          -f 'src/dotnet/Gft.Ai.Impact/Gft.Ai.Impact.Api.WebApi/Dockerfile' \        # Caminho do Dockerfile
+          -t $(dockerRegistryDomain)/$(imageName):$PACKAGE_VERSION \                  # Tag 1: versão com sufixo
+          -t $(dockerRegistryDomain)/$(imageName):$(imageTag) \                       # Tag 2: nome da branch
+          --push \                                                                     # Faz push automaticamente
+          .                                                                            # Contexto de build (diretório atual)
+
+# VARIÁVEIS PREDEFINIDAS UTILIZADAS:
+# $(Build.SourceBranch) = Branch completa (ex: refs/heads/main)
+# $(Build.SourceBranchName) = Nome da branch (ex: main)
+# $(Build.BuildId) = ID único do build
+# $(Build.RequestedFor) = Usuário que solicitou o build
+# $(Date:yyyyMMdd) = Data atual formatada
+# $(Rev:.r) = Número de revisão incremental
