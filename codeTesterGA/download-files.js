@@ -76,35 +76,37 @@ async function downloadFile(item) {
 
 async function processFiles() {
 
-    for (let item of files) {
-        // console.log(item);
-        if (
-            item.jobId &&
-            item.downloaded === false &&
-            item.error === null
-        ) {
-            try {
-                const res = await fetchJobStatus(item.jobId);
+    let pending = true;
+    while (pending) {
+        pending = false;
+        for (let item of files) {
+            if (
+                item.jobId &&
+                item.downloaded === false &&
+                item.error === null
+            ) {
+                pending = true;
+                try {
+                    const res = await fetchJobStatus(item.jobId);
 
-                if (res.data.status === 'Completed') {
-                    item.uri = res.data.results[0].output[0].uri;
-                    await downloadFile(item);
-                    writeJsonFile(jsonFilePath, files);
-                } else if (res.data.status === 'Running') {
-                    continue;
-                } else {
-                    item.error = res.data.errors || 'Unknown error.';
+                    if (res.data.status === 'Completed') {
+                        item.uri = res.data.results[0].output[0].uri;
+                        await downloadFile(item);
+                        writeJsonFile(jsonFilePath, files);
+                    } else if (res.data.status === 'Running') {
+                        continue;
+                    } else {
+                        item.error = res.data.errors || 'Unknown error.';
+                        writeJsonFile(jsonFilePath, files);
+                    }
+                } catch (err) {
+                    console.log(err.message);
+                    item.error = err.response?.headers || 'Unknown job status error.';
                     writeJsonFile(jsonFilePath, files);
                 }
-            } catch (err) {
-                console.log(err.message);
-                item.error = err.response?.headers || 'Unknown job status error.';
-                writeJsonFile(jsonFilePath, files);
+                // Wait 0.5 second before next iteration
+                await new Promise(resolve => setTimeout(resolve, 500));
             }
-            // Wait 1 second before next iteration
-            await new Promise(resolve => setTimeout(resolve, 500));
-        } else if (item.downloaded === true) {
-            console.log(`File already downloaded: ${item.uri}, skipping...`);
         }
     }
 }

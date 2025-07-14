@@ -34,15 +34,18 @@ if (emptyKeys.length > 0) {
 async function getAllFiles(dirs, ignoreDirs, includedExt) {
     let files = [];
     for (const dir of Array.isArray(dirs) ? dirs : [dirs]) {
-        // If dir matches any ignoreDirs, skip it
-        if (ignoreDirs.some(ignored => path.resolve(dir).endsWith(path.normalize(ignored)))) continue;
+        // Convert relative dir to absolute path
+        const absDir = path.isAbsolute(dir) ? dir : path.resolve(process.cwd(), dir);
 
-        const entries = await fs.readdir(dir, { withFileTypes: true });
+        // If absDir matches any ignoreDirs, skip it
+        if (ignoreDirs.some(ignored => absDir.endsWith(path.normalize(ignored)))) continue;
+
+        const entries = await fs.readdir(absDir, { withFileTypes: true });
         for (const entry of entries) {
-            const fullPath = path.join(dir, entry.name);
+            const fullPath = path.join(absDir, entry.name);
             if (entry.isDirectory()) {
                 // If this subdir matches any ignoreDirs, skip it
-                if (ignoreDirs.some(ignored => path.resolve(fullPath).endsWith(path.normalize(ignored)))) continue;
+                if (ignoreDirs.some(ignored => fullPath.endsWith(path.normalize(ignored)))) continue;
                 files = files.concat(await getAllFiles([fullPath], ignoreDirs, includedExt));
             } else {
                 const ext = path.extname(fullPath);
@@ -59,10 +62,16 @@ let allFilesArray = await getAllFiles(config.foldersToInclude, config.foldersToE
 
 let allFiles = [];
 
+// Get the current working directory for relative path calculation
+const cwd = process.cwd();
+
 for (const filePath of allFilesArray) {
+    // Convert absolute path to relative path
+    const relativePath = path.relative(cwd, filePath);
+
     allFiles.push({
         fileName: path.basename(filePath),
-        originalPath: filePath,
+        originalPath: relativePath,  // Now this will be a relative path
         jobId: null,
         error: null,
         uri: null,
