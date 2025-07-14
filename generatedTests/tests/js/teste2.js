@@ -1,74 +1,62 @@
 const assert = require('assert');
 
-describe('Greet Function Tests', () => {
-    it('Should_ReturnGreetingWithName_WhenGivenValidName', () => {
-        // Arrange
-        const name = 'World';
-        const expectedGreeting = 'Hello, World!';
-
-        // Act
-        const result = greet(name);
-
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should match the expected format');
+describe('greet function', () => {
+    it('should return a greeting with the provided name', () => {
+        const result = greet("World");
+        assert.strictEqual(result, "Hello, World!", "Greeting should match the expected format");
     });
 
-    it('Should_ReturnGreetingWithEmptyName_WhenGivenEmptyString', () => {
-        // Arrange
-        const name = '';
-        const expectedGreeting = 'Hello, !';
-
-        // Act
-        const result = greet(name);
-
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should handle empty string input');
+    it('should handle empty string input', () => {
+        const result = greet("");
+        assert.strictEqual(result, "Hello, !", "Greeting should handle empty string input");
     });
 
-    it('Should_ReturnGreetingWithNumberAsString_WhenGivenNumber', () => {
-        // Arrange
-        const name = 42;
-        const expectedGreeting = 'Hello, 42!';
-
-        // Act
-        const result = greet(name);
-
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should handle number input');
+    it('should handle null input', () => {
+        const result = greet(null);
+        assert.strictEqual(result, "Hello, null!", "Greeting should handle null input");
     });
 
-    it('Should_ReturnGreetingWithUndefined_WhenNoArgumentProvided', () => {
-        // Arrange
-        const expectedGreeting = 'Hello, undefined!';
-
-        // Act
-        const result = greet();
-
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should handle undefined input');
+    it('should handle undefined input', () => {
+        const result = greet(undefined);
+        assert.strictEqual(result, "Hello, undefined!", "Greeting should handle undefined input");
     });
 
-    it('Should_ReturnGreetingWithNull_WhenGivenNull', () => {
-        // Arrange
-        const name = null;
-        const expectedGreeting = 'Hello, null!';
-
-        // Act
-        const result = greet(name);
-
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should handle null input');
+    it('should handle number input', () => {
+        const result = greet(42);
+        assert.strictEqual(result, "Hello, 42!", "Greeting should handle number input");
     });
 
-    it('Should_ReturnGreetingWithObjectAsString_WhenGivenObject', () => {
-        // Arrange
-        const name = { toString: () => 'CustomObject' };
-        const expectedGreeting = 'Hello, CustomObject!';
+    it('should handle object input', () => {
+        const obj = { toString: () => "Object" };
+        const result = greet(obj);
+        assert.strictEqual(result, "Hello, Object!", "Greeting should handle object input");
+    });
 
-        // Act
-        const result = greet(name);
+    it('should handle array input', () => {
+        const result = greet([1, 2, 3]);
+        assert.strictEqual(result, "Hello, 1,2,3!", "Greeting should handle array input");
+    });
+});
 
-        // Assert
-        assert.strictEqual(result, expectedGreeting, 'The greeting should handle object input with toString method');
+// Test for the console.log output
+describe('console output', () => {
+    let originalLog;
+    let logOutput;
+
+    beforeEach(() => {
+        originalLog = console.log;
+        logOutput = '';
+        console.log = (message) => {
+            logOutput += message;
+        };
+    });
+
+    afterEach(() => {
+        console.log = originalLog;
+    });
+
+    it('should log the correct greeting', () => {
+        require('./greet'); // Assuming the original code is in a file named greet.js
+        assert.strictEqual(logOutput, "Hello, World!", "Console output should match the expected greeting");
     });
 });

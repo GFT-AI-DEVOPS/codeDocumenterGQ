@@ -2,6 +2,11 @@ import fs from 'fs/promises';
 import path from 'path';
 import axios from 'axios';
 import FormData from 'form-data';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 const folderPath = "./codeTesterGA";
 
@@ -82,7 +87,7 @@ function sendFiles(allFilesArray) {
                             {
                                 headers: {
                                     ...form.getHeaders(),
-                                    Authorization: `Bearer ${config.ACCESS_TOKEN}`,
+                                    Authorization: `Bearer ${ACCESS_TOKEN}`,
                                 },
                             }
                         );
