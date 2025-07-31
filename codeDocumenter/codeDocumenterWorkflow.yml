@@ -1,4 +1,4 @@
-name: CI Integrado
+name: Code Documenter Workflow
 
 on:
   workflow_dispatch:
@@ -46,14 +46,14 @@ jobs:
 
       - name: Create Classes List
         id: changes
-        run: node codeTesterGA/generate-files-list.js
+        run: node codeDocumenter/generate-files-list.js
 
       - name: Prepare and Send to API (TestCreator)
         id: send_api
-        run: node codeTesterGA/send-files.js
+        run: node codeDocumenter/send-files.js
 
       - name: Save Generated Tests
-        run: node codeTesterGA/download-files.js
+        run: node codeDocumenter/download-files.js
 
       - name: Criar Pull Request
         id: create-pr

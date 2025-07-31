@@ -1,0 +1,26 @@
+[
+  {
+    "fileName": "test.java",
+    "originalPath": "tests\\java\\test.java",
+    "jobId": null,
+    "error": "Error sending file: connect ECONNREFUSED 172.28.13.233:80",
+    "uri": null,
+    "downloaded": false
+  },
+  {
+    "fileName": "teste.js",
+    "originalPath": "tests\\js\\teste.js",
+    "jobId": null,
+    "error": "Error sending file: connect ECONNREFUSED 172.28.13.233:80",
+    "uri": null,
+    "downloaded": false
+  },
+  {
+    "fileName": "teste2.js",
+    "originalPath": "tests\\js\\teste2.js",
+    "jobId": null,
+    "error": "Error sending file: connect ECONNREFUSED 172.28.13.233:80",
+    "uri": null,
+    "downloaded": false
+  }
+]

@@ -8,9 +8,9 @@ dotenv.config();
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-const folderPath = "./codeTesterGA";
+const folderPath = "./codeDocumenter";
 
-const jsonFilePath = path.join(process.cwd(), folderPath + '/codeTesterFiles.json');
+const jsonFilePath = path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json');
 
 const configPath = path.join(process.cwd(), folderPath + '/config.json');
 
@@ -55,7 +55,7 @@ async function downloadFile(item) {
                 headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
             });
 
-        const baseDir = config.testsFolder;
+        const baseDir = config.docsFolder;
         const targetPath = path.join(baseDir, path.relative(process.cwd(), item.originalPath));
         // console.log(`Target path for download: ${targetPath}`);
 

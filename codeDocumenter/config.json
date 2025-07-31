@@ -1,19 +1,27 @@
 {
     "foldersToInclude": [
-        "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeTesterGA/tests"
+        "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeDocumenterGQ/tests"
     ],
     "foldersToExclude": [],
     "extensionsIncluded": [
         ".js",
         ".java"
     ],
-    "testFrameworks": {
-        "js": "jest",
-        "java": "junit"
-    },
-    "testsFolder": "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeTesterGA/generatedTests/",
-    "promptId": "TestCreator__CreateUnitTests_V1",
-    "additionalInstructions": "Generate only the source code, without any extra information",
+    // "testFrameworks": {
+    //     "js": "jest",
+    //     "java": "junit"
+    // },
+    "docsFolder": "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeDocumenterGQ/generatedDocs/",
+    "RunName": "GenerateDocPR",
+    "jobName": "DemoDocCreator",
+    "DocumentationFormat": "markdown",
+    "DiagramFormat": "Mermaid",
+    "DocumentationAudience": "Software Engineer",
+    "TargetExtension": "md",
+    // "promptId": "DocCreator__DocumentCode_V5",
+    "promptId": "DocCreator__DocumentCode_Chain_v2",
+    // "promptId": "DocCreator__Architecture_Meaning",
+    "additionalInstructions": "Generate the documentation in pt-BR. If the code have vulnerabilities, describe all in a new # vulnerabilities section",
     "llm": "AWS_CLAUDE",
     "extensionToLanguage": {
         ".js": "JavaScript",

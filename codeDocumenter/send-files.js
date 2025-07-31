@@ -8,7 +8,7 @@ dotenv.config();
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-const folderPath = "./codeTesterGA";
+const folderPath = "./codeDocumenter";
 
 // Load configuration from config.json
 const configPath = path.join(process.cwd(), folderPath + '/config.json');
@@ -40,10 +40,10 @@ if (emptyKeys.length > 0) {
 };
 
 try {
-    console.log("Reading: " + path.join(process.cwd(), folderPath + '/codeTesterFiles.json'))
-    allFilesArray = JSON.parse(await fs.readFile(path.join(process.cwd(), folderPath + '/codeTesterFiles.json'), 'utf-8'));
+    console.log("Reading: " + path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'))
+    allFilesArray = JSON.parse(await fs.readFile(path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'), 'utf-8'));
 } catch (err) {
-    console.error('Could not read or parse codeTesterFiles.json:', err.message);
+    console.error('Could not read or parse codeDocumenterFiles.json:', err.message);
     process.exit(1);
 };
 
@@ -66,7 +66,7 @@ async function sendFiles(allFilesArray) {
                 console.error(`No language mapping found for extension: ${ext}`);
                 element.error = `No language mapping found for extension: ${ext}`;
                 await fs.writeFile(
-                    path.join(process.cwd(), folderPath + '/codeTesterFiles.json'),
+                    path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
                     JSON.stringify(allFilesArray, null, 2),
                     'utf-8'
                 );
@@ -74,12 +74,14 @@ async function sendFiles(allFilesArray) {
                 const fileBuffer = await fs.readFile(element.originalPath);
 
                 const form = new FormData();
-                form.append('RunName', 'GenerateTests');
-                form.append('jobName', 'DemoTestCreator');
-                form.append('TestType', 'Unit');
-                form.append('TestingFrameworks', config.testFrameworks[`${path.extname(element.fileName).toLowerCase()}`]);
+                form.append('RunName', config.RunName);
+                form.append('jobName', config.jobName);
+                form.append('DocumentationFormat', config.DocumentationFormat);
+                form.append('DiagramFormat', config.DiagramFormat);
                 form.append('SourceCodeLanguage', language);
+                form.append('DocumentationAudience', config.DocumentationAudience);
                 form.append('PromptId', config.promptId);
+                form.append('TargetExtension', config.TargetExtension);
                 form.append('Llm', config.llm);
                 form.append('AdditionalInstructions', config.additionalInstructions);
                 form.append('files', fileBuffer, element.fileName);
@@ -99,7 +101,7 @@ async function sendFiles(allFilesArray) {
                     element.jobId = response.data;
                     element.error = null;
                     await fs.writeFile(
-                        path.join(process.cwd(), folderPath + '/codeTesterFiles.json'),
+                        path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
                         JSON.stringify(allFilesArray, null, 2),
                         'utf-8'
                     );
@@ -109,7 +111,7 @@ async function sendFiles(allFilesArray) {
                     element.error = `Error sending file: ${err?.response?.data ? JSON.stringify(err.response.data) : err.message}`;
                     console.error("Error sending file:", err.message);
                     await fs.writeFile(
-                        path.join(process.cwd(), folderPath + '/codeTesterFiles.json'),
+                        path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
                         JSON.stringify(allFilesArray, null, 2),
                         'utf-8'
                     );

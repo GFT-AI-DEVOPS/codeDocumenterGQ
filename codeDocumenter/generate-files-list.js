@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const folderPath = "./codeTesterGA";
+const folderPath = "./codeDocumenter";
 
 // Load configuration from config.json
 const configPath = path.join(process.cwd(), folderPath + '/config.json');
@@ -79,15 +79,15 @@ for (const filePath of allFilesArray) {
     });
 }
 
-const codeTesterFilesPath = path.join(process.cwd(), folderPath, 'codeTesterFiles.json');
+const codeDocumenterFilesPath = path.join(process.cwd(), folderPath, 'codeDocumenterFiles.json');
 try {
-    await fs.access(codeTesterFilesPath);
-    console.log('codeTesterFiles.json already exists, not creating, please delete the file and re-run the workflow if you want to start over.');
+    await fs.access(codeDocumenterFilesPath);
+    console.log('codeDocumenterFiles.json already exists, not creating, please delete the file and re-run the workflow if you want to start over.');
     process.exit(0);
 } catch (err) {
-    const outputPath = path.join(process.cwd(), folderPath, 'codeTesterFiles.json');
+    const outputPath = path.join(process.cwd(), folderPath, 'codeDocumenterFiles.json');
     await fs.writeFile(outputPath, JSON.stringify(allFiles, null, 2));
-    console.log('codeTesterFiles.json has been saved at', outputPath);
+    console.log('codeDocumenterFiles.json has been saved at', outputPath);
 }
 
 
