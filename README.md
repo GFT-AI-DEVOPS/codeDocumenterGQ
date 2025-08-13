@@ -1,271 +1,175 @@
-# Code Documenter GQ - Automated Documentation Generator
+# codeDocumenterGQ
 
-This project automatically generates comprehensive documentation for your codebase using AI-powered analysis. The workflow consists of three sequential scripts that scan your code, send it for AI processing, and download the generated documentation.
+## Visão Geral
 
-## 📋 Prerequisites
+Este projeto automatiza a geração de documentação técnica para arquivos fonte, utilizando um pipeline que inclui seleção de arquivos, envio para API de documentação, acompanhamento de jobs e download dos resultados.
 
-### Required Software
-- **Node.js** (version 18 or higher with ES modules support)
-- **Access to GFT AI Impact API** (internal network required)
+## Estrutura dos Scripts
 
-### Required Environment Variables
-Create a `.env` file in the root directory:
-```env
-ACCESS_TOKEN=your_keycloak_access_token_here
-```
+- [`generate-files-list.js`](codeDocumenter/generate-files-list.js): Gera o arquivo `codeDocumenterFiles.json` com a lista de arquivos a serem documentados, estimando tokens e validando limites.
+- [`send-files.js`](codeDocumenter/send-files.js): Envia os arquivos listados para a API de documentação, gerenciando rate limit e salvando o progresso.
+- [`download-files.js`](codeDocumenter/download-files.js): Faz o download dos arquivos de documentação gerados após a conclusão dos jobs.
+- [`sequential.js`](codeDocumenter/sequential.js): Executa todo o fluxo de envio, acompanhamento e download de forma sequencial e concorrente, salvando o progresso e resultados.
 
-## 🚀 Quick Start
+## Configuração
 
-### 1. Configure the Project
+O arquivo [`config.json`](codeDocumenter/config.json) define:
+- Pasta de origem dos arquivos (`folderToInclude`)
+- Extensões aceitas (`extensionsIncluded`)
+- Limite de tokens por arquivo (`maxTokens`)
+- Parâmetros de execução e documentação (idioma, formato, instruções adicionais)
+- Mapeamento de extensões para linguagens
+- Parâmetros de concorrência e limites
 
-Edit `codeDocumenter/config.json` with your project settings:
-
+Exemplo de configuração relevante:
 ```json
 {
-    "foldersToInclude": [
-        "./src",
-        "./lib"
-    ],
-    "foldersToExclude": [
-        "node_modules",
-        "dist",
-        "build"
-    ],
-    "extensionsIncluded": [
-        ".js",
-        ".java",
-        ".ts",
-        ".py"
-    ],
-    "docsFolder": "./generatedDocs/",
-    "RunName": "GenerateDocPR",
-    "jobName": "DemoDocCreator",
-    "DocumentationFormat": "markdown",
-    "DiagramFormat": "Mermaid",
-    "DocumentationAudience": "Software Engineer",
-    "TargetExtension": "md",
-    "promptId": "DocCreator__DocumentCode_Chain_v2",
-    "additionalInstructions": "Generate comprehensive documentation with code examples",
-    "llm": "AWS_CLAUDE",
-    "extensionToLanguage": {
-        ".js": "JavaScript",
-        ".ts": "TypeScript",
-        ".java": "Java",
-        ".py": "Python"
-    }
+  "folderToInclude": "C:/Programas_GO_Tratados",
+  "docsFolder": "C:/.../generatedDocs/",
+  "maxTokens": 200000,
+  "sequentialConcurrency": 2,
+  "promptId": "LegacyTransformer__Business_Rules"
 }
 ```
 
-### 2. Install Dependencies
+## Como Usar
 
-```bash
-npm install axios form-data dotenv
-```
+1. **Gerar a lista de arquivos:**
+   ```sh
+   node codeDocumenter/generate-files-list.js
+   ```
+2. **Enviar arquivos para documentação:**
+   ```sh
+   node codeDocumenter/send-files.js
+   ```
+3. **Baixar arquivos documentados:**
+   ```sh
+   node codeDocumenter/download-files.js
+   ```
+   Ou execute todo o fluxo sequencialmente:
+   ```sh
+   node codeDocumenter/sequential.js
+   ```
 
-### 3. Run the Scripts
+## Observações
 
-Execute the scripts in order:
+- Configure as variáveis de ambiente `ACCESS_TOKEN` e `API_URL` em um arquivo `.env`.
+- O progresso e os resultados são salvos em `codeDocumenterFiles.json` e na pasta de destino configurada.
+- O sistema respeita limites de tokens e concorrência definidos no `config.json`.
 
-```bash
-# Step 1: Generate files list
-node codeDocumenter/generate-files-list.js
+## Estrutura de Saída
 
-# Step 2: Send files to AI for processing
-node codeDocumenter/send-files.js
-
-# Step 3: Download generated documentation
-node codeDocumenter/download-files.js
-```
-
-## 📖 Configuration Guide
-
-### Required Configuration Fields
-
-| Field | Type | Description | Example |
-|-------|------|-------------|---------|
-| `foldersToInclude` | Array | Directories to scan for source files | `["./src", "./lib"]` |
-| `foldersToExclude` | Array | Directories to ignore (can be empty) | `["node_modules", "test"]` |
-| `extensionsIncluded` | Array | File extensions to process | `[".js", ".java", ".ts"]` |
-| `docsFolder` | String | Output directory for generated docs | `"./generatedDocs/"` |
-| `DocumentationFormat` | String | Output format for documentation | `"markdown"` |
-| `DiagramFormat` | String | Format for generated diagrams | `"Mermaid"` |
-| `DocumentationAudience` | String | Target audience for docs | `"Software Engineer"` |
-| `promptId` | String | AI prompt template ID | `"DocCreator__DocumentCode_Chain_v2"` |
-| `additionalInstructions` | String | Custom instructions for AI | `"Include vulnerability analysis"` |
-| `llm` | String | AI model to use | `"AWS_CLAUDE"` |
-
-### Path Configuration
-
-**✅ Use relative paths** for cross-platform compatibility:
-```json
-{
-    "foldersToInclude": ["./src", "./components"],
-    "docsFolder": "./generatedDocs/"
-}
-```
-
-**❌ Avoid absolute paths** (won't work in CI/CD):
-```json
-{
-    "foldersToInclude": ["C:/Users/user/project/src"],
-    "docsFolder": "C:/Users/user/project/docs/"
-}
-```
-
-### ⚠️ Important Notes
-
-- **Remove all JSON comments** (`//`) from your config.json before running
-- Ensure `docsFolder` ends with a forward slash `/`
-- All fields except `foldersToExclude` must have values
-
-## 🔄 Script Workflow
-
-### 1. `generate-files-list.js`
-- **Purpose**: Scans configured directories for source files
-- **Input**: Configuration from `config.json`
-- **Output**: Creates `codeDocumenterFiles.json` with file metadata
-- **Behavior**: Exits if `codeDocumenterFiles.json` already exists
-
-**Sample output:**
-```json
-[
-  {
-    "fileName": "UserService.js",
-    "originalPath": "src/services/UserService.js",
-    "jobId": null,
-    "error": null,
-    "uri": null,
-    "downloaded": false
-  }
-]
-```
-
-### 2. `send-files.js`
-- **Purpose**: Sends source files to AI API for documentation generation
-- **Input**: Files from `codeDocumenterFiles.json`
-- **Process**: 
-  - Reads each source file
-  - Maps file extensions to programming languages
-  - Sends to AI API with configuration parameters
-  - Updates `codeDocumenterFiles.json` with job IDs
-- **Rate Limiting**: 250ms delay between requests
-
-### 3. `download-files.js`
-- **Purpose**: Downloads generated documentation when AI processing completes
-- **Process**:
-  - Polls job status every 500ms
-  - Downloads completed documentation files
-  - Saves to configured `docsFolder`
-  - Maintains original directory structure
-- **Output**: Generated documentation files with proper structure
-
-## 📁 Output Structure
-
-Generated documentation maintains your source directory structure:
+A documentação gerada mantém a estrutura de diretórios da fonte:
 
 ```
 generatedDocs/
-├── src/
-│   ├── services/
-│   │   └── UserService.md
-│   └── components/
-│       └── Login.md
-└── lib/
-    └── utils/
-        └── helpers.md
+└── NOME_DO_PROMPT/
+    ├── services/
+    │   └── UserService.md
+    └── components/
+        └── Login.md
 ```
+> O diretório `NOME_DO_PROMPT` será substituído pelo valor definido em `promptId` no seu `config.json` (por exemplo, `LegacyTransformer__Business_Rules`). Não será criada uma pasta `src` ou `lib` — a estrutura interna preserva apenas os subdiretórios dos arquivos de origem.
 
-## 🔧 Troubleshooting
+## Solução de Problemas
 
-### Common Issues
+### Problemas Comuns
 
 **"Config has empty key(s)":**
-- Ensure all required fields in `config.json` are filled
-- Remove JSON comments (`//`) from the config file
-- Verify JSON syntax is valid
+- Verifique se todos os campos obrigatórios no `config.json` estão preenchidos
+- Remova os comentários JSON (`//`) do arquivo de configuração
+- Verifique se a sintaxe JSON é válida
 
 **"Could not read or parse config.json":**
-- Check JSON syntax validity
-- Remove all comments from JSON
-- Verify file path and permissions
+- Verifique a validade da sintaxe JSON
+- Remova todos os comentários do JSON
+- Verifique o caminho e as permissões do arquivo
 
-**API authentication errors:**
+**Erros de autenticação da API:**
 ```
 Error sending file: 401 Unauthorized
 ```
-- Verify `ACCESS_TOKEN` in the `.env` file
-- Check if token has expired
-- Ensure you have access to `api.gftaiimpact.local`
+- Verifique o `ACCESS_TOKEN` no arquivo `.env`
+- Confira se o token não expirou
+- Assegure-se de que você tenha acesso ao `api.gftaiimpact.local`
 
-**Connection errors:**
+**Erros de conexão:**
 ```
 Error sending file: connect ECONNREFUSED
 ```
-- Verify VPN/network access to GFT AI Impact API
-- Check if API endpoints are accessible
+- Verifique o acesso à VPN/rede para a API GFT AI Impact
+- Confira se os endpoints da API estão acessíveis
 
 **"codeDocumenterFiles.json already exists":**
-- Delete the file to regenerate the file list
-- Or continue with existing file list if resuming
+- Exclua o arquivo para regenerar a lista de arquivos
+- Ou continue com a lista de arquivos existente se estiver retomando
 
-### Reset and Restart
+### Redefinir e Reiniciar
 
-To start fresh:
+Para começar do zero:
 ```bash
-# Delete generated files
+# Excluir arquivos gerados
 rm codeDocumenter/codeDocumenterFiles.json
 rm -rf generatedDocs/
 
-# Run workflow again
+# Executar o fluxo novamente
 node codeDocumenter/generate-files-list.js
 ```
 
-### Monitoring Progress
+### Monitorando o Progresso
 
-- **Console Output**: Each script provides detailed progress logging
-- **Status File**: Check `codeDocumenterFiles.json` for detailed status of each file
-- **Error Tracking**: API errors are captured and stored for debugging
+- **Saída do console**: Cada script fornece logs detalhados de progresso
+- **Arquivo de status**: Verifique `codeDocumenterFiles.json` para o status detalhado de cada arquivo
+- **Rastreamento de erros**: Erros da API são capturados e armazenados para depuração
 
-## 📋 Supported Languages & Frameworks
+## Idiomas & Frameworks Suportados
 
-| Language | Extensions | Supported Features |
-|----------|------------|-------------------|
-| JavaScript | `.js`, `.mjs`, `.cjs`, `.jsx` | ES6+, React, Node.js |
-| TypeScript | `.ts`, `.tsx` | Types, Interfaces, Generics |
-| Java | `.java`, `.class` | OOP, Spring Framework |
-| Python | `.py`, `.pyw`, `.pyi` | Classes, Functions, Modules |
-| C/C++ | `.c`, `.cpp`, `.h`, `.hpp` | Structs, Pointers, Templates |
-| C# | `.cs`, `.csx` | .NET Framework, LINQ |
-| Go | `.go` | Goroutines, Channels |
-| Rust | `.rs`, `.rlib` | Ownership, Traits |
+| Linguagem   | Extensões                        | Recursos Suportados           |
+|-------------|----------------------------------|-------------------------------|
+| JavaScript  | `.js`, `.mjs`, `.cjs`, `.jsx`    | ES6+, React, Node.js          |
+| TypeScript  | `.ts`, `.tsx`                    | Types, Interfaces, Generics   |
+| Java        | `.java`, `.class`                | OOP, Spring Framework         |
+| Python      | `.py`, `.pyw`, `.pyi`            | Classes, Functions, Modules   |
+| C/C++       | `.c`, `.cpp`, `.h`, `.hpp`       | Structs, Pointers, Templates  |
+| C#          | `.cs`, `.csx`                    | .NET Framework, LINQ          |
+| Go          | `.go`                            | Goroutines, Channels          |
+| Rust        | `.rs`, `.rlib`                   | Ownership, Traits             |
 
-## 📊 API Endpoints
+## Endpoints da API
 
-The tool connects to these GFT AI Impact API endpoints:
+A ferramenta conecta-se aos seguintes endpoints da API GFT AI Impact:
 
-- **Submit Job**: `POST http://api.gftaiimpact.local/ai/test`
-- **Check Status**: `GET http://api.gftaiimpact.local/ai/jobs/{jobId}/status`
-- **Download File**: `GET http://api.gftaiimpact.local{uri}`
+- **Enviar Job**: `POST https://bvw.bvolks.ai-impact.gft-cloud.com/ai/test`
+- **Verificar Status**: `GET https://bvw.bvolks.ai-impact.gft-cloud.com/ai/jobs/{jobId}/status`
+- **Baixar Arquivo**: `GET https://bvw.bvolks.ai-impact.gft-cloud.com{uri}`
 
-## 🛡️ Security Notes
+## Notas de Segurança
 
-- **Never commit** `.env` files with tokens
-- **Tokens expire** - refresh Keycloak tokens regularly
-- **Network access** required to GFT AI Impact API
-- **Sensitive code** is sent to AI service - ensure compliance
+- **Nunca comite** arquivos `.env` com tokens
+- **Tokens expiram** — atualize-os regularmente no Keycloak
+- **Acesso à rede** necessário para a API GFT AI Impact
+- **Código sensível** é enviado para o serviço AI — assegure conformidade
 
-## 📞 Support
+## Suporte
 
-For issues with:
-- **Script errors**: Check configuration and file paths
-- **API access**: Contact GFT AI Impact team
-- **Documentation quality**: Adjust `additionalInstructions` in config
+Para problemas com:
+- **Erros de script**: Verifique a configuração e os caminhos dos arquivos
+- **Acesso à API**: Contate a equipe GFT AI Impact
+- **Qualidade da documentação**: Ajuste `additionalInstructions` na configuração
 
-## 💡 Tips for Success
+## Dicas para Sucesso
 
-1. **Start Small**: Test with a few files first
-2. **Clean Config**: Remove all JSON comments before running
-3. **Check Paths**: Verify all paths are relative and accessible
-4. **Monitor Progress**: Watch console output and check the JSON status file
-5. **Be Patient**: The download step polls for completion every 500ms
-6. **Customize Instructions**: Use `additionalInstructions` for specific documentation needs
+1. **Comece pequeno**: Teste com alguns arquivos primeiro
+2. **Configuração limpa**: Remova todos os comentários JSON antes de executar
+3. **Verifique os caminhos**: Assegure que todos os caminhos são relativos e acessíveis
+4. **Monitore o progresso**: Observe a saída do console e verifique o arquivo de status JSON
+5. **Tenha paciência**: A etapa de download verifica a conclusão periodicamente
+6. **Instruções personalizadas**: Use `additionalInstructions` para necessidades específicas de documentação
+
+## Pré-requisitos
+
+- [Node.js 18+ (testado com v24.5.0)](https://nodejs.org/) instalado na máquina.
+- Instale as dependências do projeto executando:
+  ```sh
+  npm install
+  ```

@@ -1,28 +1,31 @@
 {
-    "foldersToInclude": [
-        "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeDocumenterGQ/tests"
-    ],
+    "folderToInclude": "C:/Programas_GO_Tratados",
     "foldersToExclude": [],
     "extensionsIncluded": [
-        ".js",
-        ".java"
+        "",
+        ".txt"
     ],
-    // "testFrameworks": {
-    //     "js": "jest",
-    //     "java": "junit"
-    // },
+    "testFrameworks": {
+        ".js": "jest",
+        ".java": "junit"
+    },
     "docsFolder": "C:/Users/artu/OneDrive - GFT Technologies SE/Documents/AI Impact/codeDocumenterGQ/generatedDocs/",
-    "RunName": "GenerateDocPR",
+    "RunName": "GenerateDoc",
     "jobName": "DemoDocCreator",
     "DocumentationFormat": "markdown",
     "DiagramFormat": "Mermaid",
     "DocumentationAudience": "Software Engineer",
     "TargetExtension": "md",
-    // "promptId": "DocCreator__DocumentCode_V5",
-    "promptId": "DocCreator__DocumentCode_Chain_v2",
-    // "promptId": "DocCreator__Architecture_Meaning",
-    "additionalInstructions": "Generate the documentation in pt-BR. If the code have vulnerabilities, describe all in a new # vulnerabilities section",
-    "llm": "AWS_CLAUDE",
+    "promptId": "LegacyTransformer__Business_Rules",
+    "additionalInstructions": "Generate the documentation in pt-BR. Be objective and concise to reduce the number of lines.",
+    "llm": "689640a8fb414f80ad3f06cd",
+    "maxTokens": 200000,
+    "maxFilesLimit": 2,
+    "sequentialConcurrency": 2,
+    "noExtensionOverride": {
+        "active": true,
+        "extensionToUse": ".cob"
+    },
     "extensionToLanguage": {
         ".js": "JavaScript",
         ".mjs": "JavaScript",

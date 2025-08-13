@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const folderPath = "./codeDocumenter";
-
 // Load configuration from config.json
 const configPath = path.join(process.cwd(), folderPath + '/config.json');
 let config = {};
@@ -15,9 +14,11 @@ try {
     console.error('Could not read or parse config.json:', err.message);
 }
 
+const tokenLimit = config.maxTokens || 4096; // Default to 4096 if not set in config
+
 // validates config.json
 const emptyKeys = Object.keys(config).filter(key => {
-    if (key === 'foldersToExclude') return false; // allow foldersToExclude to be empty
+    if (key === 'foldersToExclude' || key === 'maxFilesLimit') return false; // allow foldersToExclude and maxFilesLimit to be empty
     const value = config[key];
     return value === undefined || value === null || value === '' ||
         (Array.isArray(value) && value.length === 0) ||
@@ -29,6 +30,19 @@ if (emptyKeys.length > 0) {
     process.exit(1);
 } else {
     console.log('Config validation passed: no empty keys (except foldersToExclude).');
+}
+
+async function estimateTokens(fileContent) {
+
+    fileContent = await fs.readFile(fileContent, 'utf8');
+
+    if (!fileContent || typeof fileContent !== 'string') return 0;
+
+    // Remove extra whitespace and normalize
+    const normalizedText = fileContent.replace(/\s+/g, ' ').trim();
+
+    // Rough estimation: 1 token ≈ 4 characters for most languages
+    return Math.ceil(normalizedText.length / 4);
 }
 
 async function getAllFiles(dirs, ignoreDirs, includedExt) {
@@ -58,8 +72,11 @@ async function getAllFiles(dirs, ignoreDirs, includedExt) {
     return files;
 }
 
-let allFilesArray = await getAllFiles(config.foldersToInclude, config.foldersToExclude, config.extensionsIncluded);
-
+let allFilesArray = await getAllFiles([config.folderToInclude], config.foldersToExclude, config.extensionsIncluded);
+if (config.maxFilesLimit && allFilesArray.length > config.maxFilesLimit) {
+    console.warn(`Warning: The number of files (${allFilesArray.length}) exceeds the maxFilesLimit (${config.maxFilesLimit}). Only the first ${config.maxFilesLimit} files will be processed.`);
+    allFilesArray = allFilesArray.slice(0, config.maxFilesLimit);
+}
 let allFiles = [];
 
 // Get the current working directory for relative path calculation
@@ -67,16 +84,20 @@ const cwd = process.cwd();
 
 for (const filePath of allFilesArray) {
     // Convert absolute path to relative path
-    const relativePath = path.relative(cwd, filePath);
+    // const relativePath = path.relative(cwd, filePath);
+
+    const tokens = await estimateTokens(filePath); // Returns 8
 
     allFiles.push({
         fileName: path.basename(filePath),
-        originalPath: relativePath,  // Now this will be a relative path
+        originalPath: filePath,  // Now this will be a relative path
         jobId: null,
-        error: null,
+        error: tokens > tokenLimit ? `Exceeded token limit ${tokens}/${tokenLimit}` : null,
         uri: null,
-        downloaded: false
+        downloaded: false,
+        tokens: tokens
     });
+
 }
 
 const codeDocumenterFilesPath = path.join(process.cwd(), folderPath, 'codeDocumenterFiles.json');

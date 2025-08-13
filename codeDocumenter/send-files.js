@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const API_URL = process.env.API_URL;
 
 const folderPath = "./codeDocumenter";
 
@@ -41,7 +42,8 @@ if (emptyKeys.length > 0) {
 
 try {
     console.log("Reading: " + path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'))
-    allFilesArray = JSON.parse(await fs.readFile(path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'), 'utf-8'));
+    // allFilesArray = JSON.parse(await fs.readFile(path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'), 'utf-8')).slice(0, 1);
+    allFilesArray = JSON.parse(await fs.readFile(path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'), 'utf-8'))
 } catch (err) {
     console.error('Could not read or parse codeDocumenterFiles.json:', err.message);
     process.exit(1);
@@ -51,16 +53,25 @@ try {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+const tokenLimit = config.maxTokens || 4096; // Default to 4096 if not set in config
 
 async function sendFiles(allFilesArray) {
     for (const [index, element] of allFilesArray.entries()) {
-        if (element.jobId === null || (element.jobId !== null && element.error !== null)) {
-            await delay(index * 250);
+        if ((element.jobId === null || (element.jobId !== null && element.error !== null)) && !(element.tokens > tokenLimit)) {
+            // Rate limiting: 20 RPM = 1 request every 3 seconds
+            console.log(element.fileName, element.tokens);
+            let delayTime = 1000;
+            if (index > 0) {
+                console.log(`Waiting ${delayTime / 1000} seconds to respect rate limit...`);
+                await delay(delayTime);
+            }
 
-            console.log(`Sending file: ${element.fileName}`);
+            console.log(`Sending file (${index + 1}/${allFilesArray.length}) - ETA: ${Math.ceil((allFilesArray.length - index) * delayTime / 1000)} seconds`);
 
             const ext = path.extname(element.fileName).toLowerCase();
-            const language = Object.prototype.hasOwnProperty.call(config.extensionToLanguage, ext) ? config.extensionToLanguage[ext] : null;
+            const language = config.noExtensionOverride.active
+                ? Object.prototype.hasOwnProperty.call(config.extensionToLanguage, config.noExtensionOverride.extensionToUse) ? config.extensionToLanguage[config.noExtensionOverride.extensionToUse] : null
+                : Object.prototype.hasOwnProperty.call(config.extensionToLanguage, ext) ? config.extensionToLanguage[ext] : null;
 
             if (language === null) {
                 console.error(`No language mapping found for extension: ${ext}`);
@@ -86,37 +97,68 @@ async function sendFiles(allFilesArray) {
                 form.append('AdditionalInstructions', config.additionalInstructions);
                 form.append('files', fileBuffer, element.fileName);
 
-                try {
-                    const response = await axios.post(
-                        'http://api.gftaiimpact.local/ai/test',
-                        form,
-                        {
-                            headers: {
-                                ...form.getHeaders(),
-                                Authorization: `Bearer ${ACCESS_TOKEN}`,
-                            },
+                // Retry logic for rate limiting
+                let success = false;
+                let retryCount = 0;
+                const maxRetries = 3;
+
+                while (!success && retryCount < maxRetries) {
+                    try {
+                        const response = await axios.post(
+                            API_URL + "/ai/document",
+                            form,
+                            {
+                                headers: {
+                                    ...form.getHeaders(),
+                                    Authorization: `Bearer ${ACCESS_TOKEN}`,
+                                },
+                            }
+                        );
+
+                        element.jobId = response.data;
+                        element.error = null;
+                        success = true; // Mark as successful
+
+                        console.log("Response data:", response.data);
+
+                    } catch (err) {
+                        retryCount++;
+
+                        if (err?.response?.status === 429) {
+                            if (retryCount < maxRetries) {
+                                const waitTime = 60000 * retryCount; // Progressive wait: 60s, 120s, 180s
+                                console.log(`Rate limit hit! Retry ${retryCount}/${maxRetries} - Waiting ${waitTime / 1000} seconds...`);
+                                await delay(waitTime);
+                            } else {
+                                console.log(`Max retries reached for ${element.fileName}`);
+                                element.error = `Rate limit exceeded after ${maxRetries} retries`;
+                            }
+                        } else {
+                            // Non-rate-limit error - don't retry
+                            console.log(`Non-rate-limit error for ${element.fileName}`);
+                            const errorMessage = err?.response?.data || err.message;
+                            element.error = `Error sending file: ${typeof errorMessage === 'string' ? errorMessage : JSON.stringify(errorMessage)}`;
+                            console.error("Error sending file:", errorMessage);
+                            console.error("Full error details:", {
+                                status: err?.response?.status,
+                                statusText: err?.response?.statusText,
+                                data: err?.response?.data
+                            });
+                            break; // Exit retry loop for non-rate-limit errors
                         }
-                    );
-
-                    element.jobId = response.data;
-                    element.error = null;
-                    await fs.writeFile(
-                        path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
-                        JSON.stringify(allFilesArray, null, 2),
-                        'utf-8'
-                    );
-                    console.log("Response data:", response.data);
-
-                } catch (err) {
-                    element.error = `Error sending file: ${err?.response?.data ? JSON.stringify(err.response.data) : err.message}`;
-                    console.error("Error sending file:", err.message);
-                    await fs.writeFile(
-                        path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
-                        JSON.stringify(allFilesArray, null, 2),
-                        'utf-8'
-                    );
+                    }
                 }
+
+                // Save progress after each file (success or final failure)
+                await fs.writeFile(
+                    path.join(process.cwd(), folderPath + '/codeDocumenterFiles.json'),
+                    JSON.stringify(allFilesArray, null, 2),
+                    'utf-8'
+                );
             }
+
+        } else if (element.tokens > tokenLimit) {
+            console.log(`File exceeded token limit(${element.tokens}/${tokenLimit}): ${element.fileName}, skipping...`);
         } else {
             console.log(`File already sent: ${element.fileName} with jobId: ${element.jobId}, skipping...`);
         }
