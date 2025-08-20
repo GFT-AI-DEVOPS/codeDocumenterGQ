@@ -17,6 +17,7 @@
     "TargetExtension": "md",
     "promptId": "Agile__StoryCreator_V1",
     "type": "agile",
+    "agileFullFileContent": true,
     "additionalInstructions": "",
     "ResponseLanguage": "pt-BR",
     "llm": "689640a8fb414f80ad3f06cd",

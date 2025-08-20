@@ -147,7 +147,38 @@ async function processFile(item) {
     await fsP.mkdir(outputDir, { recursive: true });
 
     const data = await fsP.readFile(item.originalPath, 'utf8');
-    const result = splitMarkdownSectionsWithRules(data);
+
+    if (!item.jobIds) item.jobIds = {};
+
+    if (config.agileFullFileContent) {
+        // Envia o arquivo inteiro uma única vez
+        console.log(`Sending full file content for: ${item.fileName}`);
+        const jobId = await sendSectionAndGetJobId(data, item.fileName, item);
+        item.jobIds["FullFile"] = { jobId };
+        writeJsonFile(jsonFilePath, files);
+
+        const { status, result: jobResult } = await waitForJobCompletion(jobId, item.fileName, item.fileName);
+        item.jobIds["FullFile"].status = status;
+        if (status === "CompletedWithErrors") {
+            item.jobIds["FullFile"].error = jobResult?.error || JSON.stringify(jobResult);
+        }
+        if (status === "Completed") {
+            const uri = jobResult?.results?.[0]?.output?.[0]?.uri;
+            if (uri) item.jobIds["FullFile"].uri = uri;
+        }
+        writeJsonFile(jsonFilePath, files);
+
+        const safeName = fileBaseName.replace(/[\\/:*?"<>|]/g, "_");
+        await fsP.writeFile(path.join(outputDir, `${safeName}_full.md`), data);
+
+        // Agora processa o resultado normalmente, como faz para seções
+        await processSectionDetails(item, "FullFile", item.jobIds["FullFile"]);
+
+        item.downloaded = true;
+        writeJsonFile(jsonFilePath, files);
+        console.log(`Full file sent and processed for: ${item.fileName}`);
+        return;
+    }
 
     if (!item.jobIds) item.jobIds = {};
 
@@ -324,7 +355,17 @@ async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
         jobIdsTarget.workItemDetails[obj.id] = detailResp.data;
         writeJsonFile(jsonFilePath, files);
 
-        // Cria a subpasta usando sempre o nome completo da regra ou seção
+        // Busca o Title no campo fields
+        let title = "Untitled";
+        if (detailResp.data.fields) {
+            const titleField = detailResp.data.fields.find(f => f.alias === "Title" || f.name === "Title");
+            if (titleField && titleField.value) {
+                title = titleField.value;
+            }
+        }
+        // Sanitiza o nome do arquivo
+        const safeTitle = title.replace(/[\\/:*?"<>|]/g, "_");
+
         const folderName = sectionOrRuleName.replace(/[\\/:*?"<>|]/g, "_");
         const folderPath = path.join(
             config.docsFolder,
@@ -333,7 +374,8 @@ async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
         );
         await fsP.mkdir(folderPath, { recursive: true });
 
-        const mdFileName = `${folderName}_${obj.id}_detail`;
+        // Usa apenas o Title como nome do arquivo
+        const mdFileName = `${safeTitle}`;
         await saveWorkItemDetailAsMd(
             detailResp.data,
             folderPath,
@@ -358,11 +400,52 @@ function jsonToMarkdown(obj) {
 
 // Exemplo de uso após receber o retorno da API:
 async function saveWorkItemDetailAsMd(detailJson, outputDir, fileName) {
-    const mdContent = jsonToMarkdown(detailJson);
     const safeName = fileName.replace(/[\\/:*?"<>|]/g, "_");
-    const targetPath = path.join(outputDir, `${safeName}.md`);
-    await fsP.writeFile(targetPath, mdContent, 'utf8');
-    console.log(`Work item detail saved: ${targetPath}`);
+
+    // Salva o JSON normalmente
+    const targetJsonPath = path.join(outputDir, `${safeName}.json`);
+    await fsP.writeFile(targetJsonPath, JSON.stringify(detailJson, null, 2), 'utf8');
+    console.log(`Work item detail saved: ${targetJsonPath}`);
+
+    // Extrai os campos para o markdown
+    let title = '';
+    let description = '';
+    let storyPoints = '';
+    let acceptanceCriteria = '';
+
+    if (detailJson.fields && Array.isArray(detailJson.fields)) {
+        for (const field of detailJson.fields) {
+            if ((field.alias === "Title" || field.name === "Title") && field.value) {
+                title = field.value;
+            }
+            if ((field.alias === "Description" || field.name === "Description") && field.value) {
+                description = field.value;
+            }
+            if ((field.alias === "Story Points" || field.name === "StoryPoints") && field.value) {
+                storyPoints = field.value;
+            }
+            if ((field.alias === "Acceptance Criteria" || field.name === "AcceptanceCriteria") && field.value) {
+                acceptanceCriteria = field.value;
+            }
+        }
+    }
+
+    // Monta o markdown
+    const mdContent = [
+        `# ${title}`,
+        '',
+        description,
+        '',
+        `**Story Points:** ${storyPoints}`,
+        '',
+        `**Acceptance Criteria:**`,
+        acceptanceCriteria
+    ].join('\n');
+
+    // Salva o markdown
+    const targetMdPath = path.join(outputDir, `${safeName}.md`);
+    await fsP.writeFile(targetMdPath, mdContent, 'utf8');
+    console.log(`Work item markdown saved: ${targetMdPath}`);
 }
 
 

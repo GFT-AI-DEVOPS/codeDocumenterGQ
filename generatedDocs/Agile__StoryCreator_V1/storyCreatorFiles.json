@@ -8,13 +8,13 @@
     "downloaded": true,
     "tokens": 7961,
     "jobIds": {
-      "Overview": {
-        "jobId": "2025-08-20__18-44-35.023__Agile",
+      "FullFile": {
+        "jobId": "2025-08-20__20-29-46.867__Agile",
         "status": "Completed",
-        "uri": "/ai/jobs/2025-08-20__18-44-35.023__Agile/results/Overview",
+        "uri": "/ai/jobs/2025-08-20__20-29-46.867__Agile/results/GO502A37.md",
         "processDefinition": [
           {
-            "idProjects": "68a617aa2479b3f77c3ad71a",
+            "idProjects": "68a630562479b3f77c3ad7ce",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -22,17 +22,17 @@
               "Task",
               "Test"
             ],
-            "name": "Implementacao de processamento de transacoes suspensas",
+            "name": "Implementação da lógica de seleção e classificação de transações suspensas",
             "order": 1,
             "blocked": false,
             "children": [],
-            "id": "68a617aa2479b3f77c3ad71a",
+            "id": "68a630562479b3f77c3ad7ce",
             "idParent": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "externalId": null
           },
           {
-            "idProjects": "68a617aa2479b3f77c3ad71b",
+            "idProjects": "68a630562479b3f77c3ad7cf",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -40,17 +40,17 @@
               "Task",
               "Test"
             ],
-            "name": "Geracao de relatorios detalhados em multiplos formatos",
+            "name": "Implementação do cálculo de saldos e totalizadores por filial",
             "order": 2,
             "blocked": false,
             "children": [],
-            "id": "68a617aa2479b3f77c3ad71b",
+            "id": "68a630562479b3f77c3ad7cf",
             "idParent": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "externalId": null
           },
           {
-            "idProjects": "68a617aa2479b3f77c3ad71c",
+            "idProjects": "68a630562479b3f77c3ad7d0",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -58,17 +58,17 @@
               "Task",
               "Test"
             ],
-            "name": "Calculo de totalizadores por filial e geral",
+            "name": "Implementação da integração com sistema SAP",
             "order": 3,
             "blocked": false,
             "children": [],
-            "id": "68a617aa2479b3f77c3ad71c",
+            "id": "68a630562479b3f77c3ad7d0",
             "idParent": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "externalId": null
           },
           {
-            "idProjects": "68a617aa2479b3f77c3ad71d",
+            "idProjects": "68a630562479b3f77c3ad7d1",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -76,17 +76,17 @@
               "Task",
               "Test"
             ],
-            "name": "Geracao de legendas explicativas dos codigos utilizados",
+            "name": "Implementação da geração de registros para sistema Corporate",
             "order": 4,
             "blocked": false,
             "children": [],
-            "id": "68a617aa2479b3f77c3ad71d",
+            "id": "68a630562479b3f77c3ad7d1",
             "idParent": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "externalId": null
           },
           {
-            "idProjects": "68a617aa2479b3f77c3ad71e",
+            "idProjects": "68a630562479b3f77c3ad7d2",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -94,20 +94,20 @@
               "Task",
               "Test"
             ],
-            "name": "Integracao com sistema SAP e sistema Corporate",
+            "name": "Implementação do controle de absorção de transações suspensas",
             "order": 5,
             "blocked": false,
             "children": [],
-            "id": "68a617aa2479b3f77c3ad71e",
+            "id": "68a630562479b3f77c3ad7d2",
             "idParent": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "externalId": null
           }
         ],
         "workItemDetails": {
-          "68a617aa2479b3f77c3ad71a": {
-            "id": "68a617aa2479b3f77c3ad71a",
-            "idProjects": "68a617aa2479b3f77c3ad71a",
+          "68a630562479b3f77c3ad7ce": {
+            "id": "68a630562479b3f77c3ad7ce",
+            "idProjects": "68a630562479b3f77c3ad7ce",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -115,25 +115,25 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "order": 1,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__18-44-35.023__Agile",
+            "jobId": "2025-08-20__20-29-46.867__Agile",
             "externalId": null,
             "fields": [
               {
                 "alias": "Title",
                 "type": "title",
                 "name": "Title",
-                "value": "Implementacao de processamento de transacoes suspensas",
+                "value": "Implementação da lógica de seleção e classificação de transações suspensas",
                 "values": null
               },
               {
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar o processamento de registros de transacoes suspensas para que o sistema possa classificar as transacoes por status e tipo de operacao. O sistema deve ser capaz de identificar e categorizar transacoes pendentes, regularizadas, baixadas e transferidas. Deve ser garantida a integracao com as tabelas existentes no sistema para consolidar os dados de forma precisa. O objetivo e fornecer uma base solida para controle e auditoria das operacoes financeiras.",
+                "value": "Como desenvolvedor, eu preciso implementar a lógica de seleção e classificação de transações suspensas para garantir que o sistema processe corretamente os registros da tabela PAKF023VSUSPENSO com base nas regras de negócio definidas. A lógica deve incluir: - Seleção de registros onde a data de processamento da suspensão ou regularização seja igual à data atual ou onde o status seja diferente de 'pendente' e 'cancelado', e a situação seja diferente de 'cancelado'. - Classificação das transações conforme o campo ATSFSTATUS, categorizando-as como pendente, baixa, regularizado, resíduo ou registro contábil. - Determinação de débito ou crédito com base no código de lançamento FKNICODLANC, classificando como débito se o código estiver entre 999 e 2000, caso contrário como crédito. - Garantir que os totalizadores e as contas contábeis sejam atualizados corretamente com base na classificação.",
                 "values": null
               },
               {
@@ -147,15 +147,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "O sistema deve processar registros de transacoes suspensas corretamente. As transacoes devem ser classificadas por status e tipo de operacao. Os dados devem ser integrados com as tabelas existentes no sistema. Deve ser possivel visualizar as transacoes pendentes, regularizadas, baixadas e transferidas.",
+                "value": "- A lógica de seleção deve buscar registros corretamente com base nas condições especificadas.\n- As transações devem ser classificadas corretamente por status e tipo de operação.\n- Os totalizadores e contas contábeis devem refletir corretamente os valores de débito e crédito.\n- A lógica deve ser testada e validada com dados reais da tabela PAKF023VSUSPENSO.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a617aa2479b3f77c3ad71b": {
-            "id": "68a617aa2479b3f77c3ad71b",
-            "idProjects": "68a617aa2479b3f77c3ad71b",
+          "68a630562479b3f77c3ad7cf": {
+            "id": "68a630562479b3f77c3ad7cf",
+            "idProjects": "68a630562479b3f77c3ad7cf",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -163,47 +163,47 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "order": 2,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__18-44-35.023__Agile",
+            "jobId": "2025-08-20__20-29-46.867__Agile",
             "externalId": null,
             "fields": [
               {
                 "alias": "Title",
                 "type": "title",
                 "name": "Title",
-                "value": "Geracao de relatorios detalhados em multiplos formatos",
+                "value": "Implementação do cálculo de saldos e totalizadores por filial",
                 "values": null
               },
               {
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de geracao de relatorios detalhados sobre transacoes suspensas e ocorrencias no sistema. Os relatorios devem ser gerados em multiplos formatos, incluindo impressos, arquivos para sistema SAP e dados para sistema Corporate. Deve ser garantida a consistencia e integridade dos dados nos diferentes formatos. O objetivo e fornecer informacoes claras e acessiveis para diferentes sistemas e usuarios.",
+                "value": "Como desenvolvedor, eu preciso implementar o cálculo de saldos e totalizadores por filial para garantir que o sistema gere resumos financeiros precisos. A lógica deve incluir: - Cálculo do saldo anterior subtraindo do saldo atual as inclusões, transferências, baixas, exclusões e registros contábeis do dia. - Cálculo do saldo da conta como a diferença entre créditos e débitos atuais. - Acumulação de totais gerais por tipo de operação, incluindo pendentes, inclusões, transferências, baixas, exclusões e registros contábeis. - Zeragem dos totais da filial ao mudar para a próxima filial.",
                 "values": null
               },
               {
                 "alias": "Story Points",
                 "type": "int",
                 "name": "StoryPoints",
-                "value": "13",
+                "value": "5",
                 "values": null
               },
               {
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "O sistema deve gerar relatorios detalhados sobre transacoes suspensas e ocorrencias. Os relatorios devem estar disponiveis em formatos impressos, arquivos para sistema SAP e dados para sistema Corporate. Os dados devem ser consistentes e integrados em todos os formatos. Deve ser possivel acessar os relatorios de forma clara e organizada.",
+                "value": "- O saldo anterior deve ser calculado corretamente com base nos valores e transações do dia.\n- O saldo da conta deve refletir a diferença exata entre créditos e débitos.\n- Os totais gerais devem ser acumulados corretamente por tipo de operação.\n- Os totais da filial devem ser zerados ao mudar para a próxima filial.\n- A lógica deve ser testada e validada com dados reais das tabelas relacionadas.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a617aa2479b3f77c3ad71c": {
-            "id": "68a617aa2479b3f77c3ad71c",
-            "idProjects": "68a617aa2479b3f77c3ad71c",
+          "68a630562479b3f77c3ad7d0": {
+            "id": "68a630562479b3f77c3ad7d0",
+            "idProjects": "68a630562479b3f77c3ad7d0",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -211,25 +211,25 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "order": 3,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__18-44-35.023__Agile",
+            "jobId": "2025-08-20__20-29-46.867__Agile",
             "externalId": null,
             "fields": [
               {
                 "alias": "Title",
                 "type": "title",
                 "name": "Title",
-                "value": "Calculo de totalizadores por filial e geral",
+                "value": "Implementação da integração com sistema SAP",
                 "values": null
               },
               {
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar o calculo de totalizadores por filial e geral para consolidar os dados financeiros. O sistema deve calcular os valores totais de transacoes para cada filial e tambem um total geral. Deve ser garantida a precisao dos calculos e a integracao com os dados existentes. O objetivo e fornecer uma visao clara e consolidada das transacoes financeiras para controle e auditoria.",
+                "value": "Como desenvolvedor, eu preciso implementar a integração com o sistema SAP para garantir que os lançamentos contábeis sejam gerados corretamente com base nos totais calculados. A lógica deve incluir: - Gerar lançamentos contábeis para inclusões e transferências utilizando o código SAP 4412. - Gerar lançamentos contábeis para baixas e exclusões utilizando o código SAP 3412. - Gerar lançamentos contábeis para registros contábeis utilizando o código SAP 3413. - Criar registros de débito e crédito para cada tipo de operação no formato exigido pelo SAP, incluindo campos como conta, valor, histórico e centros de custo.",
                 "values": null
               },
               {
@@ -243,15 +243,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "O sistema deve calcular corretamente os totalizadores por filial e geral. Os valores devem ser precisos e integrados com os dados existentes. Deve ser possivel visualizar os totalizadores de forma clara e organizada. Os totalizadores devem ser utilizados para controle e auditoria financeira.",
+                "value": "- Os lançamentos contábeis devem ser gerados corretamente para cada tipo de operação.\n- Os registros devem estar no formato exigido pelo SAP, incluindo todos os campos necessários.\n- A integração deve ser testada e validada com dados reais e simulações no sistema SAP.\n- A lógica deve garantir que os valores de débito e crédito sejam consistentes e precisos.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a617aa2479b3f77c3ad71d": {
-            "id": "68a617aa2479b3f77c3ad71d",
-            "idProjects": "68a617aa2479b3f77c3ad71d",
+          "68a630562479b3f77c3ad7d1": {
+            "id": "68a630562479b3f77c3ad7d1",
+            "idProjects": "68a630562479b3f77c3ad7d1",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -259,25 +259,25 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "order": 4,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__18-44-35.023__Agile",
+            "jobId": "2025-08-20__20-29-46.867__Agile",
             "externalId": null,
             "fields": [
               {
                 "alias": "Title",
                 "type": "title",
                 "name": "Title",
-                "value": "Geracao de legendas explicativas dos codigos utilizados",
+                "value": "Implementação da geração de registros para sistema Corporate",
                 "values": null
               },
               {
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a geracao de legendas explicativas para os codigos utilizados nos relatorios. O sistema deve fornecer uma descricao clara e detalhada para cada codigo presente nos relatorios. Deve ser garantida a integracao das legendas com os relatorios gerados. O objetivo e facilitar a compreensao dos relatorios pelos usuarios e garantir a transparencia das informacoes.",
+                "value": "Como desenvolvedor, eu preciso implementar a geração de registros para o sistema Corporate para garantir que os dados detalhados de cada transação sejam integrados corretamente. A lógica deve incluir: - Criar registros padronizados para cada transação, incluindo campos como número da transação, contrato, valor, data de pagamento, data de crédito, status e situação. - Garantir que os registros sejam formatados corretamente para integração com o sistema Corporate. - Validar os dados antes de gerar os registros para evitar inconsistências.",
                 "values": null
               },
               {
@@ -291,15 +291,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "O sistema deve gerar legendas explicativas para todos os codigos utilizados nos relatorios. As legendas devem ser claras e detalhadas. Deve ser possivel visualizar as legendas integradas aos relatorios. As legendas devem facilitar a compreensao e garantir a transparencia das informacoes.",
+                "value": "- Os registros devem ser gerados corretamente para cada transação com todos os campos necessários.\n- Os dados devem ser validados antes da geração para evitar inconsistências.\n- A integração deve ser testada e validada com dados reais e simulações no sistema Corporate.\n- A lógica deve garantir que os registros estejam no formato exigido pelo sistema Corporate.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a617aa2479b3f77c3ad71e": {
-            "id": "68a617aa2479b3f77c3ad71e",
-            "idProjects": "68a617aa2479b3f77c3ad71e",
+          "68a630562479b3f77c3ad7d2": {
+            "id": "68a630562479b3f77c3ad7d2",
+            "idProjects": "68a630562479b3f77c3ad7d2",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -307,2568 +307,43 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a617aa2479b3f77c3ad719",
+            "useCaseId": "68a630562479b3f77c3ad7cd",
             "order": 5,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__18-44-35.023__Agile",
+            "jobId": "2025-08-20__20-29-46.867__Agile",
             "externalId": null,
             "fields": [
               {
                 "alias": "Title",
                 "type": "title",
                 "name": "Title",
-                "value": "Integracao com sistema SAP e sistema Corporate",
+                "value": "Implementação do controle de absorção de transações suspensas",
                 "values": null
               },
               {
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a integracao do sistema com o sistema SAP e o sistema Corporate para garantir o fluxo de dados entre os sistemas. O sistema deve exportar os dados processados para o sistema SAP e o sistema Corporate em formatos especificos. Deve ser garantida a consistencia e integridade dos dados durante a integracao. O objetivo e permitir que os sistemas externos utilizem os dados gerados para controle e auditoria financeira.",
+                "value": "Como desenvolvedor, eu preciso implementar o controle de absorção de transações suspensas para garantir que o sistema trate corretamente os processos de absorção ativos. A lógica deve incluir: - Verificar na tabela PAKF074VABSORCAO se existe processo de absorção ativo para a transação suspensa. - Alterar a descrição da transação para 'ABSORÇÃO' caso um processo ativo seja encontrado. - Garantir que as transações absorvidas sejam tratadas corretamente nos cálculos e totalizadores.",
                 "values": null
               },
               {
                 "alias": "Story Points",
                 "type": "int",
                 "name": "StoryPoints",
-                "value": "13",
+                "value": "3",
                 "values": null
               },
               {
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "O sistema deve integrar corretamente com o sistema SAP e o sistema Corporate. Os dados devem ser exportados em formatos especificos para cada sistema. Deve ser garantida a consistencia e integridade dos dados durante a integracao. Os sistemas externos devem ser capazes de utilizar os dados gerados para controle e auditoria financeira.",
+                "value": "- O sistema deve verificar corretamente a existência de processos de absorção ativos na tabela PAKF074VABSORCAO.\n- A descrição das transações deve ser alterada para 'ABSORÇÃO' quando aplicável.\n- As transações absorvidas devem ser tratadas corretamente nos cálculos e totalizadores.\n- A lógica deve ser testada e validada com dados reais da tabela PAKF074VABSORCAO.",
                 "values": null
               }
             ],
             "parent": null
-          }
-        }
-      },
-      "Business Rules": {
-        "jobId": "2025-08-20__18-45-02.552__Agile",
-        "status": "Completed",
-        "uri": "/ai/jobs/2025-08-20__18-45-02.552__Agile/results/Business Rules",
-        "processDefinition": [
-          {
-            "idProjects": "68a617c22479b3f77c3ad721",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Implementar selecao de registros para processamento de transacoes suspensas",
-            "order": 1,
-            "blocked": false,
-            "children": [],
-            "id": "68a617c22479b3f77c3ad721",
-            "idParent": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617c22479b3f77c3ad722",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Implementar classificacao de transacoes por status",
-            "order": 2,
-            "blocked": false,
-            "children": [],
-            "id": "68a617c22479b3f77c3ad722",
-            "idParent": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617c22479b3f77c3ad723",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Implementar separacao de transacoes em debito e credito",
-            "order": 3,
-            "blocked": false,
-            "children": [],
-            "id": "68a617c22479b3f77c3ad723",
-            "idParent": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617c22479b3f77c3ad724",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Implementar integracao com SAP para lancamentos contabeis",
-            "order": 4,
-            "blocked": false,
-            "children": [],
-            "id": "68a617c22479b3f77c3ad724",
-            "idParent": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617c22479b3f77c3ad725",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Implementar agrupamento de relatorios por filial",
-            "order": 5,
-            "blocked": false,
-            "children": [],
-            "id": "68a617c22479b3f77c3ad725",
-            "idParent": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "externalId": null
-          }
-        ],
-        "workItemDetails": {
-          "68a617c22479b3f77c3ad721": {
-            "id": "68a617c22479b3f77c3ad721",
-            "idProjects": "68a617c22479b3f77c3ad721",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "order": 1,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-02.552__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Implementar selecao de registros para processamento de transacoes suspensas",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "Como desenvolvedor, quero implementar a funcionalidade de selecao de registros na tabela PAKF023VSUSPENSO para buscar transacoes cuja data de processamento da suspensao ou regularizacao seja igual a data de processamento atual, ou cujo status seja diferente de 1 (pendente) e 6 (cancelado), e cuja situacao seja diferente de C (cancelado). Essa funcionalidade deve garantir que apenas os registros relevantes sejam processados, otimizando o desempenho e a integridade do sistema.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "5",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "O sistema deve buscar registros na tabela PAKF023VSUSPENSO conforme os criterios especificados. Apenas registros com status e situacao validos devem ser retornados. A funcionalidade deve ser testada com diferentes combinacoes de status e situacao para garantir a corretude.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617c22479b3f77c3ad722": {
-            "id": "68a617c22479b3f77c3ad722",
-            "idProjects": "68a617c22479b3f77c3ad722",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "order": 2,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-02.552__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Implementar classificacao de transacoes por status",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "Como desenvolvedor, quero implementar a funcionalidade de classificacao de transacoes conforme o campo ATSFSTATUS, atribuindo os seguintes status: 1 (Pendente), 2 (Baixa), 3 (Regularizado), 4 (Residuo), 5 (Registro Contabil). Para cada status, o sistema deve aplicar regras especificas de contabilizacao e totalizacao, garantindo que os dados sejam processados corretamente.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "8",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "O sistema deve classificar as transacoes conforme os valores do campo ATSFSTATUS. Regras especificas de contabilizacao e totalizacao devem ser aplicadas para cada status. A funcionalidade deve ser testada com transacoes de diferentes status para garantir a corretude.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617c22479b3f77c3ad723": {
-            "id": "68a617c22479b3f77c3ad723",
-            "idProjects": "68a617c22479b3f77c3ad723",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "order": 3,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-02.552__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Implementar separacao de transacoes em debito e credito",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "Como desenvolvedor, quero implementar a funcionalidade de separacao de transacoes em debito e credito com base no codigo de lancamento FKNICODLANC. Transacoes com codigo entre 999 e 2000 devem ser classificadas como debito, enquanto as demais devem ser classificadas como credito. Essa classificacao deve impactar os totalizadores e as contas contabeis utilizadas.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "5",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "O sistema deve classificar transacoes como debito ou credito conforme o codigo de lancamento FKNICODLANC. Totalizadores e contas contabeis devem ser ajustados conforme a classificacao. A funcionalidade deve ser testada com diferentes codigos de lancamento para garantir a corretude.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617c22479b3f77c3ad724": {
-            "id": "68a617c22479b3f77c3ad724",
-            "idProjects": "68a617c22479b3f77c3ad724",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "order": 4,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-02.552__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Implementar integracao com SAP para lancamentos contabeis",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "Como desenvolvedor, quero implementar a integracao com o sistema SAP para gerar lancamentos contabeis com base nos tipos de transacao. O sistema deve utilizar os seguintes codigos: 3412 para baixas e exclusoes, 3413 para registros contabeis, 4412 para inclusoes e transferencias. Cada lancamento deve gerar um par debito/credito com as contas correspondentes.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "8",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "O sistema deve gerar lancamentos contabeis no SAP conforme os codigos especificados. Cada lancamento deve incluir um par debito/credito com as contas correspondentes. A integracao deve ser testada para garantir que os dados sejam enviados corretamente ao SAP.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617c22479b3f77c3ad725": {
-            "id": "68a617c22479b3f77c3ad725",
-            "idProjects": "68a617c22479b3f77c3ad725",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617c22479b3f77c3ad720",
-            "order": 5,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-02.552__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Implementar agrupamento de relatorios por filial",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "Como desenvolvedor, quero implementar a funcionalidade de agrupamento de relatorios por filial, gerando subtotais para cada filial antes de processar a proxima. Quando houver mudanca de filial, o sistema deve imprimir o resumo da filial anterior e reiniciar os contadores. Essa funcionalidade deve garantir que os relatorios sejam organizados de forma clara e compreensivel.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "5",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "O sistema deve agrupar relatorios por filial e gerar subtotais para cada uma. Resumos devem ser impressos ao mudar de filial, e os contadores devem ser reiniciados. A funcionalidade deve ser testada com dados de multiplas filiais para garantir a corretude.",
-                "values": null
-              }
-            ],
-            "parent": null
-          }
-        }
-      },
-      "Dependencies": {
-        "jobId": "2025-08-20__18-45-24.535__Agile",
-        "status": "Completed",
-        "uri": "/ai/jobs/2025-08-20__18-45-24.535__Agile/results/Dependencies",
-        "processDefinition": [
-          {
-            "idProjects": "68a617d82479b3f77c3ad728",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Mapeamento e migração da tabela PAKF023VSUSPENSO",
-            "order": 1,
-            "blocked": false,
-            "children": [],
-            "id": "68a617d82479b3f77c3ad728",
-            "idParent": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617d82479b3f77c3ad729",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Adaptação da lógica de controle com PAKF018VCONTROLE",
-            "order": 2,
-            "blocked": false,
-            "children": [],
-            "id": "68a617d82479b3f77c3ad729",
-            "idParent": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617d82479b3f77c3ad72a",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Conversão da estrutura de dados GN111V00",
-            "order": 3,
-            "blocked": false,
-            "children": [],
-            "id": "68a617d82479b3f77c3ad72a",
-            "idParent": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617d82479b3f77c3ad72b",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Migração do sistema de banco de dados DB2",
-            "order": 4,
-            "blocked": false,
-            "children": [],
-            "id": "68a617d82479b3f77c3ad72b",
-            "idParent": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "externalId": null
-          },
-          {
-            "idProjects": "68a617d82479b3f77c3ad72c",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdPrevious": "Feature",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "name": "Adaptação do componente SQLCA para novo SGBD",
-            "order": 5,
-            "blocked": false,
-            "children": [],
-            "id": "68a617d82479b3f77c3ad72c",
-            "idParent": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "externalId": null
-          }
-        ],
-        "workItemDetails": {
-          "68a617d82479b3f77c3ad728": {
-            "id": "68a617d82479b3f77c3ad728",
-            "idProjects": "68a617d82479b3f77c3ad728",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "order": 1,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-24.535__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Mapeamento e migração da tabela PAKF023VSUSPENSO",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "- Como desenvolvedor, preciso mapear e migrar a tabela PAKF023VSUSPENSO para a nova arquitetura.\n- A tabela contém dados críticos de contratos, valores, datas e status.\n- É necessário garantir a integridade dos dados e adaptar a estrutura para o novo sistema de banco de dados.\n- Este trabalho é essencial para a modernização do sistema, pois a tabela é a estrutura central do processamento.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "8",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "- A tabela PAKF023VSUSPENSO deve ser completamente mapeada e migrada para o novo sistema.\n- Todos os dados devem ser validados para garantir integridade.\n- A nova estrutura deve ser compatível com a arquitetura moderna.\n- Testes devem confirmar que o sistema processa corretamente os dados migrados.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617d82479b3f77c3ad729": {
-            "id": "68a617d82479b3f77c3ad729",
-            "idProjects": "68a617d82479b3f77c3ad729",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "order": 2,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-24.535__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Adaptação da lógica de controle com PAKF018VCONTROLE",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "- Como desenvolvedor, preciso adaptar a lógica de controle de processamento utilizando a tabela PAKF018VCONTROLE.\n- A tabela controla o fluxo de processamento e contém a data de processamento atual.\n- É necessário garantir que a lógica de negócio seja preservada e adaptada ao novo sistema.\n- Este trabalho é essencial para o funcionamento correto do sistema modernizado.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "5",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "- A lógica de controle deve ser adaptada para utilizar a tabela PAKF018VCONTROLE no novo sistema.\n- A data de processamento deve ser corretamente integrada.\n- Testes devem confirmar que o fluxo de processamento funciona conforme esperado.\n- A lógica de negócio deve ser preservada e validada.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617d82479b3f77c3ad72a": {
-            "id": "68a617d82479b3f77c3ad72a",
-            "idProjects": "68a617d82479b3f77c3ad72a",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "order": 3,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-24.535__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Conversão da estrutura de dados GN111V00",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "- Como desenvolvedor, preciso converter a estrutura de dados GN111V00 para um modelo de dados moderno.\n- A estrutura é crítica e está relacionada à tabela PAKG111VLANCTOCON.\n- É necessário garantir que a conversão preserve a integridade e funcionalidade dos dados.\n- Este trabalho é essencial para a integração contábil com o sistema SAP.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "8",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "- A estrutura GN111V00 deve ser completamente convertida para o novo modelo de dados.\n- A integridade dos dados deve ser validada.\n- Testes devem confirmar que a integração contábil com o sistema SAP funciona corretamente.\n- A nova estrutura deve ser compatível com a arquitetura moderna.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617d82479b3f77c3ad72b": {
-            "id": "68a617d82479b3f77c3ad72b",
-            "idProjects": "68a617d82479b3f77c3ad72b",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "order": 4,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-24.535__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Migração do sistema de banco de dados DB2",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "- Como desenvolvedor, preciso migrar o sistema de banco de dados DB2 para uma nova solução.\n- O DB2 é crítico para toda a persistência de dados do sistema.\n- É necessário desenvolver uma estratégia de migração que minimize riscos e preserve a integridade dos dados.\n- Este trabalho é essencial para a modernização completa do sistema.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "13",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "- O sistema de banco de dados DB2 deve ser completamente migrado para a nova solução.\n- A integridade dos dados deve ser garantida durante e após a migração.\n- Testes devem confirmar que o novo sistema de banco de dados funciona corretamente.\n- A estratégia de migração deve minimizar riscos e interrupções.",
-                "values": null
-              }
-            ],
-            "parent": null
-          },
-          "68a617d82479b3f77c3ad72c": {
-            "id": "68a617d82479b3f77c3ad72c",
-            "idProjects": "68a617d82479b3f77c3ad72c",
-            "projectId": "PoC - Agile",
-            "levelTypeId": "UserStory",
-            "levelTypeIdNext": [
-              "Task",
-              "Test"
-            ],
-            "parentId": null,
-            "useCaseId": "68a617d82479b3f77c3ad727",
-            "order": 5,
-            "blocked": false,
-            "integrated": false,
-            "jobId": "2025-08-20__18-45-24.535__Agile",
-            "externalId": null,
-            "fields": [
-              {
-                "alias": "Title",
-                "type": "title",
-                "name": "Title",
-                "value": "Adaptação do componente SQLCA para novo SGBD",
-                "values": null
-              },
-              {
-                "alias": "Description",
-                "type": "multiline",
-                "name": "Description",
-                "value": "- Como desenvolvedor, preciso adaptar o componente SQLCA para o novo sistema de gerenciamento de banco de dados.\n- O SQLCA é utilizado para controle de erros e transações no sistema atual.\n- É necessário garantir que o componente funcione corretamente no novo ambiente.\n- Este trabalho é essencial para o controle de transações no sistema modernizado.",
-                "values": null
-              },
-              {
-                "alias": "Story Points",
-                "type": "int",
-                "name": "StoryPoints",
-                "value": "5",
-                "values": null
-              },
-              {
-                "alias": "Acceptance Criteria",
-                "type": "multiline",
-                "name": "AcceptanceCriteria",
-                "value": "- O componente SQLCA deve ser completamente adaptado para o novo sistema de gerenciamento de banco de dados.\n- O controle de erros e transações deve funcionar corretamente.\n- Testes devem confirmar que o componente opera conforme esperado no novo ambiente.\n- A adaptação deve preservar a funcionalidade original do SQLCA.",
-                "values": null
-              }
-            ],
-            "parent": null
-          }
-        }
-      },
-      "Detailed Rules": {
-        "1. Rule: Inicializacao do Sistema e Controle de Data de Processamento": {
-          "jobId": "2025-08-20__18-45-46.550__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-45-46.550__Agile/results/1. Rule: Inicializacao do Sistema e Controle de Data de Processamento",
-          "processDefinition": [
-            {
-              "idProjects": "68a617e42479b3f77c3ad72f",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar inicialização do sistema e controle de data de processamento",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a617e42479b3f77c3ad72f",
-              "idParent": null,
-              "useCaseId": "68a617e42479b3f77c3ad72e",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a617e42479b3f77c3ad72f": {
-              "id": "68a617e42479b3f77c3ad72f",
-              "idProjects": "68a617e42479b3f77c3ad72f",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a617e42479b3f77c3ad72e",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-46.550__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar inicialização do sistema e controle de data de processamento",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "- Como desenvolvedor, quero implementar a funcionalidade de inicialização do sistema para preparar o ambiente de processamento e definir os parâmetros de controle.\n- A funcionalidade deve abrir os arquivos de saída AD1GO002, AB1GO002, AB2GO002 e AB3GO002.\n- Deve chamar a função YY115A para obter a data e hora atual do sistema.\n- Deve extrair dia, mês, ano, hora e minuto da data retornada.\n- Deve executar uma consulta SQL para obter a menor data de processamento das transações suspensas (SELECT MINPKDTDTPROC FROM AXG1000.PAKF018VCONTROLE WHERE ATSFMOVPROC = 'N').\n- Caso o SQLCODE seja diferente de zero ou o resultado seja menor que zero, deve exibir um erro e cancelar o processamento.\n- Deve converter a data obtida para o formato diamesano e armazená-la nos títulos do relatório.\n- Deve inicializar todas as variáveis de totalização com zero.\n- Para cada código SAP (3412, 3413, 4412), deve definir WS06CONVCOMPLEMENTO com o código SAP, chamar a rotina R069ACESSACONTA para obter contas de débito e crédito, e armazenar essas contas nas variáveis correspondentes WSCTDEBITO e WSCTCREDITO.\n- Deve executar um COMMIT para confirmar a transação.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A funcionalidade deve abrir corretamente os arquivos de saída especificados.\n- A função YY115A deve retornar a data e hora atual do sistema.\n- A data retornada deve ser extraída e convertida para o formato diamesano.\n- A consulta SQL deve retornar a menor data de processamento das transações suspensas ou exibir erro caso haja problemas.\n- As variáveis de totalização devem ser inicializadas com zero.\n- As contas de débito e crédito devem ser obtidas corretamente para cada código SAP especificado.\n- O COMMIT deve ser executado para confirmar a transação.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "2. Rule: Processamento Principal de Transacoes Suspensas": {
-          "jobId": "2025-08-20__18-45-57.692__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-45-57.692__Agile/results/2. Rule: Processamento Principal de Transacoes Suspensas",
-          "processDefinition": [
-            {
-              "idProjects": "68a618002479b3f77c3ad732",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementação do processamento de transações suspensas",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a618002479b3f77c3ad732",
-              "idParent": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618002479b3f77c3ad733",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Validação de campos nulos em transações suspensas",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a618002479b3f77c3ad733",
-              "idParent": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618002479b3f77c3ad734",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementação da lógica de classificação por status",
-              "order": 3,
-              "blocked": false,
-              "children": [],
-              "id": "68a618002479b3f77c3ad734",
-              "idParent": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618002479b3f77c3ad735",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementação da lógica de mudança de filial",
-              "order": 4,
-              "blocked": false,
-              "children": [],
-              "id": "68a618002479b3f77c3ad735",
-              "idParent": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618002479b3f77c3ad736",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementação da lógica de processamento baseada em datas e status",
-              "order": 5,
-              "blocked": false,
-              "children": [],
-              "id": "68a618002479b3f77c3ad736",
-              "idParent": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a618002479b3f77c3ad732": {
-              "id": "68a618002479b3f77c3ad732",
-              "idProjects": "68a618002479b3f77c3ad732",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-57.692__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementação do processamento de transações suspensas",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a lógica de processamento de transações suspensas para garantir que cada registro seja processado individualmente, aplicando regras de negócio específicas e calculando totalizadores. A funcionalidade deve incluir: - Execução de FETCH no cursor REGISTRO para obter o próximo registro. - Tratamento de SQLCODE para identificar fim de arquivo ou erros. - Validação de campos nulos através da chamada à função R025VERIFICACAMPOS. - Aplicação de lógica de classificação por status e cálculo de totalizadores. - Verificação de mudança de filial e impressão de resumo da filial anterior. - Aplicação de lógica de processamento baseada em datas e status conforme regras específicas.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O sistema deve processar cada transação suspensa individualmente.\n- Deve ser possível identificar e tratar fim de arquivo ou erros no cursor REGISTRO.\n- Campos nulos devem ser validados corretamente.\n- A lógica de classificação por status e cálculo de totalizadores deve ser aplicada.\n- Mudanças de filial devem ser detectadas e o resumo da filial anterior deve ser impresso.\n- A lógica de processamento baseada em datas e status deve ser implementada conforme especificado.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618002479b3f77c3ad733": {
-              "id": "68a618002479b3f77c3ad733",
-              "idProjects": "68a618002479b3f77c3ad733",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-57.692__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Validação de campos nulos em transações suspensas",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a validação de campos nulos em transações suspensas para garantir que os dados sejam consistentes e estejam completos antes de prosseguir com o processamento. A funcionalidade deve incluir: - Chamada à função R025VERIFICACAMPOS para validar campos nulos. - Tratamento adequado para registros com campos nulos, garantindo que sejam descartados ou corrigidos conforme as regras de negócio.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A função R025VERIFICACAMPOS deve validar corretamente os campos nulos.\n- Registros com campos nulos devem ser tratados conforme as regras de negócio.\n- O sistema deve garantir que apenas registros consistentes sejam processados.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618002479b3f77c3ad734": {
-              "id": "68a618002479b3f77c3ad734",
-              "idProjects": "68a618002479b3f77c3ad734",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "order": 3,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-57.692__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementação da lógica de classificação por status",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a lógica de classificação por status para categorizar cada transação suspensa com base em seu status e aplicar as regras de negócio específicas. A funcionalidade deve incluir: - Identificação do status de cada transação. - Aplicação de regras de negócio específicas para cada status. - Garantia de que os totalizadores sejam calculados corretamente com base no status.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O sistema deve identificar corretamente o status de cada transação.\n- Regras de negócio específicas devem ser aplicadas com base no status.\n- Totalizadores devem ser calculados corretamente com base no status das transações.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618002479b3f77c3ad735": {
-              "id": "68a618002479b3f77c3ad735",
-              "idProjects": "68a618002479b3f77c3ad735",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "order": 4,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-57.692__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementação da lógica de mudança de filial",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a lógica de mudança de filial para detectar alterações na filial durante o processamento de transações suspensas e garantir que o resumo da filial anterior seja impresso corretamente. A funcionalidade deve incluir: - Verificação de mudança de filial comparando WSFILIALANT com FKNDFILIAL atual. - Impressão do resumo da filial anterior ao detectar mudança. - Atualização de WSFILIALANT com a filial atual.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O sistema deve detectar corretamente mudanças de filial durante o processamento.\n- O resumo da filial anterior deve ser impresso ao detectar mudança.\n- WSFILIALANT deve ser atualizado corretamente com a filial atual.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618002479b3f77c3ad736": {
-              "id": "68a618002479b3f77c3ad736",
-              "idProjects": "68a618002479b3f77c3ad736",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618002479b3f77c3ad731",
-              "order": 5,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-45-57.692__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementação da lógica de processamento baseada em datas e status",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a lógica de processamento baseada em datas e status para garantir que as regras específicas sejam aplicadas corretamente durante o processamento de transações suspensas. A funcionalidade deve incluir: - Identificação de datas relevantes para o processamento. - Aplicação de regras específicas com base no status e nas datas das transações. - Garantia de que o processamento seja realizado conforme as regras de negócio definidas.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O sistema deve identificar corretamente as datas relevantes para o processamento.\n- Regras específicas devem ser aplicadas com base no status e nas datas das transações.\n- O processamento deve ser realizado conforme as regras de negócio definidas.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "3. Rule: Classificacao de Transacoes por Data e Status": {
-          "jobId": "2025-08-20__18-46-25.145__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-46-25.145__Agile/results/3. Rule: Classificacao de Transacoes por Data e Status",
-          "processDefinition": [
-            {
-              "idProjects": "68a6181c2479b3f77c3ad739",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar classificacao de transacoes pendentes",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a6181c2479b3f77c3ad739",
-              "idParent": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6181c2479b3f77c3ad73a",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar logica para inclusoes do dia",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a6181c2479b3f77c3ad73a",
-              "idParent": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6181c2479b3f77c3ad73b",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar logica para inclusoes com regularizacao no mesmo dia",
-              "order": 3,
-              "blocked": false,
-              "children": [],
-              "id": "68a6181c2479b3f77c3ad73b",
-              "idParent": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6181c2479b3f77c3ad73c",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar logica para regularizacoes de dias anteriores",
-              "order": 4,
-              "blocked": false,
-              "children": [],
-              "id": "68a6181c2479b3f77c3ad73c",
-              "idParent": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6181c2479b3f77c3ad73d",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar rotina de impressao de detalhes",
-              "order": 5,
-              "blocked": false,
-              "children": [],
-              "id": "68a6181c2479b3f77c3ad73d",
-              "idParent": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a6181c2479b3f77c3ad739": {
-              "id": "68a6181c2479b3f77c3ad739",
-              "idProjects": "68a6181c2479b3f77c3ad739",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-25.145__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar classificacao de transacoes pendentes",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a logica para classificar transacoes pendentes com base na data de processamento (ATDTPROCSUSP e PKDTDTPROC) e status (WSATSFSTATUS = 1), para que seja possivel determinar a descricao 'PENDENTE', atualizar o contador WSQTDESALDOATU e realizar os calculos apropriados de debito ou credito. A logica deve somar ATNDVALORCR a WSVLRDEBATU se FKNICODLANC estiver entre 999 e 2000, caso contrario somar ATNDVALORCR a WSVLRCREDATU. A rotina deve ser encerrada apos a execucao.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A logica deve classificar corretamente as transacoes pendentes com base nos criterios especificados.\n- O contador WSQTDESALDOATU deve ser atualizado corretamente.\n- Os calculos de debito e credito devem ser aplicados conforme a condicao de FKNICODLANC.\n- A rotina deve sair corretamente apos a execucao.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6181c2479b3f77c3ad73a": {
-              "id": "68a6181c2479b3f77c3ad73a",
-              "idProjects": "68a6181c2479b3f77c3ad73a",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-25.145__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar logica para inclusoes do dia",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a logica para classificar transacoes como inclusoes do dia com base na data de processamento (ATDTPROCSUSP e PKDTDTPROC) e status (WSATSFSTATUS = 1), para que seja possivel determinar as descricoes 'INCLUIDO DIA E PENDENTE' ou 'INCL.TRANSF. PENDENTE', atualizar os contadores WSQTDEINCLU e WSQTDETRANS, e chamar a rotina R030IMPRIMEDET para imprimir os detalhes. A logica deve tambem atualizar WSQTDESALDOATU e aplicar os calculos de debito e credito conforme a logica definida no item 1.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A logica deve classificar corretamente as transacoes como inclusoes do dia com base nos criterios especificados.\n- Os contadores WSQTDEINCLU e WSQTDETRANS devem ser atualizados corretamente.\n- A rotina R030IMPRIMEDET deve ser chamada para imprimir os detalhes.\n- WSQTDESALDOATU deve ser atualizado corretamente.\n- Os calculos de debito e credito devem ser aplicados conforme a logica definida no item 1.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6181c2479b3f77c3ad73b": {
-              "id": "68a6181c2479b3f77c3ad73b",
-              "idProjects": "68a6181c2479b3f77c3ad73b",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "order": 3,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-25.145__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar logica para inclusoes com regularizacao no mesmo dia",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a logica para classificar transacoes como inclusoes com regularizacao no mesmo dia com base na data de processamento (ATDTPROCSUSP e PKDTDTPROC) e regularizacao (ATDTREGULAR e PKDTDTPROC), e status (WSATSFSTATUS = 1), para que seja possivel verificar absorcao usando a rotina R037VERIFABSORCAO, determinar a descricao 'ABSORCAO' ou usar a descricao do lancamento, imprimir os detalhes duas vezes (inclusao e regularizacao), e aplicar os calculos baseados no status final.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A logica deve classificar corretamente as transacoes como inclusoes com regularizacao no mesmo dia com base nos criterios especificados.\n- A rotina R037VERIFABSORCAO deve ser chamada para verificar absorcao.\n- A descricao 'ABSORCAO' ou a descricao do lancamento deve ser corretamente atribuida.\n- Os detalhes devem ser impressos duas vezes (inclusao e regularizacao).\n- Os calculos baseados no status final devem ser aplicados corretamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6181c2479b3f77c3ad73c": {
-              "id": "68a6181c2479b3f77c3ad73c",
-              "idProjects": "68a6181c2479b3f77c3ad73c",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "order": 4,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-25.145__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar logica para regularizacoes de dias anteriores",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a logica para classificar transacoes como regularizacoes de dias anteriores com base na data de regularizacao (ATDTREGULAR e PKDTDTPROC) e status (WSATSFSTATUS = 1), para que seja possivel chamar a rotina R050VESTATUS para definir a descricao do status, imprimir os detalhes, e aplicar os calculos baseados no status.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A logica deve classificar corretamente as transacoes como regularizacoes de dias anteriores com base nos criterios especificados.\n- A rotina R050VESTATUS deve ser chamada para definir a descricao do status.\n- Os detalhes devem ser impressos corretamente.\n- Os calculos baseados no status devem ser aplicados corretamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6181c2479b3f77c3ad73d": {
-              "id": "68a6181c2479b3f77c3ad73d",
-              "idProjects": "68a6181c2479b3f77c3ad73d",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6181c2479b3f77c3ad738",
-              "order": 5,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-25.145__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar rotina de impressao de detalhes",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu quero implementar a rotina R030IMPRIMEDET para imprimir os detalhes das transacoes classificadas, garantindo que as informacoes sejam exibidas corretamente para cada tipo de transacao (pendente, inclusoes do dia, inclusoes com regularizacao no mesmo dia, e regularizacoes de dias anteriores), para que seja possivel validar os dados processados.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "3",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A rotina R030IMPRIMEDET deve ser implementada corretamente.\n- Os detalhes das transacoes devem ser impressos corretamente para cada tipo de transacao.\n- As informacoes exibidas devem ser consistentes com os dados processados.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "4. Rule: Calculo de Totalizadores por Status": {
-          "jobId": "2025-08-20__18-46-52.586__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-46-52.586__Agile/results/4. Rule: Calculo de Totalizadores por Status",
-          "processDefinition": [
-            {
-              "idProjects": "68a618352479b3f77c3ad740",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementação da lógica de determinação de Débito ou Crédito",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a618352479b3f77c3ad740",
-              "idParent": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618352479b3f77c3ad741",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Cálculos de Débito por Status",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a618352479b3f77c3ad741",
-              "idParent": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618352479b3f77c3ad742",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Cálculos de Crédito por Status",
-              "order": 3,
-              "blocked": false,
-              "children": [],
-              "id": "68a618352479b3f77c3ad742",
-              "idParent": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618352479b3f77c3ad743",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Cálculos para Inclusões de Débito e Crédito",
-              "order": 4,
-              "blocked": false,
-              "children": [],
-              "id": "68a618352479b3f77c3ad743",
-              "idParent": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618352479b3f77c3ad744",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Validação e Testes Unitários para Cálculos de Totalizadores",
-              "order": 5,
-              "blocked": false,
-              "children": [],
-              "id": "68a618352479b3f77c3ad744",
-              "idParent": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a618352479b3f77c3ad740": {
-              "id": "68a618352479b3f77c3ad740",
-              "idProjects": "68a618352479b3f77c3ad740",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-52.586__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementação da lógica de determinação de Débito ou Crédito",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, quero implementar a lógica de determinação de Débito ou Crédito com base nos valores de FKNICODLANC, para que o sistema possa classificar corretamente as transações. A lógica deve verificar se FKNICODLANC é igual a 999 ou 2000 para classificar como Débito, caso contrário, classificar como Crédito. Essa funcionalidade é essencial para garantir que os cálculos subsequentes sejam realizados corretamente com base na classificação da transação.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "3",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "A lógica deve classificar corretamente as transações como Débito ou Crédito com base nos valores de FKNICODLANC. Deve ser possível realizar testes unitários para validar a funcionalidade. A implementação deve seguir as melhores práticas de codificação e ser documentada adequadamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618352479b3f77c3ad741": {
-              "id": "68a618352479b3f77c3ad741",
-              "idProjects": "68a618352479b3f77c3ad741",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-52.586__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Cálculos de Débito por Status",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, quero implementar os cálculos de Débito por status, para que o sistema possa calcular corretamente os valores e quantidades associados a cada status. Para o status 2 (Baixa), os valores devem ser atribuídos a WSVLRDEBBAIXA e WSQTDEBAIXA. Para o status 5 (Reg. Contabil), os valores devem ser atribuídos a WSVLRDEBREGCTB, WSQTDEREGCTB e WSQTDE1REGCTB. Para outros status, os valores devem ser atribuídos a WSVLRDEBEXCL e WSQTDEEXCL. Essa funcionalidade é essencial para garantir que os valores de Débito sejam calculados corretamente com base no status da transação.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "Os cálculos de Débito devem ser realizados corretamente para cada status especificado. Deve ser possível realizar testes unitários para validar os cálculos. A implementação deve seguir as melhores práticas de codificação e ser documentada adequadamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618352479b3f77c3ad742": {
-              "id": "68a618352479b3f77c3ad742",
-              "idProjects": "68a618352479b3f77c3ad742",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "order": 3,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-52.586__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Cálculos de Crédito por Status",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, quero implementar os cálculos de Crédito por status, para que o sistema possa calcular corretamente os valores e quantidades associados a cada status. Para o status 2 (Baixa), os valores devem ser atribuídos a WSVLRCREDBAIXA e WSQTDEBAIXA. Para o status 5 (Reg. Contabil), os valores devem ser atribuídos a WSVLRCREDREGCTB, WSQTDEREGCTB e WSQTDE1REGCTB. Para outros status, os valores devem ser atribuídos a WSVLRCREDEXCL e WSQTDEEXCL. Essa funcionalidade é essencial para garantir que os valores de Crédito sejam calculados corretamente com base no status da transação.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "Os cálculos de Crédito devem ser realizados corretamente para cada status especificado. Deve ser possível realizar testes unitários para validar os cálculos. A implementação deve seguir as melhores práticas de codificação e ser documentada adequadamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618352479b3f77c3ad743": {
-              "id": "68a618352479b3f77c3ad743",
-              "idProjects": "68a618352479b3f77c3ad743",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "order": 4,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-52.586__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Cálculos para Inclusões de Débito e Crédito",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, quero implementar os cálculos para inclusões de Débito e Crédito, para que o sistema possa calcular corretamente os valores associados a inclusões. Se WSATNISUSPENSOANTNN for igual a 1, os valores de Débito devem ser atribuídos a WSVLRDEBINCLU e os valores de Crédito a WSVLRCREDINCLU. Caso contrário, os valores de Débito devem ser atribuídos a WSVLRDEBTRANS e os valores de Crédito a WSVLRCREDTRANS. Essa funcionalidade é essencial para garantir que os valores de Débito e Crédito sejam calculados corretamente com base na condição de inclusão.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "3",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "Os cálculos para inclusões de Débito e Crédito devem ser realizados corretamente com base na condição especificada. Deve ser possível realizar testes unitários para validar os cálculos. A implementação deve seguir as melhores práticas de codificação e ser documentada adequadamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618352479b3f77c3ad744": {
-              "id": "68a618352479b3f77c3ad744",
-              "idProjects": "68a618352479b3f77c3ad744",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618352479b3f77c3ad73f",
-              "order": 5,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-46-52.586__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Validação e Testes Unitários para Cálculos de Totalizadores",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, quero criar testes unitários para validar os cálculos de totalizadores por status e inclusões, para garantir que todas as regras de negócio sejam implementadas corretamente. Os testes devem cobrir os cenários de Débito e Crédito para todos os status especificados. Os testes devem cobrir os cenários de inclusão com base na condição WSATNISUSPENSOANTNN. Essa funcionalidade é essencial para garantir a qualidade e confiabilidade do sistema.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "Os testes unitários devem validar todos os cálculos de totalizadores por status e inclusões. Os testes devem cobrir todos os cenários especificados nas regras de negócio. A implementação dos testes deve seguir as melhores práticas e ser documentada adequadamente.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "5. Rule: Calculo de Saldos e Totais por Filial": {
-          "jobId": "2025-08-20__18-47-20.018__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-47-20.018__Agile/results/5. Rule: Calculo de Saldos e Totais por Filial",
-          "processDefinition": [
-            {
-              "idProjects": "68a618502479b3f77c3ad747",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar cálculo de saldos anteriores",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a618502479b3f77c3ad747",
-              "idParent": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618502479b3f77c3ad748",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar cálculo de saldos atuais e da conta",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a618502479b3f77c3ad748",
-              "idParent": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618502479b3f77c3ad749",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar acumulação nos totais gerais",
-              "order": 3,
-              "blocked": false,
-              "children": [],
-              "id": "68a618502479b3f77c3ad749",
-              "idParent": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a618502479b3f77c3ad74a",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar zeragem dos totais da filial",
-              "order": 4,
-              "blocked": false,
-              "children": [],
-              "id": "68a618502479b3f77c3ad74a",
-              "idParent": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a618502479b3f77c3ad747": {
-              "id": "68a618502479b3f77c3ad747",
-              "idProjects": "68a618502479b3f77c3ad747",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-20.018__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar cálculo de saldos anteriores",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu preciso implementar o cálculo de saldos anteriores para consolidar os valores de saldo inicial, débitos e créditos anteriores, garantindo que os dados estejam corretos para o resumo financeiro da filial. \n\nDetalhes:\n- Implementar o cálculo de WSQTDESALDOANT, WSVLRDEBANT e WSVLRCREDANT.\n- Garantir que os valores sejam acumulados corretamente com base nos dados históricos.\n- Validar os resultados para evitar inconsistências nos saldos.\n\nNotas:\n- Este cálculo será utilizado como base para os saldos atuais e totais gerais.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O cálculo de WSQTDESALDOANT deve ser implementado corretamente.\n- O cálculo de WSVLRDEBANT deve ser implementado corretamente.\n- O cálculo de WSVLRCREDANT deve ser implementado corretamente.\n- Os valores calculados devem ser consistentes com os dados históricos fornecidos.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618502479b3f77c3ad748": {
-              "id": "68a618502479b3f77c3ad748",
-              "idProjects": "68a618502479b3f77c3ad748",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-20.018__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar cálculo de saldos atuais e da conta",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu preciso implementar o cálculo de saldos atuais e da conta para consolidar os valores de débitos e créditos atuais, garantindo que o saldo da conta seja calculado corretamente. \n\nDetalhes:\n- Implementar o cálculo de WSQTDESALDOATU, WSVLRDEBATU, WSVLRCREDATU e WSSALDOCONTA.\n- Garantir que os valores sejam acumulados corretamente com base nos dados atuais.\n- Validar os resultados para evitar inconsistências nos saldos.\n\nNotas:\n- Este cálculo será utilizado para gerar o resumo financeiro da filial.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O cálculo de WSQTDESALDOATU deve ser implementado corretamente.\n- O cálculo de WSVLRDEBATU deve ser implementado corretamente.\n- O cálculo de WSVLRCREDATU deve ser implementado corretamente.\n- O cálculo de WSSALDOCONTA deve ser implementado corretamente.\n- Os valores calculados devem ser consistentes com os dados atuais fornecidos.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618502479b3f77c3ad749": {
-              "id": "68a618502479b3f77c3ad749",
-              "idProjects": "68a618502479b3f77c3ad749",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "order": 3,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-20.018__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar acumulação nos totais gerais",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu preciso implementar a acumulação nos totais gerais para consolidar os valores de saldos, débitos e créditos em nível de filial, garantindo que os totais sejam calculados corretamente. \n\nDetalhes:\n- Implementar o cálculo de WSTOTQTDSDANT, WSTOTDEBANT, WSTOTCREDANT, WSTOTQTDSDATU, WSTOTDEBATU, WSTOTCREDATU e WSTOTSALDOCONTA.\n- Garantir que os valores sejam acumulados corretamente com base nos dados de todas as filiais.\n- Validar os resultados para evitar inconsistências nos totais gerais.\n\nNotas:\n- Este cálculo será utilizado para gerar o resumo financeiro consolidado.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- O cálculo de WSTOTQTDSDANT deve ser implementado corretamente.\n- O cálculo de WSTOTDEBANT deve ser implementado corretamente.\n- O cálculo de WSTOTCREDANT deve ser implementado corretamente.\n- O cálculo de WSTOTQTDSDATU deve ser implementado corretamente.\n- O cálculo de WSTOTDEBATU deve ser implementado corretamente.\n- O cálculo de WSTOTCREDATU deve ser implementado corretamente.\n- O cálculo de WSTOTSALDOCONTA deve ser implementado corretamente.\n- Os valores calculados devem ser consistentes com os dados fornecidos.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a618502479b3f77c3ad74a": {
-              "id": "68a618502479b3f77c3ad74a",
-              "idProjects": "68a618502479b3f77c3ad74a",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a618502479b3f77c3ad746",
-              "order": 4,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-20.018__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar zeragem dos totais da filial",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de zeragem dos totais da filial para garantir que os dados sejam reiniciados corretamente ao processar uma nova filial. \n\nDetalhes:\n- Inicializar a estrutura WSTOTAIS com zeros ao final do processamento de cada filial.\n- Garantir que os dados antigos não interfiram nos cálculos da próxima filial.\n- Validar a funcionalidade para evitar inconsistências nos totais zerados.\n\nNotas:\n- Esta funcionalidade é essencial para garantir a precisão dos cálculos ao processar múltiplas filiais.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "3",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A estrutura WSTOTAIS deve ser inicializada com zeros corretamente.\n- Os dados antigos não devem interferir nos cálculos da próxima filial.\n- A funcionalidade deve ser validada para garantir a precisão dos totais zerados.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "6. Rule: Geracao de Lancamentos SAP": {
-          "jobId": "2025-08-20__18-47-47.442__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-47-47.442__Agile/results/6. Rule: Geracao de Lancamentos SAP",
-          "processDefinition": [
-            {
-              "idProjects": "68a6186a2479b3f77c3ad74d",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "value",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a6186a2479b3f77c3ad74d",
-              "idParent": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6186a2479b3f77c3ad74e",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "value",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a6186a2479b3f77c3ad74e",
-              "idParent": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6186a2479b3f77c3ad74f",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "value",
-              "order": 3,
-              "blocked": false,
-              "children": [],
-              "id": "68a6186a2479b3f77c3ad74f",
-              "idParent": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6186a2479b3f77c3ad750",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "value",
-              "order": 4,
-              "blocked": false,
-              "children": [],
-              "id": "68a6186a2479b3f77c3ad750",
-              "idParent": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6186a2479b3f77c3ad751",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "value",
-              "order": 5,
-              "blocked": false,
-              "children": [],
-              "id": "68a6186a2479b3f77c3ad751",
-              "idParent": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a6186a2479b3f77c3ad74d": {
-              "id": "68a6186a2479b3f77c3ad74d",
-              "idProjects": "68a6186a2479b3f77c3ad74d",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-47.442__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "value",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6186a2479b3f77c3ad74e": {
-              "id": "68a6186a2479b3f77c3ad74e",
-              "idProjects": "68a6186a2479b3f77c3ad74e",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-47.442__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "value",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6186a2479b3f77c3ad74f": {
-              "id": "68a6186a2479b3f77c3ad74f",
-              "idProjects": "68a6186a2479b3f77c3ad74f",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "order": 3,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-47.442__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "value",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6186a2479b3f77c3ad750": {
-              "id": "68a6186a2479b3f77c3ad750",
-              "idProjects": "68a6186a2479b3f77c3ad750",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "order": 4,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-47.442__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "value",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6186a2479b3f77c3ad751": {
-              "id": "68a6186a2479b3f77c3ad751",
-              "idProjects": "68a6186a2479b3f77c3ad751",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6186a2479b3f77c3ad74c",
-              "order": 5,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-47-47.442__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "value",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "value",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
-          }
-        },
-        "7. Rule: Geracao de Registros Corporate": {
-          "jobId": "2025-08-20__18-48-14.980__Agile",
-          "status": "Completed",
-          "uri": "/ai/jobs/2025-08-20__18-48-14.980__Agile/results/7. Rule: Geracao de Registros Corporate",
-          "processDefinition": [
-            {
-              "idProjects": "68a6187f2479b3f77c3ad754",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Desenvolver regra para geração de registros no sistema Corporate",
-              "order": 1,
-              "blocked": false,
-              "children": [],
-              "id": "68a6187f2479b3f77c3ad754",
-              "idParent": null,
-              "useCaseId": "68a6187f2479b3f77c3ad753",
-              "externalId": null
-            },
-            {
-              "idProjects": "68a6187f2479b3f77c3ad755",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdPrevious": "Feature",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "name": "Implementar lógica de cálculo de saldos e totalizadores",
-              "order": 2,
-              "blocked": false,
-              "children": [],
-              "id": "68a6187f2479b3f77c3ad755",
-              "idParent": null,
-              "useCaseId": "68a6187f2479b3f77c3ad753",
-              "externalId": null
-            }
-          ],
-          "workItemDetails": {
-            "68a6187f2479b3f77c3ad754": {
-              "id": "68a6187f2479b3f77c3ad754",
-              "idProjects": "68a6187f2479b3f77c3ad754",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6187f2479b3f77c3ad753",
-              "order": 1,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-48-14.980__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Desenvolver regra para geração de registros no sistema Corporate",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Esta tarefa tem como objetivo implementar a regra R035GRAVARCORPORATE, que será responsável por gerar registros padronizados para integração com o sistema Corporate. A regra deve processar dados detalhados de cada transação, garantindo a consistência e a integridade das informações. \n- A regra deve utilizar as estruturas de dados descritas no programa GO502A37, incluindo registros de entrada, saída e variáveis de trabalho essenciais para o processamento de transações suspensas. \n- Deve ser implementada a lógica de inicialização das estruturas de dados, garantindo que os campos obrigatórios sejam preenchidos corretamente e que os valores padrão sejam aplicados quando necessário. \n- A implementação deve considerar a validação de campos nulos, tratamento de datas e valores monetários, e controle de erros SQLCODE. \n- A lógica deve incluir a criação de registros com mapeamento de contas contábeis e integração com o sistema SAP, conforme especificado. \n- O desenvolvimento deve priorizar a modularidade e a reutilização de código, permitindo futuras manutenções e expansões.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "8",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A regra deve gerar registros padronizados para integração com o sistema Corporate.\n- Todos os campos obrigatórios devem ser preenchidos corretamente, e os valores padrão devem ser aplicados quando necessário.\n- A lógica deve validar campos nulos, tratar datas e valores monetários, e controlar erros SQLCODE.\n- Os registros gerados devem estar em conformidade com o mapeamento de contas contábeis e a integração com o sistema SAP.\n- O código deve ser modular e reutilizável, permitindo futuras manutenções e expansões.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            },
-            "68a6187f2479b3f77c3ad755": {
-              "id": "68a6187f2479b3f77c3ad755",
-              "idProjects": "68a6187f2479b3f77c3ad755",
-              "projectId": "PoC - Agile",
-              "levelTypeId": "UserStory",
-              "levelTypeIdNext": [
-                "Task",
-                "Test"
-              ],
-              "parentId": null,
-              "useCaseId": "68a6187f2479b3f77c3ad753",
-              "order": 2,
-              "blocked": false,
-              "integrated": false,
-              "jobId": "2025-08-20__18-48-14.980__Agile",
-              "externalId": null,
-              "fields": [
-                {
-                  "alias": "Title",
-                  "type": "title",
-                  "name": "Title",
-                  "value": "Implementar lógica de cálculo de saldos e totalizadores",
-                  "values": null
-                },
-                {
-                  "alias": "Description",
-                  "type": "multiline",
-                  "name": "Description",
-                  "value": "Esta tarefa tem como objetivo implementar a lógica de cálculo de saldos e totalizadores no programa GO502A37. A lógica deve ser capaz de calcular saldos anteriores, atuais, inclusões, transferências, baixas, exclusões e registros contábeis, conforme especificado. \n- Deve ser desenvolvida uma fórmula para calcular o saldo da conta, considerando créditos e débitos atuais. \n- A lógica deve acumular totais gerais por tipo de operação e separar valores por status de transação. \n- É necessário garantir que os cálculos sejam precisos e que os resultados sejam armazenados corretamente nas estruturas de totalização WSTOTAIS e WSTOTAISGER. \n- A implementação deve incluir validações para evitar erros de cálculo, como divisão por zero ou valores inconsistentes. \n- O código deve ser otimizado para desempenho, considerando o volume de dados processados.",
-                  "values": null
-                },
-                {
-                  "alias": "Story Points",
-                  "type": "int",
-                  "name": "StoryPoints",
-                  "value": "5",
-                  "values": null
-                },
-                {
-                  "alias": "Acceptance Criteria",
-                  "type": "multiline",
-                  "name": "AcceptanceCriteria",
-                  "value": "- A lógica deve calcular corretamente os saldos anteriores, atuais, inclusões, transferências, baixas, exclusões e registros contábeis.\n- O saldo da conta deve ser calculado considerando créditos e débitos atuais.\n- Os totais gerais devem ser acumulados por tipo de operação e separados por status de transação.\n- Os resultados dos cálculos devem ser armazenados corretamente nas estruturas de totalização WSTOTAIS e WSTOTAISGER.\n- O código deve ser otimizado para desempenho e incluir validações para evitar erros de cálculo.",
-                  "values": null
-                }
-              ],
-              "parent": null
-            }
           }
         }
       }

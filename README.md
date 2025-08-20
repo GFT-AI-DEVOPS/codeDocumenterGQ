@@ -173,3 +173,59 @@ Para problemas com:
   ```sh
   npm install
   ```
+
+## Novidades no Script `sequential-agile.js`
+
+### Geração de User Stories em JSON e Markdown
+
+- Para cada item processado, o script gera:
+  - Um arquivo `.json` com todos os detalhes da user story retornados pela API.
+  - Um arquivo `.md` contendo:
+    - **Título**
+    - **Descrição**
+    - **Story Points**
+    - **Acceptance Criteria**
+
+### Envio do Conteúdo Completo
+
+- Se a chave `"agileFullFileContent": true` estiver presente no `config.json`, o script envia o conteúdo completo do arquivo para a API, ao invés de seções separadas.
+- O processamento dos resultados segue igual, gerando os arquivos `.json` e `.md` para cada user story retornada.
+
+### Nomes dos Arquivos
+
+- Os arquivos gerados usam o campo **Title** retornado pela API como nome, sem o id.
+
+### Estrutura de Saída
+
+```
+generatedDocs/
+└── NOME_DO_PROMPT/
+    └── NomeDoArquivo/
+        └── FullFile/
+            ├── TituloDaUserStory.json
+            └── TituloDaUserStory.md
+```
+
+### Exemplo de Markdown Gerado
+
+```markdown
+# Implementação da geração de registros para sistema Corporate
+
+Descrição detalhada da user story...
+
+**Story Points:** 8
+
+**Acceptance Criteria:**
+- Critério 1
+- Critério 2
+```
+
+### Observações sobre `.gitignore`
+
+- O script **não ignora** a pasta `generatedDocs/`; quem faz isso é o Git, conforme configurado no arquivo `.gitignore`.
+- Os arquivos gerados continuarão sendo criados normalmente, mas não serão rastreados pelo Git se estiverem listados no `.gitignore`.
+
+---
+
+> As demais funcionalidades e scripts do repositório continuam funcionando normalmente.  
+> Consulte as seções anteriores do README para detalhes sobre os outros scripts.
