@@ -6,15 +6,365 @@
     "error": null,
     "uri": null,
     "downloaded": true,
+    "tokens": 17172,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-55-07.798__Agile",
+        "status": "Completed",
+        "uri": "/ai/jobs/2025-08-20__21-55-07.798__Agile/results/GO502A37.md",
+        "processDefinition": [
+          {
+            "idProjects": "68a644962479b3f77c3ad7ff",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação da inicialização do sistema",
+            "order": 1,
+            "blocked": false,
+            "children": [],
+            "id": "68a644962479b3f77c3ad7ff",
+            "idParent": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644962479b3f77c3ad800",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação do processamento principal de registros",
+            "order": 2,
+            "blocked": false,
+            "children": [],
+            "id": "68a644962479b3f77c3ad800",
+            "idParent": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644962479b3f77c3ad801",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação dos cálculos de saldos e totalizações",
+            "order": 3,
+            "blocked": false,
+            "children": [],
+            "id": "68a644962479b3f77c3ad801",
+            "idParent": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644962479b3f77c3ad802",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação da geração de relatórios formatados",
+            "order": 4,
+            "blocked": false,
+            "children": [],
+            "id": "68a644962479b3f77c3ad802",
+            "idParent": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644962479b3f77c3ad803",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação da integração com sistemas SAP",
+            "order": 5,
+            "blocked": false,
+            "children": [],
+            "id": "68a644962479b3f77c3ad803",
+            "idParent": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "externalId": null
+          }
+        ],
+        "workItemDetails": {
+          "68a644962479b3f77c3ad7ff": {
+            "id": "68a644962479b3f77c3ad7ff",
+            "idProjects": "68a644962479b3f77c3ad7ff",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "order": 1,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.798__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação da inicialização do sistema",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu quero implementar a funcionalidade de inicialização do sistema para garantir que todas as variáveis sejam inicializadas corretamente, os arquivos de saída sejam abertos, a data de controle seja obtida e as contas contábeis sejam configuradas. Isso permitirá que o sistema esteja preparado para o processamento principal.\n- Exibir identificação do programa.\n- Abrir arquivos de saída em modo OUTPUT.\n- Chamar programa utilitário para controle de arquivo.\n- Obter data e hora atual para cabeçalhos.\n- Buscar data de controle na tabela PAKF018VCONTROLE.\n- Inicializar estruturas de totalização com zeros.\n- Executar COMMIT para confirmar transações.\n- Declarar e abrir cursor para seleção principal de dados.\n- Configurar contas contábeis para códigos SAP.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- A inicialização deve garantir que todos os arquivos de saída sejam abertos corretamente.\n- A data de controle deve ser obtida e validada.\n- As contas contábeis devem ser configuradas com base nos códigos SAP especificados.\n- O cursor para seleção de dados deve ser aberto sem erros.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644962479b3f77c3ad800": {
+            "id": "68a644962479b3f77c3ad800",
+            "idProjects": "68a644962479b3f77c3ad800",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "order": 2,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.798__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação do processamento principal de registros",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu quero implementar o loop principal de processamento para ler registros do cursor, aplicar regras de classificação e acumular totalizadores conforme o tipo de movimentação. Isso permitirá que o sistema processe transações suspensas de forma eficiente.\n- Limpar campos de texto antes do processamento.\n- Executar FETCH no cursor para obter o próximo registro.\n- Filtrar registros com código SAP igual a 4400.\n- Incrementar contador de registros lidos.\n- Validar campos nulos.\n- Buscar descrições de códigos de lançamento e tipos/motivos.\n- Controlar quebra por filial e imprimir resumos.\n- Classificar tipos de movimentação com base em datas e status.\n- Gravar registros corporativos.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "13",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve processar todos os registros do cursor sem erros.\n- Os registros devem ser classificados corretamente conforme as regras de negócio.\n- Os totalizadores devem ser acumulados por filial e geral.\n- Os registros corporativos devem ser gravados corretamente.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644962479b3f77c3ad801": {
+            "id": "68a644962479b3f77c3ad801",
+            "idProjects": "68a644962479b3f77c3ad801",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "order": 3,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.798__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação dos cálculos de saldos e totalizações",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu quero implementar os cálculos de saldos e totalizações para garantir que os valores financeiros sejam calculados corretamente com base nas regras de negócio. Isso permitirá que os relatórios gerados sejam precisos e confiáveis.\n- Calcular saldo anterior subtraindo inclusões, transferências, baixas, exclusões e registros contábeis do dia.\n- Calcular saldo atual somando todas as transações pendentes.\n- Determinar saldo da conta como diferença entre créditos e débitos.\n- Acumular totalizadores distribuídos em várias estruturas.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os cálculos de saldo anterior, saldo atual e saldo da conta devem ser realizados corretamente.\n- Os totalizadores devem refletir os valores acumulados de forma precisa.\n- Os relatórios gerados devem apresentar os valores financeiros corretos.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644962479b3f77c3ad802": {
+            "id": "68a644962479b3f77c3ad802",
+            "idProjects": "68a644962479b3f77c3ad802",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "order": 4,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.798__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação da geração de relatórios formatados",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu quero implementar a geração de relatórios formatados para impressão, garantindo que os dados sejam apresentados de forma clara e estruturada. Isso permitirá que os relatórios sejam utilizados para análise e auditoria.\n- Gerar cabeçalho com identificação da empresa, filial, data e hora.\n- Apresentar detalhes das transações com todas as informações relevantes.\n- Criar resumo por filial com totalizações.\n- Consolidar resumo geral.\n- Incluir legenda dos códigos de motivo.\n- Controlar paginação com limite de 55 linhas por página.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os relatórios devem incluir cabeçalhos, detalhes das transações, resumos por filial e geral.\n- A paginação deve ser controlada corretamente, com novo cabeçalho a cada página.\n- As legendas dos códigos de motivo devem ser apresentadas de forma clara.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644962479b3f77c3ad803": {
+            "id": "68a644962479b3f77c3ad803",
+            "idProjects": "68a644962479b3f77c3ad803",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644962479b3f77c3ad7fe",
+            "order": 5,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.798__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação da integração com sistemas SAP",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu quero implementar a integração com sistemas SAP para garantir que os lançamentos contábeis sejam gerados e enviados corretamente. Isso permitirá que o sistema se comunique com os sistemas corporativos de forma eficiente.\n- Gerar lançamentos contábeis para inclusões/transferências, baixas/exclusões e registros contábeis.\n- Criar pares débito/crédito com as contas apropriadas.\n- Gravar arquivo de lançamentos SAP no formato especificado.\n- Validar dados antes de enviar para o sistema SAP.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os lançamentos contábeis devem ser gerados corretamente para cada tipo de movimentação.\n- Os pares débito/crédito devem estar associados às contas apropriadas.\n- O arquivo de lançamentos SAP deve estar no formato especificado.\n- Os dados enviados para o sistema SAP devem ser validados e consistentes.",
+                "values": null
+              }
+            ],
+            "parent": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "fileName": "GO502A38.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO502A38.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
     "tokens": 7961,
     "jobIds": {
       "FullFile": {
-        "jobId": "2025-08-20__20-29-46.867__Agile",
+        "jobId": "2025-08-20__21-55-07.647__Agile",
         "status": "Completed",
-        "uri": "/ai/jobs/2025-08-20__20-29-46.867__Agile/results/GO502A37.md",
+        "uri": "/ai/jobs/2025-08-20__21-55-07.647__Agile/results/GO502A38.md",
         "processDefinition": [
           {
-            "idProjects": "68a630562479b3f77c3ad7ce",
+            "idProjects": "68a644592479b3f77c3ad7f1",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -26,13 +376,13 @@
             "order": 1,
             "blocked": false,
             "children": [],
-            "id": "68a630562479b3f77c3ad7ce",
+            "id": "68a644592479b3f77c3ad7f1",
             "idParent": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "externalId": null
           },
           {
-            "idProjects": "68a630562479b3f77c3ad7cf",
+            "idProjects": "68a644592479b3f77c3ad7f2",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -44,13 +394,13 @@
             "order": 2,
             "blocked": false,
             "children": [],
-            "id": "68a630562479b3f77c3ad7cf",
+            "id": "68a644592479b3f77c3ad7f2",
             "idParent": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "externalId": null
           },
           {
-            "idProjects": "68a630562479b3f77c3ad7d0",
+            "idProjects": "68a644592479b3f77c3ad7f3",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -62,13 +412,13 @@
             "order": 3,
             "blocked": false,
             "children": [],
-            "id": "68a630562479b3f77c3ad7d0",
+            "id": "68a644592479b3f77c3ad7f3",
             "idParent": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "externalId": null
           },
           {
-            "idProjects": "68a630562479b3f77c3ad7d1",
+            "idProjects": "68a644592479b3f77c3ad7f4",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -80,13 +430,13 @@
             "order": 4,
             "blocked": false,
             "children": [],
-            "id": "68a630562479b3f77c3ad7d1",
+            "id": "68a644592479b3f77c3ad7f4",
             "idParent": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "externalId": null
           },
           {
-            "idProjects": "68a630562479b3f77c3ad7d2",
+            "idProjects": "68a644592479b3f77c3ad7f5",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdPrevious": "Feature",
@@ -98,16 +448,16 @@
             "order": 5,
             "blocked": false,
             "children": [],
-            "id": "68a630562479b3f77c3ad7d2",
+            "id": "68a644592479b3f77c3ad7f5",
             "idParent": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "externalId": null
           }
         ],
         "workItemDetails": {
-          "68a630562479b3f77c3ad7ce": {
-            "id": "68a630562479b3f77c3ad7ce",
-            "idProjects": "68a630562479b3f77c3ad7ce",
+          "68a644592479b3f77c3ad7f1": {
+            "id": "68a644592479b3f77c3ad7f1",
+            "idProjects": "68a644592479b3f77c3ad7f1",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -115,11 +465,11 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "order": 1,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__20-29-46.867__Agile",
+            "jobId": "2025-08-20__21-55-07.647__Agile",
             "externalId": null,
             "fields": [
               {
@@ -133,7 +483,7 @@
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a lógica de seleção e classificação de transações suspensas para garantir que o sistema processe corretamente os registros da tabela PAKF023VSUSPENSO com base nas regras de negócio definidas. A lógica deve incluir: - Seleção de registros onde a data de processamento da suspensão ou regularização seja igual à data atual ou onde o status seja diferente de 'pendente' e 'cancelado', e a situação seja diferente de 'cancelado'. - Classificação das transações conforme o campo ATSFSTATUS, categorizando-as como pendente, baixa, regularizado, resíduo ou registro contábil. - Determinação de débito ou crédito com base no código de lançamento FKNICODLANC, classificando como débito se o código estiver entre 999 e 2000, caso contrário como crédito. - Garantir que os totalizadores e as contas contábeis sejam atualizados corretamente com base na classificação.",
+                "value": "Como desenvolvedor, eu preciso implementar a lógica de seleção e classificação de transações suspensas para garantir que o sistema processe corretamente os registros da tabela PAKF023VSUSPENSO com base nas regras de negócio definidas. A lógica deve incluir: - Seleção de registros onde a data de processamento da suspensão ou regularização seja igual à data atual ou onde o status seja diferente de 'pendente' e 'cancelado', e a situação seja diferente de 'cancelado'. - Classificação das transações conforme o campo ATSFSTATUS, categorizando os registros em 'pendente', 'baixa', 'regularizado', 'resíduo' e 'registro contábil'. - Determinação de débito ou crédito com base no código de lançamento FKNICODLANC, classificando como débito se o código estiver entre 999 e 2000, caso contrário como crédito. - Garantir que os totalizadores e as contas contábeis sejam atualizados corretamente com base na classificação.",
                 "values": null
               },
               {
@@ -147,15 +497,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "- A lógica de seleção deve buscar registros corretamente com base nas condições especificadas.\n- As transações devem ser classificadas corretamente por status e tipo de operação.\n- Os totalizadores e contas contábeis devem refletir corretamente os valores de débito e crédito.\n- A lógica deve ser testada e validada com dados reais da tabela PAKF023VSUSPENSO.",
+                "value": "- A lógica de seleção deve buscar corretamente os registros na tabela PAKF023VSUSPENSO com base nas condições especificadas.\n- As transações devem ser classificadas corretamente conforme o campo ATSFSTATUS.\n- A separação entre débito e crédito deve ser realizada com base no código de lançamento FKNICODLANC.\n- Os totalizadores e contas contábeis devem refletir corretamente os valores calculados após a classificação.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a630562479b3f77c3ad7cf": {
-            "id": "68a630562479b3f77c3ad7cf",
-            "idProjects": "68a630562479b3f77c3ad7cf",
+          "68a644592479b3f77c3ad7f2": {
+            "id": "68a644592479b3f77c3ad7f2",
+            "idProjects": "68a644592479b3f77c3ad7f2",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -163,11 +513,11 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "order": 2,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__20-29-46.867__Agile",
+            "jobId": "2025-08-20__21-55-07.647__Agile",
             "externalId": null,
             "fields": [
               {
@@ -181,7 +531,7 @@
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar o cálculo de saldos e totalizadores por filial para garantir que o sistema gere resumos financeiros precisos. A lógica deve incluir: - Cálculo do saldo anterior subtraindo do saldo atual as inclusões, transferências, baixas, exclusões e registros contábeis do dia. - Cálculo do saldo da conta como a diferença entre créditos e débitos atuais. - Acumulação de totais gerais por tipo de operação, incluindo pendentes, inclusões, transferências, baixas, exclusões e registros contábeis. - Zeragem dos totais da filial ao mudar para a próxima filial.",
+                "value": "Como desenvolvedor, eu preciso implementar o cálculo de saldos e totalizadores por filial para consolidar os dados financeiros e garantir que os relatórios reflitam corretamente os valores por unidade. A lógica deve incluir: - Cálculo do saldo anterior subtraindo do saldo atual as inclusões, transferências, baixas, exclusões e registros contábeis do dia. - Cálculo do saldo da conta como a diferença entre créditos e débitos atuais. - Acumulação de totais gerais por tipo de operação, incluindo pendentes, inclusões, transferências, baixas, exclusões e registros contábeis. - Zeragem dos totais da filial ao mudar para a próxima unidade.",
                 "values": null
               },
               {
@@ -195,15 +545,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "- O saldo anterior deve ser calculado corretamente com base nos valores e transações do dia.\n- O saldo da conta deve refletir a diferença exata entre créditos e débitos.\n- Os totais gerais devem ser acumulados corretamente por tipo de operação.\n- Os totais da filial devem ser zerados ao mudar para a próxima filial.\n- A lógica deve ser testada e validada com dados reais das tabelas relacionadas.",
+                "value": "- O saldo anterior deve ser calculado corretamente com base nos valores das transações do dia.\n- O saldo da conta deve refletir a diferença entre créditos e débitos atuais.\n- Os totais gerais devem ser acumulados corretamente por tipo de operação.\n- Os totais da filial devem ser zerados ao mudar para a próxima unidade.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a630562479b3f77c3ad7d0": {
-            "id": "68a630562479b3f77c3ad7d0",
-            "idProjects": "68a630562479b3f77c3ad7d0",
+          "68a644592479b3f77c3ad7f3": {
+            "id": "68a644592479b3f77c3ad7f3",
+            "idProjects": "68a644592479b3f77c3ad7f3",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -211,11 +561,11 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "order": 3,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__20-29-46.867__Agile",
+            "jobId": "2025-08-20__21-55-07.647__Agile",
             "externalId": null,
             "fields": [
               {
@@ -229,7 +579,7 @@
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a integração com o sistema SAP para garantir que os lançamentos contábeis sejam gerados corretamente com base nos totais calculados. A lógica deve incluir: - Gerar lançamentos contábeis para inclusões e transferências utilizando o código SAP 4412. - Gerar lançamentos contábeis para baixas e exclusões utilizando o código SAP 3412. - Gerar lançamentos contábeis para registros contábeis utilizando o código SAP 3413. - Criar registros de débito e crédito para cada tipo de operação no formato exigido pelo SAP, incluindo campos como conta, valor, histórico e centros de custo.",
+                "value": "Como desenvolvedor, eu preciso implementar a integração com o sistema SAP para gerar lançamentos contábeis automáticos com base nos totais calculados. A lógica deve incluir: - Gerar lançamentos para inclusões e transferências utilizando o código SAP 4412. - Gerar lançamentos para baixas e exclusões utilizando o código SAP 3412. - Gerar lançamentos para registros contábeis utilizando o código SAP 3413. - Criar registros de débito e crédito para cada tipo de operação, garantindo que os valores e contas contábeis sejam corretamente atribuídos.",
                 "values": null
               },
               {
@@ -243,15 +593,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "- Os lançamentos contábeis devem ser gerados corretamente para cada tipo de operação.\n- Os registros devem estar no formato exigido pelo SAP, incluindo todos os campos necessários.\n- A integração deve ser testada e validada com dados reais e simulações no sistema SAP.\n- A lógica deve garantir que os valores de débito e crédito sejam consistentes e precisos.",
+                "value": "- Os lançamentos contábeis devem ser gerados corretamente para cada tipo de operação.\n- Os códigos SAP 4412, 3412 e 3413 devem ser utilizados conforme especificado.\n- Os registros de débito e crédito devem refletir os valores calculados e as contas contábeis atribuídas.\n- A integração com o sistema SAP deve ser funcional e sem erros.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a630562479b3f77c3ad7d1": {
-            "id": "68a630562479b3f77c3ad7d1",
-            "idProjects": "68a630562479b3f77c3ad7d1",
+          "68a644592479b3f77c3ad7f4": {
+            "id": "68a644592479b3f77c3ad7f4",
+            "idProjects": "68a644592479b3f77c3ad7f4",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -259,11 +609,11 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "order": 4,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__20-29-46.867__Agile",
+            "jobId": "2025-08-20__21-55-07.647__Agile",
             "externalId": null,
             "fields": [
               {
@@ -277,7 +627,7 @@
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar a geração de registros para o sistema Corporate para garantir que os dados detalhados de cada transação sejam integrados corretamente. A lógica deve incluir: - Criar registros padronizados para cada transação, incluindo campos como número da transação, contrato, valor, data de pagamento, data de crédito, status e situação. - Garantir que os registros sejam formatados corretamente para integração com o sistema Corporate. - Validar os dados antes de gerar os registros para evitar inconsistências.",
+                "value": "Como desenvolvedor, eu preciso implementar a geração de registros para o sistema Corporate para garantir que os dados detalhados de cada transação sejam corretamente integrados. A lógica deve incluir: - Criar registros padronizados com os dados detalhados de cada transação, incluindo valores, datas e descrições. - Garantir que os registros sejam formatados conforme os requisitos do sistema Corporate. - Validar os dados antes de enviar para o sistema Corporate para evitar erros de integração.",
                 "values": null
               },
               {
@@ -291,15 +641,15 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "- Os registros devem ser gerados corretamente para cada transação com todos os campos necessários.\n- Os dados devem ser validados antes da geração para evitar inconsistências.\n- A integração deve ser testada e validada com dados reais e simulações no sistema Corporate.\n- A lógica deve garantir que os registros estejam no formato exigido pelo sistema Corporate.",
+                "value": "- Os registros devem ser gerados corretamente com os dados detalhados de cada transação.\n- A formatação dos registros deve atender aos requisitos do sistema Corporate.\n- Os dados devem ser validados antes de serem enviados para o sistema Corporate.\n- A integração com o sistema Corporate deve ser funcional e sem erros.",
                 "values": null
               }
             ],
             "parent": null
           },
-          "68a630562479b3f77c3ad7d2": {
-            "id": "68a630562479b3f77c3ad7d2",
-            "idProjects": "68a630562479b3f77c3ad7d2",
+          "68a644592479b3f77c3ad7f5": {
+            "id": "68a644592479b3f77c3ad7f5",
+            "idProjects": "68a644592479b3f77c3ad7f5",
             "projectId": "PoC - Agile",
             "levelTypeId": "UserStory",
             "levelTypeIdNext": [
@@ -307,11 +657,11 @@
               "Test"
             ],
             "parentId": null,
-            "useCaseId": "68a630562479b3f77c3ad7cd",
+            "useCaseId": "68a644592479b3f77c3ad7f0",
             "order": 5,
             "blocked": false,
             "integrated": false,
-            "jobId": "2025-08-20__20-29-46.867__Agile",
+            "jobId": "2025-08-20__21-55-07.647__Agile",
             "externalId": null,
             "fields": [
               {
@@ -325,7 +675,7 @@
                 "alias": "Description",
                 "type": "multiline",
                 "name": "Description",
-                "value": "Como desenvolvedor, eu preciso implementar o controle de absorção de transações suspensas para garantir que o sistema trate corretamente os processos de absorção ativos. A lógica deve incluir: - Verificar na tabela PAKF074VABSORCAO se existe processo de absorção ativo para a transação suspensa. - Alterar a descrição da transação para 'ABSORÇÃO' caso um processo ativo seja encontrado. - Garantir que as transações absorvidas sejam tratadas corretamente nos cálculos e totalizadores.",
+                "value": "Como desenvolvedor, eu preciso implementar o controle de absorção de transações suspensas para garantir que as transações com processos de absorção ativos sejam corretamente identificadas e tratadas. A lógica deve incluir: - Verificar na tabela PAKF074VABSORCAO se existe processo de absorção ativo para a transação suspensa. - Alterar a descrição da transação para 'ABSORÇÃO' caso um processo ativo seja identificado. - Garantir que as transações absorvidas sejam corretamente classificadas e contabilizadas nos totalizadores.",
                 "values": null
               },
               {
@@ -339,7 +689,1423 @@
                 "alias": "Acceptance Criteria",
                 "type": "multiline",
                 "name": "AcceptanceCriteria",
-                "value": "- O sistema deve verificar corretamente a existência de processos de absorção ativos na tabela PAKF074VABSORCAO.\n- A descrição das transações deve ser alterada para 'ABSORÇÃO' quando aplicável.\n- As transações absorvidas devem ser tratadas corretamente nos cálculos e totalizadores.\n- A lógica deve ser testada e validada com dados reais da tabela PAKF074VABSORCAO.",
+                "value": "- O sistema deve verificar corretamente a tabela PAKF074VABSORCAO para identificar processos de absorção ativos.\n- A descrição das transações deve ser alterada para 'ABSORÇÃO' quando aplicável.\n- As transações absorvidas devem ser corretamente classificadas e contabilizadas nos totalizadores.",
+                "values": null
+              }
+            ],
+            "parent": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "fileName": "GO503A43.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO503A43.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
+    "tokens": 16456,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-55-07.768__Agile",
+        "status": "Completed",
+        "uri": "/ai/jobs/2025-08-20__21-55-07.768__Agile/results/GO503A43.md",
+        "processDefinition": [
+          {
+            "idProjects": "68a644d52479b3f77c3ad806",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Controle de Data de Processamento",
+            "order": 1,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d52479b3f77c3ad806",
+            "idParent": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d52479b3f77c3ad807",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Processamento de Inclusão de Contratos",
+            "order": 2,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d52479b3f77c3ad807",
+            "idParent": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d52479b3f77c3ad808",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Regras de Incentivo",
+            "order": 3,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d52479b3f77c3ad808",
+            "idParent": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d52479b3f77c3ad809",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Lançamentos Contábeis",
+            "order": 4,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d52479b3f77c3ad809",
+            "idParent": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d52479b3f77c3ad80a",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Processamento de Cancelamento de Contratos",
+            "order": 5,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d52479b3f77c3ad80a",
+            "idParent": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "externalId": null
+          }
+        ],
+        "workItemDetails": {
+          "68a644d52479b3f77c3ad806": {
+            "id": "68a644d52479b3f77c3ad806",
+            "idProjects": "68a644d52479b3f77c3ad806",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "order": 1,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.768__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Controle de Data de Processamento",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar o controle de data de processamento para garantir que o sistema obtenha a menor data de processamento disponível na tabela de controle e busque os valores históricos de TAC e CAD para aplicar nas regras de negócio subsequentes. Isso permitirá que o sistema processe os contratos financeiros de forma ordenada e com base em dados históricos precisos.\n- Executar consulta SQL na tabela AXG1000.PAKF018VCONTROLE para obter o menor valor de PKDTDTPROC onde ATSFMOVPROC = 'N'.\n- Validar o SQLCODE para garantir que não haja erros na consulta.\n- Implementar lógica para abortar o processamento caso a data obtida seja inválida ou menor que zero.\n- Buscar valores históricos de TAC e CAD na tabela AXG1000.PAKF018VCONTADOR.\n- Garantir que os valores obtidos sejam filtrados corretamente e estejam dentro dos parâmetros esperados.\n- Exibir mensagens informativas sobre o status do processamento e os valores obtidos.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- A data de processamento mínima é obtida corretamente.\n- Os valores históricos de TAC e CAD são recuperados e validados.\n- O sistema aborta o processamento em caso de erros ou valores inválidos.\n- Mensagens informativas são exibidas para o usuário ou logadas no sistema.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d52479b3f77c3ad807": {
+            "id": "68a644d52479b3f77c3ad807",
+            "idProjects": "68a644d52479b3f77c3ad807",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "order": 2,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.768__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Processamento de Inclusão de Contratos",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar o processamento de inclusão de contratos para garantir que o sistema selecione contratos válidos para inclusão, aplique as regras de negócio e crie os lançamentos contábeis necessários. Isso permitirá que o sistema processe novos contratos de forma eficiente e conforme as regras estabelecidas.\n- Declarar cursor para selecionar contratos na tabela AXG1000.PAKF008VCONTRATO.\n- Aplicar filtros para excluir contratos pendentes de aprovação, pendentes de balanceamento ou já cancelados.\n- Ordenar os contratos por empresa, concessão e data de início.\n- Implementar lógica para abrir o cursor e validar os dados obtidos.\n- Garantir que os contratos selecionados sejam processados individualmente, tratando valores nulos e preparando os dados para as regras subsequentes.\n- Criar lançamentos contábeis conforme as regras de negócio definidas.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "13",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Contratos válidos são selecionados corretamente.\n- Filtros de aprovação, balanceamento e cancelamento são aplicados.\n- Os contratos são ordenados conforme os critérios estabelecidos.\n- Lançamentos contábeis são criados para cada contrato processado.\n- Valores nulos são tratados adequadamente.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d52479b3f77c3ad808": {
+            "id": "68a644d52479b3f77c3ad808",
+            "idProjects": "68a644d52479b3f77c3ad808",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "order": 3,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.768__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Regras de Incentivo",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar as regras de cálculo de incentivo para garantir que o sistema aplique corretamente os percentuais e limites definidos para contratos com incentivo. Isso permitirá que o sistema calcule os valores de incentivo de forma precisa e conforme as regras de negócio.\n- Implementar lógica para calcular o valor do incentivo com base no percentual e número de meses.\n- Garantir que o número de meses seja limitado a 12, caso exceda esse valor.\n- Calcular o IR sobre o incentivo com base na fórmula definida.\n- Implementar lógica para verificar contratos substitutos e remover incentivos de contratos originais com status 5.\n- Validar os dados de entrada para garantir que os cálculos sejam realizados corretamente.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O valor do incentivo é calculado corretamente.\n- O número de meses é limitado a 12 quando necessário.\n- O IR sobre o incentivo é calculado conforme a fórmula definida.\n- Contratos substitutos têm incentivos removidos corretamente.\n- Dados de entrada são validados antes do cálculo.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d52479b3f77c3ad809": {
+            "id": "68a644d52479b3f77c3ad809",
+            "idProjects": "68a644d52479b3f77c3ad809",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "order": 4,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.768__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Lançamentos Contábeis",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a criação de lançamentos contábeis para garantir que o sistema registre corretamente os valores financeiros associados aos contratos processados. Isso permitirá que o sistema mantenha a integridade contábil e registre os dados financeiros conforme as regras de negócio.\n- Implementar lógica para criar lançamentos contábeis com base nos valores financiados, seguros, tarifas e IOF.\n- Garantir que os lançamentos sejam diferenciados por tipo de cliente (Pessoa Física ou Jurídica).\n- Implementar lógica para calcular valores de IOF conforme as regras específicas para contratos após 04/01/2008.\n- Criar lançamentos de tarifas e comissões conforme os códigos definidos.\n- Garantir que cada lançamento receba uma sequência única por contrato e código de lançamento.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "13",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Lançamentos contábeis são criados corretamente para cada contrato processado.\n- Os valores de IOF são calculados conforme as regras específicas.\n- Os lançamentos são diferenciados por tipo de cliente.\n- Cada lançamento recebe uma sequência única.\n- A integridade contábil é mantida.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d52479b3f77c3ad80a": {
+            "id": "68a644d52479b3f77c3ad80a",
+            "idProjects": "68a644d52479b3f77c3ad80a",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d52479b3f77c3ad805",
+            "order": 5,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.768__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Processamento de Cancelamento de Contratos",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar o processamento de cancelamento de contratos para garantir que o sistema reverta estatísticas de produção e crie lançamentos de estorno para contratos cancelados. Isso permitirá que o sistema mantenha a integridade contábil e registre os cancelamentos de forma adequada.\n- Selecionar contratos cancelados na data de processamento.\n- Implementar lógica para reverter estatísticas de produção apenas se o cancelamento ocorrer no mesmo mês/ano da inclusão.\n- Criar lançamentos de estorno para todos os lançamentos originais do contrato.\n- Mapear códigos de lançamento originais para códigos de estorno específicos.\n- Garantir que os estornos sejam detalhados para contratos incluídos após 01/11/1993 e simplificados para contratos anteriores.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Contratos cancelados são selecionados corretamente.\n- Estatísticas de produção são revertidas conforme as regras estabelecidas.\n- Lançamentos de estorno são criados para todos os lançamentos originais.\n- Códigos de estorno são mapeados corretamente.\n- Estornos detalhados e simplificados são aplicados conforme a data de inclusão do contrato.",
+                "values": null
+              }
+            ],
+            "parent": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "fileName": "GO504A38.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO504A38.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
+    "tokens": 17159,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-55-07.771__Agile",
+        "status": "Completed",
+        "uri": "/ai/jobs/2025-08-20__21-55-07.771__Agile/results/GO504A38.md",
+        "processDefinition": [
+          {
+            "idProjects": "68a644d92479b3f77c3ad80d",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar Determinação do Decêndio de Processamento",
+            "order": 1,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d92479b3f77c3ad80d",
+            "idParent": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d92479b3f77c3ad80e",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar Seleção de Contratos Incluídos e Cancelados no Período",
+            "order": 2,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d92479b3f77c3ad80e",
+            "idParent": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d92479b3f77c3ad80f",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar Cálculo Base de IOF",
+            "order": 3,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d92479b3f77c3ad80f",
+            "idParent": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d92479b3f77c3ad810",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar Conversão de IOF para UFIR",
+            "order": 4,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d92479b3f77c3ad810",
+            "idParent": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a644d92479b3f77c3ad811",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar Geração de Arquivos de Saída",
+            "order": 5,
+            "blocked": false,
+            "children": [],
+            "id": "68a644d92479b3f77c3ad811",
+            "idParent": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "externalId": null
+          }
+        ],
+        "workItemDetails": {
+          "68a644d92479b3f77c3ad80d": {
+            "id": "68a644d92479b3f77c3ad80d",
+            "idProjects": "68a644d92479b3f77c3ad80d",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "order": 1,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.771__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar Determinação do Decêndio de Processamento",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de determinação automática do decêndio de processamento para que o sistema identifique corretamente o período decendial (1º a 10º, 11º a 20º, 21º ao último dia do mês) com base na data de processamento. A funcionalidade deve considerar o cálculo de dias úteis utilizando a rotina GN750A00, incluindo feriados e finais de semana, e ajustar o período para o mês anterior caso a data de processamento seja após o 2º dia útil do 3º decêndio.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve identificar corretamente o decêndio atual com base na data de processamento.\n- Deve calcular corretamente os dias úteis utilizando a rotina GN750A00.\n- Deve ajustar o período para o mês anterior caso a data de processamento seja após o 2º dia útil do 3º decêndio.\n- Deve definir as datas de início e fim do período processado corretamente.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d92479b3f77c3ad80e": {
+            "id": "68a644d92479b3f77c3ad80e",
+            "idProjects": "68a644d92479b3f77c3ad80e",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "order": 2,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.771__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar Seleção de Contratos Incluídos e Cancelados no Período",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de seleção de contratos incluídos e cancelados no período decendial para que o sistema processe apenas os contratos relevantes. A funcionalidade deve aplicar filtros rigorosos, como exclusão de contratos renegociados, separação por tipo de cliente (física ou jurídica) e validação de datas de inclusão e cancelamento dentro do período.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve selecionar contratos com data base dentro do período decendial.\n- Deve excluir contratos com renegociação (ATNICTRENEG IS NULL).\n- Deve separar contratos por tipo de cliente (física ou jurídica).\n- Deve validar que as datas de inclusão e cancelamento estão dentro do período processado.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d92479b3f77c3ad80f": {
+            "id": "68a644d92479b3f77c3ad80f",
+            "idProjects": "68a644d92479b3f77c3ad80f",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "order": 3,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.771__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar Cálculo Base de IOF",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de cálculo base de IOF para que o sistema calcule o valor devido de IOF para cada contrato. A funcionalidade deve aplicar uma fórmula padrão ou uma fórmula especial dependendo da data de início do contrato e de ranges específicos de números de contrato.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve calcular o valor base de IOF utilizando a fórmula padrão para contratos comuns.\n- Deve aplicar a fórmula especial para contratos iniciados após 04/01/2008 e que não estejam nos ranges específicos.\n- Deve validar que contratos nos ranges específicos não recebem IOF adicional.\n- Deve calcular e armazenar o IOF total corretamente.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d92479b3f77c3ad810": {
+            "id": "68a644d92479b3f77c3ad810",
+            "idProjects": "68a644d92479b3f77c3ad810",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "order": 4,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.771__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar Conversão de IOF para UFIR",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de conversão de IOF para UFIR para que o sistema converta os valores monetários de IOF utilizando o índice UFIR vigente na data de início do contrato. A funcionalidade deve buscar o índice na tabela PAKG003VINDEXADOR e realizar os cálculos necessários.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve buscar o índice UFIR correto na tabela PAKG003VINDEXADOR com base na data de início do contrato.\n- Deve validar que a data de início do contrato é válida e não nula.\n- Deve calcular a quantidade de UFIR corretamente utilizando o índice encontrado.\n- Deve arredondar o resultado para duas casas decimais.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a644d92479b3f77c3ad811": {
+            "id": "68a644d92479b3f77c3ad811",
+            "idProjects": "68a644d92479b3f77c3ad811",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a644d92479b3f77c3ad80c",
+            "order": 5,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.771__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar Geração de Arquivos de Saída",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de geração de arquivos de saída para que o sistema crie os arquivos AB2GO004 e AB3GO004 com os dados processados. O arquivo AB2GO004 deve conter contratos em dia, enquanto o AB3GO004 deve conter contratos cancelados, reincluídos e em atraso, ambos no formato delimitado por pipes.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve gerar o arquivo AB2GO004 com contratos em dia, incluindo tipo de registro, data de movimento e valores de IOF.\n- Deve gerar o arquivo AB3GO004 com contratos cancelados, reincluídos e em atraso, incluindo tipo de registro, data de movimento e valores de IOF.\n- Ambos os arquivos devem seguir o formato delimitado por pipes.\n- Deve validar que os arquivos gerados estão completos e sem erros.",
+                "values": null
+              }
+            ],
+            "parent": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "fileName": "GO506A06.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO506A06.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
+    "tokens": 14812,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-55-07.769__Agile",
+        "status": "Completed",
+        "uri": "/ai/jobs/2025-08-20__21-55-07.769__Agile/results/GO506A06.md",
+        "processDefinition": [
+          {
+            "idProjects": "68a6445a2479b3f77c3ad7f8",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar consulta à tabela de controle para obter a data base",
+            "order": 1,
+            "blocked": false,
+            "children": [],
+            "id": "68a6445a2479b3f77c3ad7f8",
+            "idParent": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a6445a2479b3f77c3ad7f9",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Desenvolver geração sequencial de 9000 datas",
+            "order": 2,
+            "blocked": false,
+            "children": [],
+            "id": "68a6445a2479b3f77c3ad7f9",
+            "idParent": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a6445a2479b3f77c3ad7fa",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementar validação de consistência temporal",
+            "order": 3,
+            "blocked": false,
+            "children": [],
+            "id": "68a6445a2479b3f77c3ad7fa",
+            "idParent": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a6445a2479b3f77c3ad7fb",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Parametrizar valores fixos no sistema",
+            "order": 4,
+            "blocked": false,
+            "children": [],
+            "id": "68a6445a2479b3f77c3ad7fb",
+            "idParent": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a6445a2479b3f77c3ad7fc",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Gerar relatório final de processamento",
+            "order": 5,
+            "blocked": false,
+            "children": [],
+            "id": "68a6445a2479b3f77c3ad7fc",
+            "idParent": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "externalId": null
+          }
+        ],
+        "workItemDetails": {
+          "68a6445a2479b3f77c3ad7f8": {
+            "id": "68a6445a2479b3f77c3ad7f8",
+            "idProjects": "68a6445a2479b3f77c3ad7f8",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "order": 1,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.769__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar consulta à tabela de controle para obter a data base",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Desenvolver a funcionalidade que realiza a consulta à tabela AXG1000.PAKF018VCONTROLE para obter a menor data de processamento válida (MINPKDTDTPROC). A consulta deve filtrar registros onde ATSFMOVPROC seja diferente de 'N'. Caso não encontre uma data válida ou ocorra erro na consulta, o sistema deve implementar um tratamento de erro estruturado, substituindo a prática atual de divisão por zero. A data obtida será utilizada como ponto de referência para a geração das demais datas.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- A consulta deve retornar a menor data válida da tabela AXG1000.PAKF018VCONTROLE.\n- Registros com ATSFMOVPROC igual a 'N' devem ser ignorados.\n- Em caso de erro ou ausência de dados válidos, o sistema deve exibir uma mensagem de erro clara e registrar o evento em log.\n- A data base obtida deve ser armazenada para uso posterior no processamento.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a6445a2479b3f77c3ad7f9": {
+            "id": "68a6445a2479b3f77c3ad7f9",
+            "idProjects": "68a6445a2479b3f77c3ad7f9",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "order": 2,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.769__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Desenvolver geração sequencial de 9000 datas",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Implementar a funcionalidade que gera 9000 registros de datas sequenciais, tanto para o passado quanto para o futuro, a partir da data base obtida. Cada iteração deve calcular uma nova data com base no deslocamento em dias, utilizando a rotina externa YY115A. O sistema deve garantir que as datas sejam geradas em ordem cronológica e que cada registro contenha a data formatada (DDMMAAAA) e o número sequencial de dias em relação à data base.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve gerar exatamente 9000 registros de datas.\n- Cada registro deve conter a data formatada no padrão DDMMAAAA e o número sequencial de dias.\n- As datas devem ser geradas em ordem cronológica.\n- A rotina YY115A deve ser chamada para calcular as datas com base no deslocamento em dias.\n- O sistema deve registrar qualquer erro na execução da rotina YY115A.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a6445a2479b3f77c3ad7fa": {
+            "id": "68a6445a2479b3f77c3ad7fa",
+            "idProjects": "68a6445a2479b3f77c3ad7fa",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "order": 3,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.769__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementar validação de consistência temporal",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Desenvolver a funcionalidade que valida a consistência temporal das datas geradas. O sistema deve garantir que a data inicial seja menor que a data final e que as datas estejam em ordem cronológica. Em caso de inconsistência, o sistema deve registrar o evento em log e continuar o processamento sem interrupções.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "3",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O sistema deve validar que a data inicial é menor que a data final.\n- As datas geradas devem estar em ordem cronológica.\n- Qualquer inconsistência detectada deve ser registrada em log.\n- O processamento não deve ser interrompido em caso de inconsistências.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a6445a2479b3f77c3ad7fb": {
+            "id": "68a6445a2479b3f77c3ad7fb",
+            "idProjects": "68a6445a2479b3f77c3ad7fb",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "order": 4,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.769__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Parametrizar valores fixos no sistema",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Substituir os valores fixos atualmente codificados no sistema, como o número de iterações (9000) e o valor de referência (4200), por parâmetros configuráveis. Esses parâmetros devem ser carregados de um arquivo de configuração ou tabela de banco de dados, permitindo maior flexibilidade e manutenção do sistema.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O número de iterações e o valor de referência devem ser parametrizáveis.\n- Os parâmetros devem ser carregados de um arquivo de configuração ou tabela de banco de dados.\n- O sistema deve validar os valores carregados para garantir que sejam consistentes e utilizáveis.\n- A funcionalidade deve ser testada para garantir que os valores parametrizados sejam aplicados corretamente.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a6445a2479b3f77c3ad7fc": {
+            "id": "68a6445a2479b3f77c3ad7fc",
+            "idProjects": "68a6445a2479b3f77c3ad7fc",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a6445a2479b3f77c3ad7f7",
+            "order": 5,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-55-07.769__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Gerar relatório final de processamento",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Implementar a funcionalidade que gera um relatório consolidado ao final do processamento. O relatório deve incluir o total de datas geradas, a data base utilizada, a data inicial da sequência e a data final da sequência. O relatório deve ser exibido de forma clara e armazenado para auditoria futura.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "3",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- O relatório deve incluir o total de datas geradas, a data base utilizada, a data inicial e a data final da sequência.\n- O relatório deve ser exibido de forma clara e legível.\n- O relatório deve ser armazenado para auditoria futura.\n- O sistema deve registrar qualquer erro ocorrido durante a geração do relatório.",
+                "values": null
+              }
+            ],
+            "parent": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "fileName": "GO507A02.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO507A02.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
+    "tokens": 14679,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-57-48.563__Agile",
+        "status": "CompletedWithErrors",
+        "error": "{\"additionalResultFiles\":[],\"start\":\"2025-08-20T21:57:48.5641635+00:00\",\"end\":\"2025-08-20T21:59:43.8227756+00:00\",\"inputToken\":28305,\"outputToken\":2488,\"inputToOutputRatio\":0.08789966437025261,\"duration\":\"00:01:55.2586121\",\"errors\":{\"GLOBAL\":\"Error Save Story Creator: Unexpected character encountered while parsing value: `. Path '', line 0, position 0.History cannot be saved, the return of the llm is: ```json\\n[\\n\\t{\\n\\t\\t\\\"Id\\\": \\\"66bf2d49fe3654b802df4853\\\",\\n\\t\\t\\\"ProjectId\\\": \\\"PoC - Agile\\\",\\n\\t\\t\\\"LevelTypeId\\\": \\\"UserStory\\\",\\n\\t\\t\\\"WorkItemTitle\\\": \\\"Implementar consulta à tabela de controle para obter a menor data de processamento\\\",\\n\\t\\t\\\"WorkItemDescription\\\": \\\"- Como desenvolvedor, quero implementar a funcionalidade de consulta à tabela AXG1000.PAKF018VCONTROLE para obter a menor data de processamento válida.\\\\n- A consulta deve filtrar registros onde o campo ATSFMOVPROC seja diferente de 'N'.\\\\n- Caso não sejam encontrados registros válidos ou ocorra erro na consulta (SQLCODE diferente de 000 ou indicador nulo igual a 0), o sistema deve exibir uma mensagem de erro e interromper o processamento de forma controlada.\\\\n- Esta funcionalidade é essencial para garantir que o programa tenha um ponto de partida válido para a geração de datas subsequentes.\\\",\\n\\t\\t\\\"AcceptanceCriteria\\\": \\\"- A consulta deve retornar a menor data válida do campo PKDTDTPROC.\\\\n- O sistema deve exibir uma mensagem de erro clara caso não encontre registros válidos ou ocorra erro na consulta.\\\\n- O processamento deve ser interrompido de forma controlada em caso de erro.\\\",\\n\\t\\t\\\"StoryPoints\\\": 5,\\n\\t\\t\\\"ParentId\\\": null,\\n\\t\\t\\\"Fields\\\": [\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Title\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Implementar consulta à tabela de controle para obter a menor data de processamento\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Description\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Como desenvolvedor, quero implementar a funcionalidade de consulta à tabela AXG1000.PAKF018VCONTROLE para obter a menor data de processamento válida. A consulta deve filtrar registros onde o campo ATSFMOVPROC seja diferente de 'N'. Caso não sejam encontrados registros válidos ou ocorra erro na consulta (SQLCODE diferente de 000 ou indicador nulo igual a 0), o sistema deve exibir uma mensagem de erro e interromper o processamento de forma controlada. Esta funcionalidade é essencial para garantir que o programa tenha um ponto de partida válido para a geração de datas subsequentes.\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"StoryPoints\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"5\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"AcceptanceCriteria\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"A consulta deve retornar a menor data válida do campo PKDTDTPROC. O sistema deve exibir uma mensagem de erro clara caso não encontre registros válidos ou ocorra erro na consulta. O processamento deve ser interrompido de forma controlada em caso de erro.\\\"\\n\\t\\t\\t}\\n\\t\\t]\\n\\t},\\n\\t{\\n\\t\\t\\\"Id\\\": \\\"66bf2d49fe3654b802df4854\\\",\\n\\t\\t\\\"ProjectId\\\": \\\"PoC - Agile\\\",\\n\\t\\t\\\"LevelTypeId\\\": \\\"UserStory\\\",\\n\\t\\t\\\"WorkItemTitle\\\": \\\"Desenvolver funcionalidade para geração sequencial de 1850 datas\\\",\\n\\t\\t\\\"WorkItemDescription\\\": \\\"- Como desenvolvedor, quero implementar a funcionalidade de geração de 1850 datas consecutivas a partir da menor data obtida.\\\\n- Cada data gerada deve ser incrementada em um dia, utilizando a rotina externa YY115A (função 24) para cálculos precisos de datas.\\\\n- A funcionalidade deve garantir que as datas sejam geradas de forma sequencial e lógica, considerando anos bissextos e mudanças de mês e ano.\\\",\\n\\t\\t\\\"AcceptanceCriteria\\\": \\\"- O sistema deve gerar exatamente 1850 datas consecutivas a partir da data base.\\\\n- Cada data gerada deve ser válida e sequencial.\\\\n- A rotina YY115A deve ser utilizada para cálculos de datas.\\\",\\n\\t\\t\\\"StoryPoints\\\": 8,\\n\\t\\t\\\"ParentId\\\": null,\\n\\t\\t\\\"Fields\\\": [\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Title\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Desenvolver funcionalidade para geração sequencial de 1850 datas\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Description\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Como desenvolvedor, quero implementar a funcionalidade de geração de 1850 datas consecutivas a partir da menor data obtida. Cada data gerada deve ser incrementada em um dia, utilizando a rotina externa YY115A (função 24) para cálculos precisos de datas. A funcionalidade deve garantir que as datas sejam geradas de forma sequencial e lógica, considerando anos bissextos e mudanças de mês e ano.\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"StoryPoints\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"8\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"AcceptanceCriteria\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"O sistema deve gerar exatamente 1850 datas consecutivas a partir da data base. Cada data gerada deve ser válida e sequencial. A rotina YY115A deve ser utilizada para cálculos de datas.\\\"\\n\\t\\t\\t}\\n\\t\\t]\\n\\t},\\n\\t{\\n\\t\\t\\\"Id\\\": \\\"66bf2d49fe3654b802df4855\\\",\\n\\t\\t\\\"ProjectId\\\": \\\"PoC - Agile\\\",\\n\\t\\t\\\"LevelTypeId\\\": \\\"UserStory\\\",\\n\\t\\t\\\"WorkItemTitle\\\": \\\"Implementar formatação e gravação de registros de datas geradas\\\",\\n\\t\\t\\\"WorkItemDescription\\\": \\\"- Como desenvolvedor, quero implementar a funcionalidade de formatação e gravação dos registros de datas geradas em um arquivo sequencial.\\\\n- Cada registro deve conter a data no formato DD.MM.AAAA e um número sequencial correspondente ao dia gerado.\\\\n- O arquivo de saída deve ser compatível com os padrões estabelecidos e conter exatamente 15 caracteres por registro.\\\",\\n\\t\\t\\\"AcceptanceCriteria\\\": \\\"- Cada registro deve conter a data formatada no padrão DD.MM.AAAA e o número sequencial do dia.\\\\n- O arquivo de saída deve conter exatamente 1850 registros, cada um com 15 caracteres.\\\\n- O sistema deve exibir estatísticas ao final do processamento, indicando o total de datas geradas.\\\",\\n\\t\\t\\\"StoryPoints\\\": 5,\\n\\t\\t\\\"ParentId\\\": null,\\n\\t\\t\\\"Fields\\\": [\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Title\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Implementar formatação e gravação de registros de datas geradas\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Description\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Como desenvolvedor, quero implementar a funcionalidade de formatação e gravação dos registros de datas geradas em um arquivo sequencial. Cada registro deve conter a data no formato DD.MM.AAAA e um número sequencial correspondente ao dia gerado. O arquivo de saída deve ser compatível com os padrões estabelecidos e conter exatamente 15 caracteres por registro.\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"StoryPoints\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"5\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"AcceptanceCriteria\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Cada registro deve conter a data formatada no padrão DD.MM.AAAA e o número sequencial do dia. O arquivo de saída deve conter exatamente 1850 registros, cada um com 15 caracteres. O sistema deve exibir estatísticas ao final do processamento, indicando o total de datas geradas.\\\"\\n\\t\\t\\t}\\n\\t\\t]\\n\\t},\\n\\t{\\n\\t\\t\\\"Id\\\": \\\"66bf2d49fe3654b802df4856\\\",\\n\\t\\t\\\"ProjectId\\\": \\\"PoC - Agile\\\",\\n\\t\\t\\\"LevelTypeId\\\": \\\"UserStory\\\",\\n\\t\\t\\\"WorkItemTitle\\\": \\\"Implementar tratamento de erros SQL e logging robusto\\\",\\n\\t\\t\\\"WorkItemDescription\\\": \\\"- Como desenvolvedor, quero implementar um tratamento robusto para erros SQL, garantindo que o sistema capture e registre informações detalhadas sobre falhas nas operações de banco de dados.\\\\n- O sistema deve identificar a tabela, função e rotina onde o erro ocorreu e registrar essas informações em um log persistente.\\\\n- Em caso de erro crítico, o sistema deve interromper o processamento de forma controlada e exibir mensagens claras para diagnóstico.\\\",\\n\\t\\t\\\"AcceptanceCriteria\\\": \\\"- O sistema deve capturar e registrar informações detalhadas sobre erros SQL, incluindo tabela, função e rotina envolvidas.\\\\n- O log deve ser persistente e acessível para análise posterior.\\\\n- O processamento deve ser interrompido de forma controlada em caso de erro crítico.\\\",\\n\\t\\t\\\"StoryPoints\\\": 8,\\n\\t\\t\\\"ParentId\\\": null,\\n\\t\\t\\\"Fields\\\": [\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Title\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Implementar tratamento de erros SQL e logging robusto\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Description\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Como desenvolvedor, quero implementar um tratamento robusto para erros SQL, garantindo que o sistema capture e registre informações detalhadas sobre falhas nas operações de banco de dados. O sistema deve identificar a tabela, função e rotina onde o erro ocorreu e registrar essas informações em um log persistente. Em caso de erro crítico, o sistema deve interromper o processamento de forma controlada e exibir mensagens claras para diagnóstico.\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"StoryPoints\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"8\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"AcceptanceCriteria\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"O sistema deve capturar e registrar informações detalhadas sobre erros SQL, incluindo tabela, função e rotina envolvidas. O log deve ser persistente e acessível para análise posterior. O processamento deve ser interrompido de forma controlada em caso de erro crítico.\\\"\\n\\t\\t\\t}\\n\\t\\t]\\n\\t},\\n\\t{\\n\\t\\t\\\"Id\\\": \\\"66bf2d49fe3654b802df4857\\\",\\n\\t\\t\\\"ProjectId\\\": \\\"PoC - Agile\\\",\\n\\t\\t\\\"LevelTypeId\\\": \\\"UserStory\\\",\\n\\t\\t\\\"WorkItemTitle\\\": \\\"Parametrizar número de iterações para geração de datas\\\",\\n\\t\\t\\\"WorkItemDescription\\\": \\\"- Como desenvolvedor, quero parametrizar o número de iterações para geração de datas, permitindo que o valor seja configurável em vez de hardcoded.\\\\n- Essa parametrização deve ser feita através de um arquivo de configuração ou variável de ambiente, garantindo flexibilidade para ajustes futuros.\\\\n- O sistema deve validar o valor configurado para evitar erros de execução.\\\",\\n\\t\\t\\\"AcceptanceCriteria\\\": \\\"- O número de iterações deve ser configurável através de um arquivo de configuração ou variável de ambiente.\\\\n- O sistema deve validar o valor configurado, garantindo que seja um número positivo.\\\\n- A funcionalidade deve ser testada para diferentes valores de iterações.\\\",\\n\\t\\t\\\"StoryPoints\\\": 3,\\n\\t\\t\\\"ParentId\\\": null,\\n\\t\\t\\\"Fields\\\": [\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Title\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Parametrizar número de iterações para geração de datas\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"Description\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"Como desenvolvedor, quero parametrizar o número de iterações para geração de datas, permitindo que o valor seja configurável em vez de hardcoded. Essa parametrização deve ser feita através de um arquivo de configuração ou variável de ambiente, garantindo flexibilidade para ajustes futuros. O sistema deve validar o valor configurado para evitar erros de execução.\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"StoryPoints\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"3\\\"\\n\\t\\t\\t},\\n\\t\\t\\t{\\n\\t\\t\\t\\t\\\"Name\\\": \\\"AcceptanceCriteria\\\",\\n\\t\\t\\t\\t\\\"Value\\\": \\\"O número de iterações deve ser configurável através de um arquivo de configuração ou variável de ambiente. O sistema deve validar o valor configurado, garantindo que seja um número positivo. A funcionalidade deve ser testada para diferentes valores de iterações.\\\"\\n\\t\\t\\t}\\n\\t\\t]\\n\\t}\\n]\\n```\\n\"},\"totalItemCount\":1,\"processedItemCount\":1,\"results\":[{\"sourceItem\":\"configuration/Work/DemoAgile/2025-08-20__21-57-48.563__Agile/Input/agile.txt\",\"output\":[{\"targetItem\":\"GO507A02.md\",\"status\":\"Done\",\"uri\":\"/ai/jobs/2025-08-20__21-57-48.563__Agile/results/GO507A02.md\",\"inputToken\":28305,\"outputToken\":2488}]}],\"status\":\"CompletedWithErrors\"}"
+      }
+    }
+  },
+  {
+    "fileName": "GO508A27.md",
+    "originalPath": "C:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO508A27.md",
+    "jobId": null,
+    "error": null,
+    "uri": null,
+    "downloaded": true,
+    "tokens": 15693,
+    "jobIds": {
+      "FullFile": {
+        "jobId": "2025-08-20__21-57-49.093__Agile",
+        "status": "Completed",
+        "uri": "/ai/jobs/2025-08-20__21-57-49.093__Agile/results/GO508A27.md",
+        "processDefinition": [
+          {
+            "idProjects": "68a645182479b3f77c3ad814",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Apropriação de Rendas com Correção Prefixada",
+            "order": 1,
+            "blocked": false,
+            "children": [],
+            "id": "68a645182479b3f77c3ad814",
+            "idParent": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a645182479b3f77c3ad815",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Apropriação de Rendas com Correção por Indexador Diário",
+            "order": 2,
+            "blocked": false,
+            "children": [],
+            "id": "68a645182479b3f77c3ad815",
+            "idParent": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a645182479b3f77c3ad816",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Apropriação de Rendas com Correção por Indexador Mensal",
+            "order": 3,
+            "blocked": false,
+            "children": [],
+            "id": "68a645182479b3f77c3ad816",
+            "idParent": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a645182479b3f77c3ad817",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Validação de Integridade de Dados",
+            "order": 4,
+            "blocked": false,
+            "children": [],
+            "id": "68a645182479b3f77c3ad817",
+            "idParent": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "externalId": null
+          },
+          {
+            "idProjects": "68a645182479b3f77c3ad818",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdPrevious": "Feature",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "name": "Implementação de Controle de Concorrência no Processamento",
+            "order": 5,
+            "blocked": false,
+            "children": [],
+            "id": "68a645182479b3f77c3ad818",
+            "idParent": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "externalId": null
+          }
+        ],
+        "workItemDetails": {
+          "68a645182479b3f77c3ad814": {
+            "id": "68a645182479b3f77c3ad814",
+            "idProjects": "68a645182479b3f77c3ad814",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "order": 1,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-57-49.093__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Apropriação de Rendas com Correção Prefixada",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de apropriação de rendas com correção prefixada para contratos financeiros, garantindo que os valores de curto e longo prazo sejam calculados corretamente com base nos lançamentos contábeis históricos. Esta funcionalidade deve: - Calcular a soma dos lançamentos contábeis dos códigos especificados (1402, 1403, 1404, 1405, 1406, 1502, 1503, 1504, 1505, 1506). - Separar os valores entre curto prazo (lançamentos até a data do próximo ano) e longo prazo (lançamentos após o próximo ano). - Subtrair os valores dos códigos 2642 e 2742 do total apropriado. - Atualizar os campos ATNDRENDAPROPCPCR e ATNDRENDAPROPLPCR na tabela de contratos. - Garantir que os cálculos sejam realizados de forma eficiente e com integridade de dados.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os valores de curto e longo prazo devem ser calculados corretamente com base nos lançamentos contábeis históricos.\n- Os campos ATNDRENDAPROPCPCR e ATNDRENDAPROPLPCR devem ser atualizados na tabela de contratos.\n- Os valores dos códigos 2642 e 2742 devem ser subtraídos do total apropriado.\n- A funcionalidade deve ser testada para garantir a integridade dos dados e a eficiência dos cálculos.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a645182479b3f77c3ad815": {
+            "id": "68a645182479b3f77c3ad815",
+            "idProjects": "68a645182479b3f77c3ad815",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "order": 2,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-57-49.093__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Apropriação de Rendas com Correção por Indexador Diário",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de apropriação de rendas com correção por indexador diário para contratos financeiros, garantindo que os valores sejam corrigidos com base nos índices diários. Esta funcionalidade deve: - Buscar todos os lançamentos contábeis do contrato na data de processamento. - Aplicar o índice de correção diário sobre cada lançamento. - Calcular os valores corrigidos multiplicando o valor indexado pelo índice atual. - Inverter o sinal dos valores para os códigos 2642 e 2742 e multiplicar por -1. - Atualizar tanto os valores em moeda corrente quanto os valores indexados. - Criar novos lançamentos contábeis com os códigos apropriados (2600-2700 e 1600-1700) dependendo da carteira.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "13",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os valores corrigidos devem ser calculados corretamente com base nos índices diários.\n- Os lançamentos contábeis devem ser atualizados com os valores corrigidos.\n- Novos lançamentos contábeis devem ser criados com os códigos apropriados.\n- A funcionalidade deve ser testada para garantir a integridade dos dados e a eficiência dos cálculos.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a645182479b3f77c3ad816": {
+            "id": "68a645182479b3f77c3ad816",
+            "idProjects": "68a645182479b3f77c3ad816",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "order": 3,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-57-49.093__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Apropriação de Rendas com Correção por Indexador Mensal",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar a funcionalidade de apropriação de rendas com correção por indexador mensal para contratos financeiros, garantindo que os valores sejam corrigidos com base nos índices mensais. Esta funcionalidade deve: - Buscar todos os lançamentos contábeis do contrato na data de processamento. - Aplicar o índice de correção mensal sobre cada lançamento. - Calcular os valores corrigidos multiplicando o valor indexado pelo índice atual. - Inverter o sinal dos valores para os códigos 2642 e 2742 e multiplicar por -1. - Atualizar tanto os valores em moeda corrente quanto os valores indexados. - Criar novos lançamentos contábeis com os códigos apropriados (2600-2700 e 1600-1700) dependendo da carteira. - Garantir que os cálculos considerem interpolação linear para dias intermediários do mês e anos bissextos.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "13",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os valores corrigidos devem ser calculados corretamente com base nos índices mensais.\n- Os lançamentos contábeis devem ser atualizados com os valores corrigidos.\n- Novos lançamentos contábeis devem ser criados com os códigos apropriados.\n- A funcionalidade deve considerar interpolação linear para dias intermediários do mês e anos bissextos.\n- A funcionalidade deve ser testada para garantir a integridade dos dados e a eficiência dos cálculos.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a645182479b3f77c3ad817": {
+            "id": "68a645182479b3f77c3ad817",
+            "idProjects": "68a645182479b3f77c3ad817",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "order": 4,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-57-49.093__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Validação de Integridade de Dados",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar validações de integridade de dados para garantir que os valores processados sejam consistentes entre as tabelas relacionadas e que não ocorram erros críticos durante o processamento. Esta funcionalidade deve: - Validar que os valores negativos ou zerados não sejam processados. - Garantir que datas futuras não sejam consideradas para processamento. - Implementar rollback automático em caso de erro, garantindo que os dados não fiquem em estado inconsistente. - Exibir mensagens detalhadas de erro com identificação da rotina, função e tabelas envolvidas.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "8",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Os valores negativos ou zerados devem ser rejeitados durante o processamento.\n- Datas futuras não devem ser consideradas para processamento.\n- Em caso de erro, o rollback automático deve ser executado corretamente.\n- Mensagens detalhadas de erro devem ser exibidas com informações claras sobre a rotina, função e tabelas envolvidas.",
+                "values": null
+              }
+            ],
+            "parent": null
+          },
+          "68a645182479b3f77c3ad818": {
+            "id": "68a645182479b3f77c3ad818",
+            "idProjects": "68a645182479b3f77c3ad818",
+            "projectId": "PoC - Agile",
+            "levelTypeId": "UserStory",
+            "levelTypeIdNext": [
+              "Task",
+              "Test"
+            ],
+            "parentId": null,
+            "useCaseId": "68a645182479b3f77c3ad813",
+            "order": 5,
+            "blocked": false,
+            "integrated": false,
+            "jobId": "2025-08-20__21-57-49.093__Agile",
+            "externalId": null,
+            "fields": [
+              {
+                "alias": "Title",
+                "type": "title",
+                "name": "Title",
+                "value": "Implementação de Controle de Concorrência no Processamento",
+                "values": null
+              },
+              {
+                "alias": "Description",
+                "type": "multiline",
+                "name": "Description",
+                "value": "Como desenvolvedor, eu preciso implementar um controle de concorrência no processamento para evitar conflitos e duplicação de apropriações financeiras. Esta funcionalidade deve: - Garantir que múltiplas execuções simultâneas do processo não causem conflitos. - Implementar locks de processo para evitar execuções paralelas. - Exibir mensagens claras caso o processo já esteja em execução.",
+                "values": null
+              },
+              {
+                "alias": "Story Points",
+                "type": "int",
+                "name": "StoryPoints",
+                "value": "5",
+                "values": null
+              },
+              {
+                "alias": "Acceptance Criteria",
+                "type": "multiline",
+                "name": "AcceptanceCriteria",
+                "value": "- Múltiplas execuções simultâneas devem ser bloqueadas para evitar conflitos.\n- Locks de processo devem ser implementados corretamente.\n- Mensagens claras devem ser exibidas caso o processo já esteja em execução.",
                 "values": null
               }
             ],

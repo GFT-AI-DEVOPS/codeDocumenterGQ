@@ -70,7 +70,7 @@ function splitMarkdownSectionsWithRules(markdownText) {
         const sectionName = titles[i].title;
         let sectionContent = markdownText.slice(start, end).trim();
 
-        // Se for Detailed Rules, subdivide pelas regras internas
+        // Se for Detailed Rules, subdivida pelas regras internas
         if (sectionName.toLowerCase() === 'detailed rules') {
             const ruleRegex = /\*\*\d+\.\s*Rule:[^\n]*\n([\s\S]*?)(?=(\*\*\d+\. Rule:|<!-- rule-end -->|$))/g;
             const rules = {};
@@ -98,47 +98,23 @@ async function waitForJobCompletion(jobId, sectionName, fileName, delayTime = 50
         try {
             const response = await fetchJobStatus(jobId);
             const status = response.data?.status || response.data?.jobStatus;
-            logJobStatus(jobId, attempts + 1, status, sectionName, fileName);
+            console.log(`Job ${jobId}: attempt ${attempts + 1}, status: ${status} | Section: ${sectionName} | File: ${fileName}`);
 
-            if (isJobCompleted(status)) {
-                logJobCompletion(jobId, sectionName, fileName, status);
+            if (status === "completed" || status === "Completed") {
+                console.log(`Job ${jobId} completed with status "${status}" for section "${sectionName}" in file "${fileName}".`);
                 return { status, result: response.data };
             }
-            if (isJobError(status)) {
-                logJobError(jobId, sectionName, fileName, status);
+            if (status === "CompletedWithErrors" || status === "failed" || status === "error") {
+                console.error(`Job ${jobId} completed with error status "${status}" for section "${sectionName}" in file "${fileName}".`);
                 return { status, result: response.data };
             }
         } catch (error) {
-            logJobFetchError(jobId, sectionName, fileName, error);
+            console.error(`Error fetching status for job ${jobId} (Section: ${sectionName}, File: ${fileName}): ${error.message}`);
         }
         await delay(delayTime);
         attempts++;
     }
     throw new Error(`Job ${jobId} did not complete after ${maxAttempts} attempts (Section: ${sectionName}, File: ${fileName})`);
-}
-
-function logJobStatus(jobId, attempt, status, sectionName, fileName) {
-    console.log(`Job ${jobId}: attempt ${attempt}, status: ${status} | Section: ${sectionName} | File: ${fileName}`);
-}
-
-function logJobCompletion(jobId, sectionName, fileName, status) {
-    console.log(`Job ${jobId} completed with status "${status}" for section "${sectionName}" in file "${fileName}".`);
-}
-
-function logJobError(jobId, sectionName, fileName, status) {
-    console.error(`Job ${jobId} completed with error status "${status}" for section "${sectionName}" in file "${fileName}".`);
-}
-
-function logJobFetchError(jobId, sectionName, fileName, error) {
-    console.error(`Error fetching status for job ${jobId} (Section: ${sectionName}, File: ${fileName}): ${error.message}`);
-}
-
-function isJobCompleted(status) {
-    return status === "completed" || status === "Completed";
-}
-
-function isJobError(status) {
-    return status === "CompletedWithErrors" || status === "failed" || status === "error";
 }
 
 async function processFile(item) {
@@ -168,10 +144,9 @@ async function processFile(item) {
         }
         writeJsonFile(jsonFilePath, files);
 
-        const safeName = fileBaseName.replace(/[\\/:*?"<>|]/g, "_");
-        await fsP.writeFile(path.join(outputDir, `${safeName}_full.md`), data);
+        // NÃO salva mais o arquivo ..._full.md
+        // await fsP.writeFile(path.join(outputDir, `${safeName}_full.md`), data);
 
-        // Agora processa o resultado normalmente, como faz para seções
         await processSectionDetails(item, "FullFile", item.jobIds["FullFile"]);
 
         item.downloaded = true;
@@ -180,15 +155,13 @@ async function processFile(item) {
         return;
     }
 
-    if (!item.jobIds) item.jobIds = {};
-
-    for (const [section, value] of Object.entries(result)) {
+    for (const [section, value] of Object.entries(splitMarkdownSectionsWithRules(data))) {
         if (section === "Detailed Rules" && typeof value === "object") {
             if (!item.jobIds[section]) item.jobIds[section] = {};
             for (const [ruleName, ruleContent] of Object.entries(value)) {
                 // Adicione apenas dentro de "Detailed Rules"
                 const jobInfo = item.jobIds[section][ruleName];
-                const shouldRetry = !jobInfo || isJobError(jobInfo.status) || !jobInfo.status;
+                const shouldRetry = !jobInfo || jobInfo.status === "CompletedWithErrors" || !jobInfo.status;
 
                 if (!shouldRetry) continue;
 
@@ -215,11 +188,9 @@ async function processFile(item) {
             }
         } else {
             // Seção principal, não adicione regras detalhadas aqui!
-            if (section.startsWith("1. Rule:") || section.startsWith("2. Rule:") || section.startsWith("3. Rule:") || section.startsWith("4. Rule:") || section.startsWith("5. Rule:") || section.startsWith("6. Rule:") || section.startsWith("7. Rule:")) {
-                continue; // Pula regras detalhadas fora de "Detailed Rules"
-            }
+            if (/^(\d+\.\s*Rule:)/.test(section)) continue;
             const jobInfo = item.jobIds[section];
-            const shouldRetry = !jobInfo || isJobError(jobInfo.status) || !jobInfo.status;
+            const shouldRetry = !jobInfo || jobInfo.status === "CompletedWithErrors" || !jobInfo.status;
 
             if (!shouldRetry) continue;
 
@@ -277,7 +248,6 @@ async function sendSectionAndGetJobId(content, sectionName, item) {
     form.append('LevelTypeId', 'UserStory');
     form.append('ProjectId', 'PoC - Agile');
     form.append('RequestTitle', sectionName);
-    // console.log('Sending section content:', content);
     form.append('RequestDescription', content);
     form.append('ResponseLanguage', config.ResponseLanguage);
     form.append('AdditionalInstructions', config.additionalInstructions);
@@ -301,8 +271,6 @@ async function sendSectionAndGetJobId(content, sectionName, item) {
 }
 
 async function processFilesWithConcurrency() {
-
-
     const concurrency = config.sequentialConcurrency || 1;
     let index = 0;
     while (index < files.length) {
@@ -313,10 +281,8 @@ async function processFilesWithConcurrency() {
     console.log('All files processed with concurrency.');
     console.log('Please check the storyCreatorFiles.json file for the results.');
 
-    // Save a copy of storyCreatorFiles.json in the download folder
-    const downloadFolder = path.join(config.docsFolder, config.promptId);
-    const targetJsonPath = path.join(downloadFolder, 'storyCreatorFiles.json');
-    await fsP.mkdir(downloadFolder, { recursive: true });
+    // Save a copy of storyCreatorFiles.json in the docsFolder
+    const targetJsonPath = path.join(config.docsFolder, 'storyCreatorFiles.json');
     await fsP.copyFile(jsonFilePath, targetJsonPath);
     console.log(`Saved a copy of storyCreatorFiles.json to: ${targetJsonPath}`);
 }
@@ -326,15 +292,12 @@ await processFilesWithConcurrency();
 async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
     if (!jobInfo || jobInfo.status !== "Completed" || !jobInfo.jobId) return;
 
-    // Decide where to update: top-level or inside "Detailed Rules"
     let jobIdsTarget;
     if (/^(\d+\.\s*Rule:)/.test(sectionOrRuleName)) {
-        // Is a detailed rule, update inside "Detailed Rules"
         if (!item.jobIds["Detailed Rules"]) item.jobIds["Detailed Rules"] = {};
         if (!item.jobIds["Detailed Rules"][sectionOrRuleName]) item.jobIds["Detailed Rules"][sectionOrRuleName] = jobInfo;
         jobIdsTarget = item.jobIds["Detailed Rules"][sectionOrRuleName];
     } else {
-        // Is a normal section, update top-level
         if (!item.jobIds[sectionOrRuleName]) item.jobIds[sectionOrRuleName] = jobInfo;
         jobIdsTarget = item.jobIds[sectionOrRuleName];
     }
@@ -355,7 +318,6 @@ async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
         jobIdsTarget.workItemDetails[obj.id] = detailResp.data;
         writeJsonFile(jsonFilePath, files);
 
-        // Busca o Title no campo fields
         let title = "Untitled";
         if (detailResp.data.fields) {
             const titleField = detailResp.data.fields.find(f => f.alias === "Title" || f.name === "Title");
@@ -363,47 +325,39 @@ async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
                 title = titleField.value;
             }
         }
-        // Sanitiza o nome do arquivo
         const safeTitle = title.replace(/[\\/:*?"<>|]/g, "_");
 
-        const folderName = sectionOrRuleName.replace(/[\\/:*?"<>|]/g, "_");
-        const folderPath = path.join(
+        // Renomeia a pasta principal para userStory
+        const mainFolderName = sectionOrRuleName === "FullFile" ? "userStory" : sectionOrRuleName.replace(/[\\/:*?"<>|]/g, "_");
+        const baseFolderPath = path.join(
             config.docsFolder,
             path.basename(item.fileName, path.extname(item.fileName)),
-            folderName
+            mainFolderName
         );
-        await fsP.mkdir(folderPath, { recursive: true });
+        await fsP.mkdir(baseFolderPath, { recursive: true });
 
-        // Usa apenas o Title como nome do arquivo
-        const mdFileName = `${safeTitle}`;
+        // Cria subpastas md e json
+        const mdFolderPath = path.join(baseFolderPath, "md");
+        const jsonFolderPath = path.join(baseFolderPath, "json");
+        await fsP.mkdir(mdFolderPath, { recursive: true });
+        await fsP.mkdir(jsonFolderPath, { recursive: true });
+
+        // Salva arquivos nas subpastas corretas
         await saveWorkItemDetailAsMd(
             detailResp.data,
-            folderPath,
-            mdFileName
+            mdFolderPath,
+            jsonFolderPath,
+            safeTitle
         );
     }
 }
 
-
-// Função para converter o JSON em Markdown simples
-function jsonToMarkdown(obj) {
-    let md = '';
-    for (const [key, value] of Object.entries(obj)) {
-        if (typeof value === 'object' && value !== null) {
-            md += `## ${key}\n${jsonToMarkdown(value)}\n`;
-        } else {
-            md += `- **${key}**: ${value}\n`;
-        }
-    }
-    return md;
-}
-
-// Exemplo de uso após receber o retorno da API:
-async function saveWorkItemDetailAsMd(detailJson, outputDir, fileName) {
+// Atualize a função saveWorkItemDetailAsMd para receber os dois diretórios:
+async function saveWorkItemDetailAsMd(detailJson, mdDir, jsonDir, fileName) {
     const safeName = fileName.replace(/[\\/:*?"<>|]/g, "_");
 
-    // Salva o JSON normalmente
-    const targetJsonPath = path.join(outputDir, `${safeName}.json`);
+    // Salva o JSON na pasta json
+    const targetJsonPath = path.join(jsonDir, `${safeName}.json`);
     await fsP.writeFile(targetJsonPath, JSON.stringify(detailJson, null, 2), 'utf8');
     console.log(`Work item detail saved: ${targetJsonPath}`);
 
@@ -434,6 +388,7 @@ async function saveWorkItemDetailAsMd(detailJson, outputDir, fileName) {
     const mdContent = [
         `# ${title}`,
         '',
+        `**Description:**`,
         description,
         '',
         `**Story Points:** ${storyPoints}`,
@@ -442,8 +397,8 @@ async function saveWorkItemDetailAsMd(detailJson, outputDir, fileName) {
         acceptanceCriteria
     ].join('\n');
 
-    // Salva o markdown
-    const targetMdPath = path.join(outputDir, `${safeName}.md`);
+    // Salva o markdown na pasta md
+    const targetMdPath = path.join(mdDir, `${safeName}.md`);
     await fsP.writeFile(targetMdPath, mdContent, 'utf8');
     console.log(`Work item markdown saved: ${targetMdPath}`);
 }
