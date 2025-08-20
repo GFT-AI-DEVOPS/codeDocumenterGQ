@@ -18,7 +18,8 @@ const tokenLimit = config.maxTokens || 4096; // Default to 4096 if not set in co
 
 // validates config.json
 const emptyKeys = Object.keys(config).filter(key => {
-    if (key === 'foldersToExclude' || key === 'maxFilesLimit') return false; // allow foldersToExclude and maxFilesLimit to be empty
+    // allow foldersToExclude, maxFilesLimit, and additionalInstructions to be empty
+    if (['foldersToExclude', 'maxFilesLimit', 'additionalInstructions'].includes(key)) return false;
     const value = config[key];
     return value === undefined || value === null || value === '' ||
         (Array.isArray(value) && value.length === 0) ||
@@ -100,15 +101,21 @@ for (const filePath of allFilesArray) {
 
 }
 
-const codeDocumenterFilesPath = path.join(process.cwd(), folderPath, 'codeDocumenterFiles.json');
+let fileName = 'codeDocumenterFiles.json'
+
+if (config?.type == "agile") {
+    fileName = 'storyCreatorFiles.json'
+}
+
+const codeDocumenterFilesPath = path.join(process.cwd(), folderPath, fileName);
 try {
     await fs.access(codeDocumenterFilesPath);
-    console.log('codeDocumenterFiles.json already exists, not creating, please delete the file and re-run the workflow if you want to start over.');
+    console.log(fileName + ' already exists, not creating, please delete the file and re-run the workflow if you want to start over.');
     process.exit(0);
 } catch (err) {
-    const outputPath = path.join(process.cwd(), folderPath, 'codeDocumenterFiles.json');
+    const outputPath = path.join(process.cwd(), folderPath, fileName);
     await fs.writeFile(outputPath, JSON.stringify(allFiles, null, 2));
-    console.log('codeDocumenterFiles.json has been saved at', outputPath);
+    console.log(fileName + ' has been saved at', outputPath);
 }
 
 
