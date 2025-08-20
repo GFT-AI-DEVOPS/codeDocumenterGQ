@@ -77,7 +77,7 @@ function splitMarkdownSectionsWithRules(markdownText) {
             let ruleMatch;
             while ((ruleMatch = ruleRegex.exec(sectionContent)) !== null) {
                 // Extrai o nome da regra (primeira linha após "**N. Rule:")
-                const ruleTitleMatch = ruleMatch[0].match(/\*\*\d+\.\s*Rule:\s*([^\n]*)/);
+                const ruleTitleMatch = ruleMatch[0].match(/\*\*(\d+\.\s*Rule:[^\n]*)/);
                 const ruleTitle = ruleTitleMatch
                     ? ruleTitleMatch[1].replace(/^\*+|\*+$/g, '').trim()
                     : `Rule ${ruleMatch[0]}`;
@@ -91,116 +91,6 @@ function splitMarkdownSectionsWithRules(markdownText) {
 
     return sections;
 }
-
-// Exemplo de uso:
-// const fs = require('fs');
-// const path = 'c:\\Users\\artu\\OneDrive - GFT Technologies SE\\Documents\\AI Impact\\codeDocumenterGQ\\generatedDocs\\LegacyTransformer__Business_Rules\\Programas_GO_Tratados\\GO502A37.md';
-
-
-
-// async function sendFile(item) {
-//     const ext = path.extname(item.fileName).toLowerCase();
-//     const language = config.noExtensionOverride?.active
-//         ? config.extensionToLanguage[config.noExtensionOverride.extensionToUse] ?? null
-//         : config.extensionToLanguage[ext] ?? null;
-
-//     if (language === null) {
-//         console.error(`No language mapping found for extension: ${ext}`);
-//         item.error = `No language mapping found for extension: ${ext}`;
-//         writeJsonFile(jsonFilePath, files);
-//         return false;
-//     }
-
-//     const fileBuffer = await fsP.readFile(item.originalPath);
-
-//     const form = new FormData();
-//     form.append('RunName', config.RunName);
-//     form.append('jobName', config.jobName);
-//     // form.append('DocumentationFormat', config.DocumentationFormat);
-//     // form.append('DiagramFormat', config.DiagramFormat);
-//     // form.append('SourceCodeLanguage', language);
-//     // form.append('DocumentationAudience', config.DocumentationAudience);
-//     form.append('PromptId', config.promptId);
-//     // form.append('TargetExtension', config.TargetExtension);
-//     form.append('Llm', config.llm);
-//     form.append('Conventions', 'StoryLevelName_V1');
-//     form.append('LevelTypeId', 'UserStory');
-//     form.append('ProjectId', 'PoC - Agile');
-//     form.append('RequestTitle', '');
-//     form.append('RequestDescription', '');
-//     form.append('AdditionalInstructions', config.additionalInstructions);
-//     // form.append('files', fileBuffer, item.fileName);
-
-//     let success = false;
-//     let retryCount = 0;
-//     const maxRetries = 3;
-
-//     while (!success && retryCount < maxRetries) {
-//         try {
-//             const response = await axios.post(
-//                 API_URL + "/bff/agile/preview",
-//                 form,
-//                 {
-//                     headers: {
-//                         ...form.getHeaders(),
-//                         Authorization: `Bearer ${ACCESS_TOKEN}`,
-//                     },
-//                 }
-//             );
-//             item.jobId = response.data;
-//             item.error = null;
-//             success = true;
-//             writeJsonFile(jsonFilePath, files);
-//             return true;
-//         } catch (err) {
-//             retryCount++;
-//             if (err?.response?.status === 429) {
-//                 if (retryCount < maxRetries) {
-//                     const waitTime = 60000 * retryCount;
-//                     console.log(`Rate limit hit! Retry ${retryCount}/${maxRetries} - Waiting ${waitTime / 1000} seconds...`);
-//                     await delay(waitTime);
-//                 } else {
-//                     console.log(`Max retries reached for ${item.fileName}`);
-//                     item.error = `Rate limit exceeded after ${maxRetries} retries`;
-//                     writeJsonFile(jsonFilePath, files);
-//                     return false;
-//                 }
-//             } else {
-//                 const errorMessage = err?.response?.data || err.message;
-//                 item.error = `Error sending file: ${typeof errorMessage === 'string' ? errorMessage : JSON.stringify(errorMessage)}`;
-//                 writeJsonFile(jsonFilePath, files);
-//                 return false;
-//             }
-//         }
-//     }
-// }
-
-// async function downloadFile(item) {
-//     try {
-//         const fileResponse = await axios.get(
-//             API_URL + `${item.uri}`,
-//             {
-//                 headers: { Authorization: `Bearer ${ACCESS_TOKEN}` },
-//             });
-
-//         const baseDir = config.docsFolder;
-//         const promptFolder = config.promptId;
-//         const baseFolderToInclude = config.folderToInclude;
-//         const baseFolderName = path.basename(baseFolderToInclude);
-//         const relativePath = path.relative(baseFolderToInclude, item.originalPath);
-//         const fullRelativePath = path.join(baseFolderName, relativePath);
-//         const targetPath = path.join(baseDir, promptFolder, fullRelativePath) + '.md';
-
-//         await fsP.mkdir(path.dirname(targetPath), { recursive: true });
-//         await fsP.writeFile(targetPath, fileResponse.data);
-
-//         item.downloaded = true;
-//         console.log(`File downloaded successfully: ${targetPath}`);
-//     } catch (err) {
-//         item.error = err.response?.headers || err.response?.data || err.message || 'Unknown download error.';
-//         writeJsonFile(jsonFilePath, files);
-//     }
-// }
 
 async function waitForJobCompletion(jobId, sectionName, fileName, delayTime = 5000, maxAttempts = 60) {
     let attempts = 0;
@@ -265,16 +155,17 @@ async function processFile(item) {
         if (section === "Detailed Rules" && typeof value === "object") {
             if (!item.jobIds[section]) item.jobIds[section] = {};
             for (const [ruleName, ruleContent] of Object.entries(value)) {
+                // Adicione apenas dentro de "Detailed Rules"
                 const jobInfo = item.jobIds[section][ruleName];
                 const shouldRetry = !jobInfo || isJobError(jobInfo.status) || !jobInfo.status;
 
-                if (!shouldRetry) continue; // Skip if already succeeded
+                if (!shouldRetry) continue;
 
                 const cleanContent = ruleContent.replace(/<!--[\s\S]*?-->/g, '');
                 console.log(`Retrying section: ${section} > ${ruleName}`);
 
                 const jobId = await sendSectionAndGetJobId(cleanContent, ruleName, item);
-                item.jobIds[section][ruleName] = { jobId };
+                item.jobIds[section][ruleName] = { jobId }; // <-- só aqui!
                 writeJsonFile(jsonFilePath, files);
 
                 const { status, result: jobResult } = await waitForJobCompletion(jobId, ruleName, item.fileName);
@@ -292,10 +183,14 @@ async function processFile(item) {
                 await fsP.writeFile(path.join(outputDir, `${safeName}.md`), cleanContent);
             }
         } else {
+            // Seção principal, não adicione regras detalhadas aqui!
+            if (section.startsWith("1. Rule:") || section.startsWith("2. Rule:") || section.startsWith("3. Rule:") || section.startsWith("4. Rule:") || section.startsWith("5. Rule:") || section.startsWith("6. Rule:") || section.startsWith("7. Rule:")) {
+                continue; // Pula regras detalhadas fora de "Detailed Rules"
+            }
             const jobInfo = item.jobIds[section];
             const shouldRetry = !jobInfo || isJobError(jobInfo.status) || !jobInfo.status;
 
-            if (!shouldRetry) continue; // Skip if already succeeded
+            if (!shouldRetry) continue;
 
             const cleanContent = value.replace(/<!--[\s\S]*?-->/g, '');
             console.log(`Retrying section: ${section}`);
@@ -320,13 +215,18 @@ async function processFile(item) {
         }
     }
 
-    // After all sections processed, for each section without errors:
+    // After all sections processed, para cada seção sem erro:
     for (const [section, jobInfo] of Object.entries(item.jobIds)) {
         if (section === "Detailed Rules" && typeof jobInfo === "object") {
             for (const [ruleName, ruleJobInfo] of Object.entries(jobInfo)) {
+                // Passe o nome da regra como section
                 await processSectionDetails(item, ruleName, ruleJobInfo);
             }
-        } else {
+        } else if (
+            section !== "Detailed Rules" &&
+            !/^(\d+\.\s*Rule:)/.test(section) // <-- NÃO processe regras detalhadas fora de Detailed Rules
+        ) {
+            // Só crie pasta para seções que não são Detailed Rules nem regras detalhadas
             await processSectionDetails(item, section, jobInfo);
         }
     }
@@ -392,35 +292,53 @@ async function processFilesWithConcurrency() {
 
 await processFilesWithConcurrency();
 
-async function processSectionDetails(item, section, jobInfo) {
+async function processSectionDetails(item, sectionOrRuleName, jobInfo) {
     if (!jobInfo || jobInfo.status !== "Completed" || !jobInfo.jobId) return;
 
-    // Ensure the jobIds structure exists
-    if (!item.jobIds) item.jobIds = {};
-    if (!item.jobIds[section]) item.jobIds[section] = jobInfo;
+    // Decide where to update: top-level or inside "Detailed Rules"
+    let jobIdsTarget;
+    if (/^(\d+\.\s*Rule:)/.test(sectionOrRuleName)) {
+        // Is a detailed rule, update inside "Detailed Rules"
+        if (!item.jobIds["Detailed Rules"]) item.jobIds["Detailed Rules"] = {};
+        if (!item.jobIds["Detailed Rules"][sectionOrRuleName]) item.jobIds["Detailed Rules"][sectionOrRuleName] = jobInfo;
+        jobIdsTarget = item.jobIds["Detailed Rules"][sectionOrRuleName];
+    } else {
+        // Is a normal section, update top-level
+        if (!item.jobIds[sectionOrRuleName]) item.jobIds[sectionOrRuleName] = jobInfo;
+        jobIdsTarget = item.jobIds[sectionOrRuleName];
+    }
 
-    // 1. Call process-definition endpoint
     const processDefUrl = `${API_URL}/bff/agile/process-definition/${jobInfo.jobId}`;
     const processDefResp = await axios.get(processDefUrl, {
         headers: { Authorization: `Bearer ${ACCESS_TOKEN}` }
     });
-    item.jobIds[section].processDefinition = processDefResp.data;
+    jobIdsTarget.processDefinition = processDefResp.data;
     writeJsonFile(jsonFilePath, files);
 
-    // 2. For each object in processDefinition, call work-item detail endpoint
     for (const obj of processDefResp.data) {
         const detailUrl = `${API_URL}/bff/agile/work-item/${obj.id}/detail`;
         const detailResp = await axios.get(detailUrl, {
             headers: { Authorization: `Bearer ${ACCESS_TOKEN}` }
         });
-        // Save detail response under the section, keyed by work-item id
-        if (!item.jobIds[section].workItemDetails) item.jobIds[section].workItemDetails = {};
-        item.jobIds[section].workItemDetails[obj.id] = detailResp.data;
+        if (!jobIdsTarget.workItemDetails) jobIdsTarget.workItemDetails = {};
+        jobIdsTarget.workItemDetails[obj.id] = detailResp.data;
         writeJsonFile(jsonFilePath, files);
 
-        // Save the work item detail as .md
-        const mdFileName = `${section}_${obj.id}_detail`;
-        await saveWorkItemDetailAsMd(detailResp.data, path.join(config.docsFolder, path.basename(item.fileName, path.extname(item.fileName))), mdFileName);
+        // Cria a subpasta usando sempre o nome completo da regra ou seção
+        const folderName = sectionOrRuleName.replace(/[\\/:*?"<>|]/g, "_");
+        const folderPath = path.join(
+            config.docsFolder,
+            path.basename(item.fileName, path.extname(item.fileName)),
+            folderName
+        );
+        await fsP.mkdir(folderPath, { recursive: true });
+
+        const mdFileName = `${folderName}_${obj.id}_detail`;
+        await saveWorkItemDetailAsMd(
+            detailResp.data,
+            folderPath,
+            mdFileName
+        );
     }
 }
 
@@ -442,12 +360,9 @@ function jsonToMarkdown(obj) {
 async function saveWorkItemDetailAsMd(detailJson, outputDir, fileName) {
     const mdContent = jsonToMarkdown(detailJson);
     const safeName = fileName.replace(/[\\/:*?"<>|]/g, "_");
-    await fsP.writeFile(path.join(outputDir, `${safeName}.md`), mdContent, 'utf8');
+    const targetPath = path.join(outputDir, `${safeName}.md`);
+    await fsP.writeFile(targetPath, mdContent, 'utf8');
+    console.log(`Work item detail saved: ${targetPath}`);
 }
 
-// // Exemplo de chamada após obter o detalhe:
-// const detailJson = /* resposta da API */;
-// const outputDir = /* pasta onde salvar */;
-// const fileName = /* nome do arquivo desejado */;
-// await saveWorkItemDetailAsMd(detailJson, outputDir, fileName);
 

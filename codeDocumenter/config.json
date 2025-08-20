@@ -18,10 +18,10 @@
     "promptId": "Agile__StoryCreator_V1",
     "type": "agile",
     "additionalInstructions": "",
-    "ResponseLanguage": "en-US",
+    "ResponseLanguage": "pt-BR",
     "llm": "689640a8fb414f80ad3f06cd",
     "maxTokens": 200000,
-    "maxFilesLimit": 10,
+    "maxFilesLimit": 1,
     "sequentialConcurrency": 1,
     "noExtensionOverride": {
         "active": false,

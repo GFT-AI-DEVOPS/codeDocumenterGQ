@@ -50,6 +50,7 @@ coverage/
 # Test output
 test-output/
 junit-report.xml
+generatedDocs/
 
 # Misc
 .idea/
